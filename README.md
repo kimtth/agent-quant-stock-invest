@@ -3,7 +3,7 @@
 
 ## Overview
 
-🤑Agent-based stock analysis and investment strategy application using 🎰AutoGen framework, focusing on MSFT stock.
+💸Agent-based stock analysis and investment strategy application using 🎰AutoGen framework, focusing on MSFT stock.
 
 - Review historical stock performance of Microsoft from the past 10-20 years.
 - Identify patterns and trends.
@@ -19,23 +19,33 @@
 
 ```bash
 Run complete stock analysis for MSFT from 1995-01-01 to today. 
-Generate buy/sell signals using 20 days Moving Average and 200 days Moving Average.
+Generate buy/sell signals using 20-day Moving Average, TRIX, UO.
 Based on the generated signals, backtest the strategy and provide performance metrics.
 ```
 
 - Results
 
 ```bash
-The stock analysis for MSFT from 1995-01-01 to 2024-09-09 has been completed. Here are the performance metrics from the backtest based on the generated buy/sell signals:
+### Strategy Performance Summary
 
-- **Cumulative Return:** 4049.51%
-- **CAGR (Compound Annual Growth Rate):** 13.30%
-- **MDD (Maximum Drawdown):** -70.96%
-- **Sharpe Ratio:** 0.04
+**Indicators Used:**
+- 20-day Moving Average (MA)
+- TRIX (Triple Exponential Average)
+- Ultimate Oscillator (UO)
 
-If you need any further analysis or insights, feel free to ask!
+**Strategy Summary:**
+The strategy employs a combination of technical indicators to generate buy and sell signals. The 20-day Moving Average smooths price data to identify trends, while the TRIX indicator assesses momentum and potential trend reversals. The Ultimate Oscillator helps gauge market momentum by considering multiple time frames.
 
-TERMINATE
+Buy signals are generated when the stock price is above the 20-day MA, TRIX is positive, and UO is below 50, indicating a potential upward trend. Conversely, sell signals are triggered when the price is below the 20-day MA, TRIX is negative, and UO is above 50, suggesting a downward trend. This strategy aims to capture momentum while managing risk effectively.
+
+### Performance Metrics
+
+| Metric               | Value    |
+|----------------------|----------|
+| **Cumulative Return** | 188.17%  |
+| **CAGR**             | 2.15%    |
+| **Maximum Drawdown** | -4.47%   |
+| **Sharpe Ratio**     | 0.04     |
 ```
 
 ## Configurations and Setup
