@@ -1,12 +1,15 @@
 import os
 import requests
 from typing import List, Tuple, Optional
+from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
 # Define the structure of a search result entry
 ResponseEntry = Tuple[str, str, str]
 
-load_dotenv()
+
+if not os.getenv("BING_API_KEY"):
+    load_dotenv()
 
 
 class WebSearch:
@@ -23,7 +26,7 @@ class WebSearch:
         - config (dict): A dictionary containing configuration settings.
         """
         self.config = {
-            "result_count": 3,
+            "result_count": 2,
             # Bing Search enter these values
             "bing_api_key": os.getenv("BING_API_KEY"),
         }
@@ -68,6 +71,13 @@ class WebSearch:
         if response.status_code == 200:
             result_list: List[ResponseEntry] = []
             for item in response.json().get("webPages", {}).get("value", []):
+                # Get content from the url
+                content_response = requests.get(item["url"])
+                if response.status_code == 200:
+                    soup = BeautifulSoup(content_response.text, "html.parser")
+                    cleaned_text = soup.get_text(separator=" ", strip=True)
+                    item["snippet"] = cleaned_text
+
                 result_list.append((item["name"], item["url"], item["snippet"]))
             return result_list
         else:
@@ -76,8 +86,8 @@ class WebSearch:
 
 # Remember to replace the placeholders in CONFIG with your actual API keys.
 # Example usage
-# search = WebSearch(CONFIG)
-# results = search.search_query("Example Query")
+# search = WebSearch()
+# results = search.search_query("How to use python ta library")
 # if results is not None:
 #     for title, link, snippet in results:
 #         print(title, link, snippet)
