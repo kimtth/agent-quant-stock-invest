@@ -140,8 +140,8 @@ class Backtester:
         backtest_metrics_file_path = os.path.join(WORK_DIR, BACKTEST_METRICS_FILE)
         with open(backtest_metrics_file_path, "w") as f:
             f.write(f"Backtest Results {timestamp_str}\n")
-            f.write(f"Start Value: {start_value:.2%}\n")
-            f.write(f"End Value: {end_value:.2%}\n")
+            f.write(f"Start Value: {start_value:.2f}\n")
+            f.write(f"End Value: {end_value:.2f}\n")
             f.write(f"Cumulative Return: {end_value:.2%}\n")
             f.write(f"CAGR: {cagr:.2%}\n")
             f.write(f"MDD: {mdd:.2%}\n")

@@ -9,9 +9,9 @@ from utils.datamodels import BacktestPerformanceMetrics
 
 class ToolRegistry:
     def __init__(self, user_proxy, stock_analysis_agent, custom_signal_analysis_agent):
-        self.user_proxy = user_proxy
-        self.stock_analysis_agent = stock_analysis_agent
-        self.custom_signal_analysis_agent = custom_signal_analysis_agent
+        self._user_proxy = user_proxy
+        self._stock_analysis_agent = stock_analysis_agent
+        self._custom_signal_analysis_agent = custom_signal_analysis_agent
 
     def register_tools(self):
         self.__register_create_stock_data()
@@ -19,8 +19,8 @@ class ToolRegistry:
         self.__register_execute_backtesting_strategy()
 
     def __register_create_stock_data(self):
-        @self.user_proxy.register_for_execution()
-        @self.stock_analysis_agent.register_for_llm(
+        @self._user_proxy.register_for_execution()
+        @self._stock_analysis_agent.register_for_llm(
             description="Create stock price data from a file path or API."
         )
         def create_stock_data(
@@ -37,11 +37,11 @@ class ToolRegistry:
             return f"Stock data loaded from {price_data_file_path}"
 
     def __register_search_ideas_from_web(self):
-        @self.user_proxy.register_for_execution()
-        @self.stock_analysis_agent.register_for_llm(
+        @self._user_proxy.register_for_execution()
+        @self._stock_analysis_agent.register_for_llm(
             description="Search for description of indicators on the web."
         )
-        @self.custom_signal_analysis_agent.register_for_llm(
+        @self._custom_signal_analysis_agent.register_for_llm(
             description="Search for examples of using the `ta` library on the web."
         )
         def search_ideas_from_web(
@@ -52,18 +52,20 @@ class ToolRegistry:
             output = ""
             if results is not None:
                 for title, link, snippet in results:
-                    markdown_format =  f"### [{title}]({link})\n\n{snippet}\n\n"
+                    markdown_format = f"### [{title}]({link})\n\n{snippet}\n\n"
                     output += markdown_format
             return output
 
     def __register_execute_backtesting_strategy(self):
-        @self.user_proxy.register_for_execution()
-        @self.stock_analysis_agent.register_for_llm(
+        @self._user_proxy.register_for_execution()
+        @self._stock_analysis_agent.register_for_llm(
             description="Execute a backtesting strategy based on buy/sell signals."
         )
         def execute_backtesting_strategy(
             stock_price_file_path: Annotated[str, "Stock price data file path"],
-            stock_signals_file_path: Annotated[str, "Stock buy/sell signal data file path"],
+            stock_signals_file_path: Annotated[
+                str, "Stock buy/sell signal data file path"
+            ],
         ) -> BacktestPerformanceMetrics:
             backtest_performance_metrics = backtest_stock_strategy(
                 stock_price_file_path, stock_signals_file_path
