@@ -103,7 +103,8 @@ def main():
     if not os.path.exists(WORK_DIR):
         os.mkdir(WORK_DIR)
 
-    indicator_str = "20-day Moving Average, TRIX, UO" # Example indicator string
+    indicator_str = "20-day Moving Average, TRIX, UO" # Example 1
+    indicator_str = "Buy and Hold" # Example 2
     chat_res = initiate_stock_analysis(user_proxy, group_chat_manager, indicator_str)
     print_logging_info(group_chat, chat_res)
 

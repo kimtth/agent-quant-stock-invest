@@ -5,7 +5,7 @@ from utils.const import DATASET_STOCK, DATASET_SIGNALS
 import autogen
 
 
-class StockAnalysisAgent(ConversableAgent):
+class StockAnalysisAgent:
     def __init__(self, llm_config: Dict):
         self.__llm_config = llm_config
         self.__stock_analysis_agent_prompt = self._stock_analysis_agent_prompt()
