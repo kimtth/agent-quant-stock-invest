@@ -2,6 +2,15 @@ import os
 from textwrap import dedent
 from pydantic import BaseModel, field_validator
 from typing import List, Optional
+from enum import Enum
+
+
+class AgentName(Enum):
+    STOCK_ANALYSIS_AGENT = "stock_analysis_agent"
+    CUSTOM_SIGNAL_ANALYSIS_AGENT = "custom_signal_analysis_agent"
+    USER_PROXY = "user_proxy"
+    STRATEGY_IDEA_AGENT = "strategy_idea_agent"
+    STOCK_REPORT_AGENT = "stock_report_agent"
 
 
 class Settings(BaseModel):
@@ -10,6 +19,7 @@ class Settings(BaseModel):
     backtest_metrics_file: str = "backtest_metrics.txt"
     dataset_stock: str = "stock_data.csv"
     dataset_signals: str = "stock_signals.csv"
+    strategy_ideas: str = "strategy_ideas.json"
     llm_model_names: Optional[List[str]] = os.getenv("MODEL_NAMES")
 
     @field_validator("llm_model_names")
@@ -26,7 +36,9 @@ BACKTEST_RESULTS_FILE = settings.backtest_results_file
 BACKTEST_METRICS_FILE = settings.backtest_metrics_file
 DATASET_STOCK = settings.dataset_stock
 DATASET_SIGNALS = settings.dataset_signals
+STRATEGY_IDEAS = settings.strategy_ideas
 MODEL_NAMES = settings.llm_model_names
+
 SUMMARY_PROMPT = dedent(
     """
         # Task

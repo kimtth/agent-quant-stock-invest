@@ -7,20 +7,23 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.11,<3.13"
-ta-lib = {path = "config/TA_Lib-0.4.32-cp311-cp311-win_amd64.whl"}
-quantstats = "^0.0.62"
+msgpack = "^1.1.0"
+# ta-lib = {path = "config/TA_Lib-0.4.32-cp311-cp311-win_amd64.whl"}
+# quantstats = "^0.0.62"
 pyautogen = "^0.2.35"
 autogenstudio = "^0.1.5"
 yfinance = "^0.2.43"
 pandas = "^2.2.2"
-zipline-reloaded = "^3.0.4"
-docker = "^7.1.0"
-pyyaml = "^6.0.2"
+# zipline-reloaded = "^3.0.4"
+# docker = "^7.1.0"
+# pyyaml = "^6.0.2"
 ta = "^0.11.0"
 python-dotenv = "^1.0.1"
 openpyxl = "^3.1.5"
 click = "^8.1.7"
 beautifulsoup4 = "^4.12.3"
+matplotlib = "^3.9.2"
+seaborn = "^0.13.2"
 
 
 [build-system]
