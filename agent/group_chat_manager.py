@@ -1,13 +1,13 @@
 from textwrap import dedent
 from utils.const import DATASET_STOCK, WORK_DIR, DATASET_SIGNALS
-from agent.agent_dict import AgentDict, get_agents_from_dict
 from autogen import GroupChat, GroupChatManager, ConversableAgent
 from typing import Union, Literal, Dict
+from utils.const import AgentName
 import os
 
 class GroupChatManagerBase:
-    def __init__(self, agents_dict: AgentDict, llm_config: Dict):
-        self.__agents_dict = agents_dict
+    def __init__(self, agents_registry: Dict[AgentName, ConversableAgent], llm_config: Dict):
+        self.__agents_registry = agents_registry
         self.__llm_config = llm_config
         self._group_chat = self.create_group_chat()
         self._group_chat_manager = self.create_group_chat_manager()
@@ -59,7 +59,9 @@ class GroupChatManagerBase:
         )
 
     def create_group_chat(self) -> GroupChat:
-        stock_analysis_agent, custom_signal_analysis_agent, user_proxy = get_agents_from_dict(self.__agents_dict)
+        custom_signal_analysis_agent = self.__agents_registry.get(AgentName.CUSTOM_SIGNAL_ANALYSIS_AGENT)
+        stock_analysis_agent = self.__agents_registry.get(AgentName.STOCK_ANALYSIS_AGENT)
+        user_proxy = self.__agents_registry.get(AgentName.USER_PROXY)
 
         allowed_transitions = {
             custom_signal_analysis_agent: [user_proxy],
