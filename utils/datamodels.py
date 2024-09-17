@@ -17,3 +17,9 @@ class BacktestPerformanceMetrics(CustomBaseModel):
     cagr: str
     mdd: str
     sharpe_ratio: str
+
+
+class WorkFlowTasks(BaseModel):
+    stock_idea_task_description: str
+    investment_analysis_instructions: str
+    stock_report_task_instructions: str

@@ -1,17 +1,23 @@
+import json
 import os
-from utils.const import WORK_DIR, DATASET_STOCK
+from utils.const import WORK_DIR, DATASET_STOCK, STRATEGY_IDEAS
 from utils.functions import fetch_stock_data, backtest_stock_strategy
 from utils.web_search import WebSearch
 from datetime import datetime
-from typing import Annotated
+from typing import Annotated, Dict
+from autogen import ConversableAgent
+from utils.const import AgentName
 from utils.datamodels import BacktestPerformanceMetrics
 
 
 class ToolRegistry:
-    def __init__(self, user_proxy, stock_analysis_agent, custom_signal_analysis_agent):
-        self._user_proxy = user_proxy
-        self._stock_analysis_agent = stock_analysis_agent
-        self._custom_signal_analysis_agent = custom_signal_analysis_agent
+    def __init__(self, agent_registry: Dict[AgentName, ConversableAgent]):
+        self._user_proxy = agent_registry.get(AgentName.USER_PROXY)
+        self._stock_analysis_agent = agent_registry.get(AgentName.STOCK_ANALYSIS_AGENT)
+        self._custom_signal_analysis_agent = agent_registry.get(
+            AgentName.CUSTOM_SIGNAL_ANALYSIS_AGENT
+        )
+        self._strategy_idea_agent = agent_registry.get(AgentName.STRATEGY_IDEA_AGENT)
 
     def register_tools(self):
         self.__register_create_stock_data()
@@ -71,3 +77,44 @@ class ToolRegistry:
                 stock_price_file_path, stock_signals_file_path
             )
             return backtest_performance_metrics
+
+
+class JsonToolRegistry:
+    def __init__(self, user_proxy: ConversableAgent, strategy_idea_agent: ConversableAgent):
+        self._user_proxy = user_proxy
+        self._strategy_idea_agent = strategy_idea_agent
+
+    def register_tools(self):
+        self.__register_json_validation()
+        self.__register_store_json_data()
+
+    def __register_json_validation(self):
+        @self._user_proxy.register_for_execution()
+        @self._strategy_idea_agent.register_for_llm(
+            description="Validate JSON data against a schema."
+        )
+        def validate_json_data(
+            json_string: Annotated[str, "JSON data as a string"]
+        ) -> bool:
+            try:
+                json.loads(json_string)
+                return True
+            except json.JSONDecodeError:
+                return False
+
+    def __register_store_json_data(self):
+        @self._user_proxy.register_for_execution()
+        @self._strategy_idea_agent.register_for_llm(
+            description="Store JSON data as a file."
+        )
+        def store_json_data(
+            json_string: Annotated[str, "JSON data as a string"]
+        ) -> bool:
+            try:
+                # Store JSON data as a file
+                with open(
+                    os.path.join(WORK_DIR, STRATEGY_IDEAS), "w", encoding="utf8"
+                ) as f:
+                    f.write(json_string)
+            except Exception as e:
+                pass
