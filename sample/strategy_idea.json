@@ -1,0 +1,135 @@
+[
+    {
+        "strategy": "Buy and hold",
+        "description": "Buy and hold a security for the long term, regardless of market fluctuations.",
+        "rationale": "Historically, the stock market has trended upward over time, providing long-term investors with capital appreciation and dividend income.",
+        "investing_conditions": "Buy a security and hold it for an extended period, typically years or decades.",
+        "expected_outcome": "Benefit from long-term market growth and compounding returns."
+    },
+    {
+        "strategy": "Moving Average Crossover",
+        "description": "Utilize short-term and long-term moving averages to identify buy and sell signals.",
+        "rationale": "When a short-term moving average crosses above a long-term moving average, it signals a potential upward trend (bullish). Conversely, a cross below indicates a potential downward trend (bearish).",
+        "investing_conditions": "Buy when the short-term average crosses above the long-term average; sell when it crosses below.",
+        "expected_outcome": "Capture trends early and maximize returns during upward movements while limiting losses during downturns."
+    },
+    {
+        "strategy": "RSI Reversal",
+        "description": "Use the RSI to identify overbought and oversold conditions for potential reversals.",
+        "rationale": "An RSI above 70 indicates overbought conditions, while below 30 indicates oversold conditions, suggesting potential reversals.",
+        "investing_conditions": "Buy when RSI is below 30; sell when RSI is above 70.",
+        "expected_outcome": "Enter positions at favorable prices, benefiting from market corrections."
+    },
+    {
+        "strategy": "MACD Divergence",
+        "description": "Utilize MACD to identify divergence between price and momentum.",
+        "rationale": "Divergence indicates potential reversals; if prices are making new highs while MACD is making lower highs, it may indicate weakness.",
+        "investing_conditions": "Buy when MACD shows bullish divergence; sell on bearish divergence.",
+        "expected_outcome": "Identify reversal points to enter or exit trades effectively."
+    },
+    {
+        "strategy": "Bollinger Band Breakout",
+        "description": "Use Bollinger Bands to identify price volatility and potential breakouts.",
+        "rationale": "When the price breaks above the upper band, it may indicate a bullish breakout; below the lower band may indicate a bearish breakout.",
+        "investing_conditions": "Buy when the price closes above the upper band; sell when it closes below the lower band.",
+        "expected_outcome": "Capitalize on strong price movements post-breakout."
+    },
+    {
+        "strategy": "Stochastic Oscillator",
+        "description": "Use the Stochastic Oscillator to identify overbought and oversold conditions in the market.",
+        "rationale": "Values above 80 indicate overbought conditions; below 20 indicate oversold conditions, which can suggest potential reversals.",
+        "investing_conditions": "Buy when the Stochastic crosses above 20; sell when it crosses below 80.",
+        "expected_outcome": "Take advantage of price reversals based on overbought/oversold conditions."
+    },
+    {
+        "strategy": "ADX Trend Strength",
+        "description": "Use the Average Directional Movement Index (ADX) to determine trend strength.",
+        "rationale": "An ADX value above 25 indicates a strong trend, while below 20 indicates a weak trend.",
+        "investing_conditions": "Buy when ADX is above 25 and +DI is above -DI; sell when ADX is above 25 and -DI is above +DI.",
+        "expected_outcome": "Engage in trades that align with strong trends to maximize profits."
+    },
+    {
+        "strategy": "Volume Confirmation",
+        "description": "Use volume indicators to confirm price movements.",
+        "rationale": "High volume during a price increase indicates strength in the movement; low volume may indicate weakness.",
+        "investing_conditions": "Buy when price rises with increased volume; sell when price falls with increased volume.",
+        "expected_outcome": "Enhance trade accuracy by confirming price movements with volume."
+    },
+    {
+        "strategy": "CCI Overbought/Oversold",
+        "description": "Use the Commodity Channel Index (CCI) to identify overbought and oversold levels.",
+        "rationale": "A CCI above 100 indicates overbought conditions, while below -100 indicates oversold conditions.",
+        "investing_conditions": "Buy when CCI crosses above -100; sell when it crosses below 100.",
+        "expected_outcome": "Identify potential reversal points based on overbought/oversold conditions."
+    },
+    {
+        "strategy": "Keltner Channel",
+        "description": "Use Keltner Channels to identify price breakouts and reversals.",
+        "rationale": "Price movements outside the channels can indicate potential breakouts or reversals.",
+        "investing_conditions": "Buy when price closes above the Keltner Channel; sell when it closes below.",
+        "expected_outcome": "Capitalize on strong price movements following breakouts."
+    },
+    {
+        "strategy": "Money Flow Index (MFI)",
+        "description": "Use MFI to measure the flow of money into and out of a security.",
+        "rationale": "MFI above 80 indicates overbought; below 20 indicates oversold conditions, suggesting potential reversals.",
+        "investing_conditions": "Buy when MFI crosses below 20; sell when MFI crosses above 80.",
+        "expected_outcome": "Enter trades based on potential market corrections."
+    },
+    {
+        "strategy": "Trix Indicator",
+        "description": "Use the Trix indicator to identify trends and potential reversals.",
+        "rationale": "A positive Trix indicates an upward trend; a negative Trix indicates a downward trend.",
+        "investing_conditions": "Buy when Trix crosses above zero; sell when it crosses below.",
+        "expected_outcome": "Capture trends early and secure profits."
+    },
+    {
+        "strategy": "Force Index",
+        "description": "Combine price movement and volume to assess the strength of a price trend.",
+        "rationale": "A rising Force Index indicates increasing buying pressure, while a declining index indicates selling pressure.",
+        "investing_conditions": "Buy when Force Index is above zero and rising; sell when it falls below zero.",
+        "expected_outcome": "Identify strong buying/selling opportunities based on pressure."
+    },
+    {
+        "strategy": "Vortex Indicator",
+        "description": "Use the Vortex Indicator to identify potential trend reversals.",
+        "rationale": "When the +VI crosses above -VI, it indicates an upward trend; vice versa for a downward trend.",
+        "investing_conditions": "Buy when +VI crosses above -VI; sell when -VI crosses above +VI.",
+        "expected_outcome": "Engage in trades aligned with emerging trends."
+    },
+    {
+        "strategy": "Ichimoku Cloud",
+        "description": "Use the Ichimoku Cloud to identify support, resistance, and trend direction.",
+        "rationale": "Price above the cloud indicates bullish conditions, while below indicates bearish conditions.",
+        "investing_conditions": "Buy when price is above the cloud; sell when it is below.",
+        "expected_outcome": "Trade with significant support/resistance levels in mind."
+    },
+    {
+        "strategy": "Ultimate Oscillator",
+        "description": "Use the Ultimate Oscillator to identify potential price reversals based on momentum.",
+        "rationale": "Values above 70 indicate overbought conditions; below 30 indicate oversold conditions.",
+        "investing_conditions": "Buy when the Ultimate Oscillator is below 30; sell when it is above 70.",
+        "expected_outcome": "Enter trades at optimal points based on momentum shifts."
+    },
+    {
+        "strategy": "Negative Volume Index (NVI)",
+        "description": "Use the NVI to identify trends based on volume changes.",
+        "rationale": "Rising NVI indicates bullish trends, while falling NVI may indicate bearish trends.",
+        "investing_conditions": "Buy when NVI is rising; sell when NVI is falling.",
+        "expected_outcome": "Align trades with underlying volume trends."
+    },
+    {
+        "strategy": "Daily Return Momentum",
+        "description": "Analyze daily returns to gauge stock momentum.",
+        "rationale": "Consistent positive daily returns can indicate strong upward momentum.",
+        "investing_conditions": "Buy after three consecutive positive daily returns; sell after three consecutive negative returns.",
+        "expected_outcome": "Capitalize on momentum-driven price movements."
+    },
+    {
+        "strategy": "Cumulative Return Analysis",
+        "description": "Evaluate cumulative returns to assess long-term performance.",
+        "rationale": "Strong cumulative returns may indicate a solid investment opportunity.",
+        "investing_conditions": "Buy when cumulative returns are positive; sell when they turn negative.",
+        "expected_outcome": "Invest in stocks with strong long-term performance."
+    }
+]

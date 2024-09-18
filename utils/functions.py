@@ -107,12 +107,22 @@ class Backtester:
         returns = pd.Series(self.data["Adj Close"]).pct_change()
         self.data["Returns"] = returns
 
-        adjusted_returns = returns * self.data["Position"].shift(1).fillna(0)
-        adjusted_returns[self.data["Position"] == -1] = 0
-        adjusted_returns[self.data["Position"] == 0] = 0
-        self.data["Adjusted Returns"] = adjusted_returns
+        # Calculate adjusted returns
+        # Position = 1 (buy) - 0 (no sell) = 1 (hold position)
+        # Position = 0 (no buy) - 1 (sell) = -1 (sell position or close position)
+        # Position = 0 (no buy) - 0 (no sell) = 0 (no position)
 
-        cumulative_returns = (1 + adjusted_returns).cumprod().fillna(1)
+        # Position = 1: Buy signal, so return is as is
+        # Position = -1: Sell signal, returns are inverted (negative). 
+        #   Selling a stock means you make a profit when the price goes down, and a loss when it goes up.
+        # Position = 0: No trade, so return is 0
+        # The `shift(1)` operation is used to apply the previous day's position to the current day's return.
+        
+        # Calculate adjusted returns
+        self.data["Adjusted Position"] = self.data["Position"].shift(1).fillna(0)
+        self.data["Adjusted Returns"] = self.data["Returns"] * self.data["Adjusted Position"]
+
+        cumulative_returns = (1 + self.data["Adjusted Returns"]).cumprod().fillna(1)
         self.data["Cumulative Returns"] = cumulative_returns
 
         cumulative_max = cumulative_returns.cummax()
@@ -124,6 +134,9 @@ class Backtester:
         start_value = cumulative_returns.iloc[0]
         end_value = cumulative_returns.iloc[-1]
         periods = len(cumulative_returns) / 252
+
+        # calculate cumulative return by start and end value
+        perf_cumulative_returns = (end_value / start_value) - 1
 
         cagr = PerformanceMetricsCalculator.calculate_cagr(
             start_value, end_value, periods
@@ -142,13 +155,13 @@ class Backtester:
             f.write(f"Backtest Results {timestamp_str}\n")
             f.write(f"Start Value: {start_value:.2f}\n")
             f.write(f"End Value: {end_value:.2f}\n")
-            f.write(f"Cumulative Return: {end_value:.2%}\n")
+            f.write(f"Cumulative Return: {perf_cumulative_returns:.2%}\n")
             f.write(f"CAGR: {cagr:.2%}\n")
             f.write(f"MDD: {mdd:.2%}\n")
             f.write(f"Sharpe Ratio: {sharpe:.2f}\n")
 
         self.results = BacktestPerformanceMetrics(
-            cumulative_return=f"Cumulative Return: {end_value:.2%}",
+            cumulative_return=f"Cumulative Return: {perf_cumulative_returns:.2%}",
             cagr=f"CAGR: {cagr:.2%}",
             mdd=f"MDD: {mdd:.2%}",
             sharpe_ratio=f"Sharpe Ratio: {sharpe:.2f}",
