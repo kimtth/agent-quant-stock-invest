@@ -26,7 +26,7 @@ class WebSearch:
         - config (dict): A dictionary containing configuration settings.
         """
         self.config = {
-            "result_count": 2,
+            "result_count": 3,
             # Bing Search enter these values
             "bing_api_key": os.getenv("BING_API_KEY"),
         }
@@ -63,7 +63,7 @@ class WebSearch:
         - A list of ResponseEntry tuples containing the name, URL, and snippet of each Bing search result.
         """
         api_key = self.config.get("bing_api_key")
-        url = f"https://api.bing.microsoft.com/v7.0/search?q={query}"
+        url = f"https://api.bing.microsoft.com/v7.0/search?q={query}&setLang=en"
         if cnt > 0:
             url += f"&count={cnt}"
         headers = {"Ocp-Apim-Subscription-Key": api_key}

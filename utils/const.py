@@ -20,6 +20,8 @@ class Settings(BaseModel):
     dataset_stock: str = "stock_data.csv"
     dataset_signals: str = "stock_signals.csv"
     strategy_ideas: str = "strategy_ideas.json"
+    plot_file_name: str = "stock_plot.png"
+    chat_summary_file_name: str = "chat_summary.txt"
     llm_model_names: Optional[List[str]] = os.getenv("MODEL_NAMES")
 
     @field_validator("llm_model_names")
@@ -37,6 +39,8 @@ BACKTEST_METRICS_FILE = settings.backtest_metrics_file
 DATASET_STOCK = settings.dataset_stock
 DATASET_SIGNALS = settings.dataset_signals
 STRATEGY_IDEAS = settings.strategy_ideas
+PLOT_FILE_NAME = settings.plot_file_name
+CHAT_SUMMARY_FILE_NAME = settings.chat_summary_file_name
 MODEL_NAMES = settings.llm_model_names
 
 SUMMARY_PROMPT = dedent(
@@ -47,6 +51,7 @@ SUMMARY_PROMPT = dedent(
         - Do not include duplicates information in the summary.
         - The performance metrics should include the following:
             Cumulative return, CAGR, MDD, and Sharpe Ratio.
+        - Include the code used to generate buy/sell signals.
         - Desired output should be markdown.
 
         # Desired output
@@ -72,5 +77,13 @@ SUMMARY_PROMPT = dedent(
             | **CAGR**             | 15.5%    |
             | **Maximum Drawdown** | -12.3%   |
             | **Sharpe Ratio**     | 1.34     |
+
+            ### Used code for buy/sell signals
+            ```python
+            df["MA10"] = ta.trend.sma_indicator(df["Adj Close"], window=10)
+            df["BuySignal"] = (df["Adj Close"] > df["MA10"]) 
+            df["SellSignal"] = (df["Adj Close"] < df["MA10"]) 
+            df["Description"] = "Generated signals using Moving Average 10 days"
+            ```
         """
 )

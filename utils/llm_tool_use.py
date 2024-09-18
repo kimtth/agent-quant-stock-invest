@@ -94,12 +94,16 @@ class JsonToolRegistry:
             description="Validate JSON data against a schema."
         )
         def validate_json_data(
-            json_string: Annotated[str, "JSON data as a string"]
+            json_file_path: Annotated[str, "JSON file path to validate"]
         ) -> bool:
             try:
+                with open(json_file_path, "r", encoding='utf8') as f:
+                    json_string = f.read()
                 json.loads(json_string)
                 return True
             except json.JSONDecodeError:
+                return False
+            except Exception as e:
                 return False
 
     def __register_store_json_data(self):
@@ -116,5 +120,6 @@ class JsonToolRegistry:
                     os.path.join(WORK_DIR, STRATEGY_IDEAS), "w", encoding="utf8"
                 ) as f:
                     f.write(json_string)
+                return True
             except Exception as e:
-                pass
+                return False
