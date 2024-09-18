@@ -5,10 +5,50 @@ from autogen.coding import LocalCommandLineCodeExecutor
 import autogen
 
 
-class UserProxyAgent:
+class BaseUserProxyAgent:
     def __init__(self):
         self.__user_proxy_prompt = self._user_proxy_prompt()
 
+    def create_user_proxy(self) -> ConversableAgent:
+        """Create the user proxy agent with common configurations."""
+        return autogen.UserProxyAgent(
+            name="user_proxy",
+            is_termination_msg=lambda x: x.get("content", "") is not None
+            and str(x.get("content", "")).rstrip().endswith("TERMINATE"),
+            human_input_mode="NEVER",  # Literal['ALWAYS', 'TERMINATE', 'NEVER']
+            max_consecutive_auto_reply=15,
+            code_execution_config={
+                "executor": LocalCommandLineCodeExecutor(
+                    work_dir=WORK_DIR, timeout=600, execution_policies={"python": True}
+                ),
+            },
+            system_message=self.__user_proxy_prompt,
+        )
+
+    @staticmethod
+    def _user_proxy_prompt() -> str:
+        """Each subclass should implement this method to provide a custom prompt."""
+        raise NotImplementedError
+
+
+class UserProxyReportAgent(BaseUserProxyAgent):
+    @staticmethod
+    def _user_proxy_prompt() -> str:
+        return dedent(
+            """
+            You are responsible for executing Python code provided by other agents, or validating and storing JSON content.
+
+            Tasks:
+
+            If the provided code is not Python, do not execute it.
+            If the provided content is JSON, check its validity and store the JSON in the 'WORK_DIR'.
+            If the task is successful or the validity check is success, reply with TERMINATE.
+            If further steps are required, reply with CONTINUE, or explain why the task has not yet been resolved.
+            """
+        )
+
+
+class UserProxyAgent(BaseUserProxyAgent):
     @staticmethod
     def _user_proxy_prompt() -> str:
         return dedent(
@@ -24,20 +64,3 @@ class UserProxyAgent:
             If more steps are required, reply CONTINUE, or explain why the task has not been solved yet.
             """
         )
-
-    def create_user_proxy(self) -> ConversableAgent:
-        user_proxy = autogen.UserProxyAgent(
-            name="user_proxy",
-            is_termination_msg=lambda x: x.get("content", "") is not None
-            and str(x.get("content", "")).rstrip().endswith("TERMINATE"),
-            human_input_mode="NEVER",  # Literal['ALWAYS', 'TERMINATE', 'NEVER']
-            max_consecutive_auto_reply=15,
-            code_execution_config={
-                "executor": LocalCommandLineCodeExecutor(
-                    work_dir=WORK_DIR, timeout=600, execution_policies={"python": True}
-                ),
-            },
-            system_message=self.__user_proxy_prompt,
-        )
-
-        return user_proxy
