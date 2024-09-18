@@ -61,6 +61,9 @@ class SignalAnalysisAgent:
                         df["SellSignal"] = (df["Adj Close"] < df["MA10"]) & (df["MACD"] < 0)
                         df["Description"] = "Generated signals using MACD and Moving Average 10 days"
 
+                        df["BuySignal"] = df["BuySignal"].fillna(False)
+                        df["SellSignal"] = df["SellSignal"].fillna(False)
+                        
                         df_output = df[["BuySignal", "SellSignal", "Description"]]
 
                         file_output_path = os.path.join(abs_path, OUTPUT_FILE),
