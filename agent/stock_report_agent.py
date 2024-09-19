@@ -1,7 +1,7 @@
-
 import autogen
 from typing import Dict
-from utils.const import BACKTEST_RESULTS_FILE, PLOT_FILE_NAME
+from autogen import ConversableAgent
+from utils.llm_tool_use import PlotToolRegistry
 
 
 class StockReportAgent:
@@ -13,36 +13,23 @@ class StockReportAgent:
     def _stock_report_agent_prompt() -> str:
         return f"""
             # Role:
-            Plot a graph comparing stock prices over time.
+            You are responsible for generating stock performance plots. 
 
             # Tasks:
-            1. Load the file `"BACKTEST_RESULTS_FILE"` from the directory `"REPORT_DATA_DIR"`:
-                ```python
-                import seaborn as sns
-                import pandas as pd
-                import os
+            - You can generate plots for the stock data and backtest results.
 
-                BACKTEST_RESULTS_FILE = {BACKTEST_RESULTS_FILE}
-                REPORT_DATA_DIR = '.'
-                abs_path = os.path.abspath(REPORT_DATA_DIR)
-                file_path = os.path.join(abs_path, BACKTEST_RESULTS_FILE)
-                plot_output_path = os.path.join(abs_path, '{PLOT_FILE_NAME}')
-                ```
-
-            2. Plot the following columns:
-                - Cumulative Returns: `'Cumulative Returns'`
-                - MDD: `'MDD'`
-
-            3. Create separate subplots for Cumulative Returns and MDD using `plt.subplots(2, 1)` in the same figure.
-            4. Exclude any messages or descriptions from the output, providing only the Python code.
-            5. Use the last days of each year and month for plotting due to the large dataset.
-            6. Ensure the plot is saved in the current working directory.
-            7. Provide the code to `user_proxy` for execution without running it.
+            If the plot creating is successful, reply TERMINATE
+            If more steps are required, reply CONTINUE, or explain why the task has not been solved yet.
+            If an error occurs, reply 'TERMINATE for ERROR' with the error message.
             """
-    
+
     def create_agent(self):
         return autogen.AssistantAgent(
             name="stock_report_agent",
             system_message=self.__report_agent_prompt,
             llm_config=self.__llm_config,
         )
+    
+    def register_tools(self, user_proxy: ConversableAgent, stock_analysis_agent: ConversableAgent):
+        tool_registry = PlotToolRegistry(user_proxy, stock_analysis_agent)
+        tool_registry.register_tools()

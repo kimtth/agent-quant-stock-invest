@@ -1,4 +1,5 @@
 import os
+import numpy as np
 import yfinance as yf
 import pandas as pd
 from typing import Any, Dict, Annotated
@@ -113,14 +114,24 @@ class Backtester:
         # Position = 0 (no buy) - 0 (no sell) = 0 (no position)
 
         # Position = 1: Buy signal, so return is as is
-        # Position = -1: Sell signal, returns are inverted (negative). 
-        #   Selling a stock means you make a profit when the price goes down, and a loss when it goes up.
+        # Position = -1: Sell signal.
         # Position = 0: No trade, so return is 0
+
+        # The previous day’s signal determines today’s trading action.
         # The `shift(1)` operation is used to apply the previous day's position to the current day's return.
         
         # Calculate adjusted returns
         self.data["Adjusted Position"] = self.data["Position"].shift(1).fillna(0)
-        self.data["Adjusted Returns"] = self.data["Returns"] * self.data["Adjusted Position"]
+        # Add a column for self.data["Open"].shift(-1)
+        self.data["Open.Shift(-1)"] = self.data["Open"].shift(-1)
+
+        # When the adjusted position is -1, the adjusted returns will be the sell at open price.
+        self.data["Adjusted Returns"] = np.where(
+            self.data["Adjusted Position"] == -1, 
+            # This is the ratio of the next day's open price to the current day's adjusted close price. 
+            (self.data["Open"].shift(-1) / self.data["Close"] - 1).fillna(0),  # Adjust returns for sell at open
+            self.data["Returns"] * self.data["Adjusted Position"] # Adjust returns for buy at adj close and no position
+        )
 
         cumulative_returns = (1 + self.data["Adjusted Returns"]).cumprod().fillna(1)
         self.data["Cumulative Returns"] = cumulative_returns
@@ -193,11 +204,26 @@ def backtest_stock_strategy(
     stock_price_file_path: Annotated[str, "a file path of Stock price data"],
     stock_signals_file_path: Annotated[str, "a file path of Stock signal data"],
 ) -> BacktestPerformanceMetrics:
-    price_handler = StockDataHandler("", "", "", stock_price_file_path)
-    price_dict = price_handler.load_data_from_csv()
-    signals_handler = StockDataHandler("", "", "", stock_signals_file_path)
-    signals_dict = signals_handler.load_data_from_csv()
-    generator = SignalGenerator(signals_dict)
-    signals = generator.generate_signals_model()
-    backtester = Backtester(price_dict, signals)
-    return backtester.backtest_strategy_perf()
+    try:
+        price_handler = StockDataHandler("", "", "", stock_price_file_path)
+        price_dict = price_handler.load_data_from_csv()
+    except Exception as e:
+        return f"Error loading stock price data: {e}"
+
+    try:
+        signals_handler = StockDataHandler("", "", "", stock_signals_file_path)
+        signals_dict = signals_handler.load_data_from_csv()
+    except Exception as e:
+        return f"Error loading stock signals data: {e}"
+
+    try:
+        generator = SignalGenerator(signals_dict)
+        signals = generator.generate_signals_model()
+    except Exception as e:
+        return f"Error generating signals: {e}"
+
+    try:
+        backtester = Backtester(price_dict, signals)
+        return backtester.backtest_strategy_perf()
+    except Exception as e:
+        return f"Error during backtesting: {e}"

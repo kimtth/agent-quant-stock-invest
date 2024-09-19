@@ -42,6 +42,8 @@ class UserProxyReportAgent(BaseUserProxyAgent):
 
             If the provided code is not Python, do not execute it.
             If the provided content is JSON, check its validity and store the JSON in the 'WORK_DIR'.
+
+            If you get TERMINATE included message from an agent, reply with TERMINATE.
             If the task is successful or the validity check is success, reply with TERMINATE.
             If further steps are required, reply with CONTINUE, or explain why the task has not yet been resolved.
             """

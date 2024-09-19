@@ -8,6 +8,7 @@ from typing import Annotated, Dict
 from autogen import ConversableAgent
 from utils.const import AgentName
 from utils.datamodels import BacktestPerformanceMetrics
+from utils.llm_plot import plot_backtest_results
 
 
 class ToolRegistry:
@@ -18,6 +19,7 @@ class ToolRegistry:
             AgentName.CUSTOM_SIGNAL_ANALYSIS_AGENT
         )
         self._strategy_idea_agent = agent_registry.get(AgentName.STRATEGY_IDEA_AGENT)
+        self._stock_report_agent = agent_registry.get(AgentName.STOCK_REPORT_AGENT)
 
     def register_tools(self):
         self.__register_create_stock_data()
@@ -73,14 +75,19 @@ class ToolRegistry:
                 str, "Stock buy/sell signal data file path"
             ],
         ) -> BacktestPerformanceMetrics:
-            backtest_performance_metrics = backtest_stock_strategy(
-                stock_price_file_path, stock_signals_file_path
-            )
-            return backtest_performance_metrics
+            try:
+                backtest_performance_metrics = backtest_stock_strategy(
+                    stock_price_file_path, stock_signals_file_path
+                )
+                return backtest_performance_metrics
+            except Exception as e:
+                return f"Error executing backtesting strategy: {str(e)}"
 
 
 class JsonToolRegistry:
-    def __init__(self, user_proxy: ConversableAgent, strategy_idea_agent: ConversableAgent):
+    def __init__(
+        self, user_proxy: ConversableAgent, strategy_idea_agent: ConversableAgent
+    ):
         self._user_proxy = user_proxy
         self._strategy_idea_agent = strategy_idea_agent
 
@@ -97,7 +104,7 @@ class JsonToolRegistry:
             json_file_path: Annotated[str, "JSON file path to validate"]
         ) -> bool:
             try:
-                with open(json_file_path, "r", encoding='utf8') as f:
+                with open(json_file_path, "r", encoding="utf8") as f:
                     json_string = f.read()
                 json.loads(json_string)
                 return True
@@ -123,3 +130,28 @@ class JsonToolRegistry:
                 return True
             except Exception as e:
                 return False
+
+
+class PlotToolRegistry:
+    def __init__(
+        self, user_proxy: ConversableAgent, stock_report_agent: ConversableAgent
+    ):
+        self._user_proxy = user_proxy
+        self._stock_report_agent = stock_report_agent
+
+    def register_tools(self):
+        self.__register_stock_plot()
+
+    def __register_stock_plot(self):
+        @self._user_proxy.register_for_execution()
+        @self._stock_report_agent.register_for_llm(
+            description="Plot stock performance data."
+        )
+        def create_stock_perf_plot() -> str:
+            # Plot the stock data
+            try:
+                plot_backtest_results()
+                return "Stock performance plot created."
+            except Exception as e:
+                return f"Error creating stock performance plot: {str(e)}"
+
