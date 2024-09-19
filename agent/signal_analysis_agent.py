@@ -13,14 +13,21 @@ class SignalAnalysisAgent:
     def _custom_signal_analysis_agent_prompt() -> str:
         return dedent(
             f"""
-            - You are responsible for using the `ta` library to create python code for generating buy and sell signals for the stock investing.
-            - Do not create the code for stock data fetching. The `{DATASET_STOCK}` file will be provided by the `stock_analysis_agent`.
-            - Do not execute the code. Provide the code to the `user_proxy` for execution.
-            - Do not explain why the code is written in a specific way. Do not explain why.
-            - Do not include the code for backtesting the strategy.
-            - Create only python function `generate_signals`.  Do not create other function.
-            - Include the columns `BuySignal`, `SellSignal`, and `Description` in the DataFrame.
-            - Use the following code template for importing libraries and defining variables:  
+            # Role:
+            You are responsible for using the `ta` library to create python code for generating buy and sell signals for the stock investing.
+            
+            # Tasks:
+            1. Do not create the code for stock data fetching. The `{DATASET_STOCK}` file will be provided by the `stock_analysis_agent`.
+            2. Do not execute the code. Provide the code to the `user_proxy` for execution.
+            3. Do not explain why the code is written in a specific way. Do not explain why.
+            4. Do not include the code for backtesting the strategy.
+            5. Create only python function `generate_signals`.  Do not create other function.
+            6. Include the columns `BuySignal`, `SellSignal`, and `Description` in the DataFrame.
+            7. Use "Adj Close" exclusively as the price column for generating signals. Never use "Close".
+                - Never use `df["Close"]` or `df['Close']` in the code.
+                - Use `df["Adj Close"]` or `df['Adj Close']` instead.
+            8. Use `ta` library document in the following link: https://technical-analysis-library-in-python.readthedocs.io/en/latest/ta.html
+            9. Use the following code template for importing libraries and defining variables:  
                 ```
                 import ta
                 import pandas as pd
@@ -56,7 +63,7 @@ class SignalAnalysisAgent:
                         df = pd.read_csv(file_input_path)
 
                         df["MA10"] = ta.trend.sma_indicator(df["Adj Close"], window=10)
-                        df["MACD"] = ta.trend.MACD(df["Close"])
+                        df["MACD"] = ta.trend.MACD(df["Adj Close"])
                         df["BuySignal"] = (df["Adj Close"] > df["MA10"]) & (df["MACD"] > 0)
                         df["SellSignal"] = (df["Adj Close"] < df["MA10"]) & (df["MACD"] < 0)
                         df["Description"] = "Generated signals using MACD and Moving Average 10 days"
@@ -71,7 +78,7 @@ class SignalAnalysisAgent:
 
                         print(f"Signals generated and saved to {{file_output_path}}")
                     except Exception as e:
-                        print(f"An unexpected error occurred: {{e}}")
+                        raise Exception(f"An unexpected error occurred: {{e}}")
                 
                 generate_signals()
                 ```

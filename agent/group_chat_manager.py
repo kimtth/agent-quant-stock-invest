@@ -36,8 +36,10 @@ class GroupChatManagerBase:
     def _speaker_select_msg_prompt() -> str:
         return dedent(
             f"""
+            # Role:
             You are a manager responsible for coordinating a group chat between three agents: `stock_analysis_agent`, `custom_signal_analysis_agent`, and `user_proxy`.
 
+            # Tasks:
             Your role is to oversee the stock analysis workflow, which consists of the following tasks:
             1. Creating stock data ("{DATASET_STOCK}") using the `stock_analysis_agent`.
             2. Generating buy/sell signals code by coordinating the `custom_signal_analysis_agent` 
