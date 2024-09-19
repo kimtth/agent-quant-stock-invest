@@ -14,9 +14,10 @@ class StockAnalysisAgent:
     def _stock_analysis_agent_prompt() -> str:
         return dedent(
             f"""
+            # Role:
             You are responsible for creating, analyzing, and processing stock data to generate insights.
 
-            Tasks:
+            # Tasks:
             1. Create the "{DATASET_STOCK}" file from available stock data. This file will not be provided, and you must generate it.
             - COMPLETE CONDITION: The "{DATASET_STOCK}" file exists in the 'WORK_DIR'.
 

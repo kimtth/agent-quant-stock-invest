@@ -5,7 +5,7 @@ import re
 import autogen
 import time
 from textwrap import dedent
-from typing import Dict
+from typing import Dict, List
 from dotenv import load_dotenv
 from datetime import datetime
 from autogen import ChatResult
@@ -23,8 +23,10 @@ from utils.const import (
     SUMMARY_PROMPT,
     WORK_DIR,
     STRATEGY_IDEAS,
+    AgentName,
 )
 from utils.datamodels import WorkFlowTasks
+from utils.functions import backtest_stock_strategy
 from utils.llm_config import load_config
 
 
@@ -32,15 +34,15 @@ load_dotenv()
 config_file_path = os.path.join(os.path.dirname(__file__), "OAI_CONFIG_LIST.json")
 llm_config = load_config(config_file_path)
 
-# Create a user proxy agent
+# 1. Create a user proxy agent
 user_report_proxy = UserProxyReportAgent().create_user_proxy()
 
-# Create a strategy idea agent
+# 2. Create a strategy idea agent
 strategy_idea_agent_base = StrategyIdeaAgent(llm_config=llm_config)
 strategy_idea_agent = strategy_idea_agent_base.create_agent()
 strategy_idea_agent_base.register_tools(user_report_proxy, strategy_idea_agent)
 
-# Create a stock performance group chat
+# 3. Create a stock performance group chat
 (
     agents_registry,
     group_chat,
@@ -48,9 +50,10 @@ strategy_idea_agent_base.register_tools(user_report_proxy, strategy_idea_agent)
 ) = setup_agents(llm_config)
 register_tools(agents_registry)
 
-# Create a stock report agent
+# 4. Create a stock report agent
 stock_report_agent_base = StockReportAgent(llm_config=llm_config)
 stock_report_agent = stock_report_agent_base.create_agent()
+stock_report_agent_base.register_tools(user_report_proxy, stock_report_agent)
 
 
 def genereate_strategy_analysis_request_message(
@@ -73,20 +76,35 @@ def genereate_strategy_analysis_request_message(
 
 
 def save_stock_performance_data(
-    strategy_idea: Dict, chat_res_summary: ChatResult, verbose_output: bool = False
+    strategy_idea: Dict, chat_res: ChatResult, custom_signal_agent_messages: List[Dict], verbose_output: bool = False
 ):
     stock_performance_dir_name: str = strategy_idea.get("strategy")
     # make dir for stock performance data
     invalid_chars = r'[<>:"/\\|?*]'
-    sanitized_stock_performance_dir_name = re.sub(invalid_chars, '_', stock_performance_dir_name)
+    sanitized_stock_performance_dir_name = re.sub(
+        invalid_chars, "_", stock_performance_dir_name
+    )
 
-    os.makedirs(os.path.join(WORK_DIR, sanitized_stock_performance_dir_name), exist_ok=True)
+    os.makedirs(
+        os.path.join(WORK_DIR, sanitized_stock_performance_dir_name), exist_ok=True
+    )
     time.sleep(0.1)
 
     # Generate the chat summary
-    chat_history = f'{os.linesep}'.join([entry['content'] for entry in chat_res_summary.chat_history])
-    chat_summary = chat_res_summary.summary
-    cost = json.dumps(chat_res_summary.cost, indent=4)
+    chat_history = f"{os.linesep}".join(
+        [entry["content"] for entry in chat_res.chat_history]
+    )
+    chat_summary = chat_res.summary
+    cost = json.dumps(chat_res.cost, indent=4)
+    # If the chat summary is empty, use the last message from the custom_signal_analysis_agent
+    if not chat_summary:
+        # loop the list by reverse order
+        for message in reversed(custom_signal_agent_messages):
+            if "content" in message:
+                tmp_chat_summary = message["content"]
+                if 'import' in tmp_chat_summary:
+                    chat_summary = tmp_chat_summary
+                    break
 
     # Format the output
     chat_summary_output = (
@@ -99,7 +117,7 @@ def save_stock_performance_data(
     with open(
         os.path.join(WORK_DIR, stock_performance_dir_name, CHAT_SUMMARY_FILE_NAME), "w"
     ) as f:
-        sep = '-' * 50
+        sep = "-" * 50
         f.write(chat_summary_output)
         f.write(f"{sep}{os.linesep}")
 
@@ -127,9 +145,7 @@ def save_stock_performance_data(
 
 # Define the agents that will be involved in the workflow
 # https://microsoft.github.io/autogen/docs/notebooks/agentchat_multi_task_async_chats#scenario-1-solve-the-tasks-with-a-series-of-chats
-async def run_workflow(
-    workflow_tasks: WorkFlowTasks
-):
+def run_workflow(workflow_tasks: WorkFlowTasks):
     # Create a chat with the strategy idea agent
     # The agent will provide stock investing ideas using technical indicators
     strategy_idea_json_path = os.path.join(
@@ -141,7 +157,7 @@ async def run_workflow(
             message=workflow_tasks.stock_idea_task_description,
             summary_method="last_msg",
         )
-    
+
     strategy_ideas = []
     with open(strategy_idea_json_path, "r") as file:
         strategy_ideas = json.load(file)
@@ -151,30 +167,63 @@ async def run_workflow(
         # Perform investment analysis and generate buy/sell signals
         # Perform backtesting and provide performance metrics
         # Create a chat with the stock report agent to generate a plot of stock prices and investment returns over time
-        chat_res = await user_report_proxy.a_initiate_chats(
-            [
-                {
-                    "chat_id": 1,
-                    "recipient": group_chat_manager,
-                    "message": genereate_strategy_analysis_request_message(
-                        workflow_tasks.investment_analysis_instructions, strategy_idea
-                    ),
-                    "summary_method": "reflection_with_llm",
-                    "summary_args": {"summary_prompt": SUMMARY_PROMPT},
-                },
-                {
-                    "chat_id": 2,
-                    "prerequisites": [1],
-                    "recipient": stock_report_agent,
-                    "message": workflow_tasks.stock_report_task_instructions,
-                    "summary_method": "last_msg", # reflection_with_llm
-                },
-            ]
-        )
-        print("Completed analysis for strategy: ", strategy_idea)
-        # Get first item from the chat_res dictionary
-        chat_res_summary: ChatResult = list(chat_res.values())[0]
-        save_stock_performance_data(strategy_idea, chat_res_summary, verbose_output=True)
+        try:
+            chat_res = user_report_proxy.initiate_chat(
+                recipient=group_chat_manager,
+                message=genereate_strategy_analysis_request_message(
+                    workflow_tasks.investment_analysis_instructions, strategy_idea
+                ),
+                summary_method="reflection_with_llm",  # "last_msg" or "reflection_with_llm: not working"
+                summary_args={"summary_prompt": SUMMARY_PROMPT},
+            )
+            print("Completed analysis for strategy: ", strategy_idea)
+        except Exception as e:
+            print(f"Error in chat for strategy: {strategy_idea}. {e}")
+            continue
+
+        # Workaround to handle the case when backtest_results.xlsx is not generated
+        backtest_result_file_path = os.path.join(WORK_DIR, BACKTEST_RESULTS_FILE)
+        if not os.path.exists(backtest_result_file_path):
+            stock_price_file_path = os.path.join(WORK_DIR, DATASET_STOCK)
+            stock_signals_file_path = os.path.join(WORK_DIR, DATASET_SIGNALS)
+            # Execute the backtesting strategy manually calling the function again.
+            backtest_stock_strategy(stock_price_file_path, stock_signals_file_path)
+
+        if chat_res:
+            if os.path.exists(backtest_result_file_path):
+                user_report_proxy.initiate_chat(
+                    recipient=stock_report_agent,
+                    message=workflow_tasks.stock_report_task_instructions,
+                    summary_method="last_msg",
+                )
+
+                # Get the chat messages for the custom signal analysis agent.
+                # Sometimes the chat summary is empty, so we need to get the last message from the custom_signal_analysis_agent.
+                custom_signal_agent = agents_registry.get(AgentName.CUSTOM_SIGNAL_ANALYSIS_AGENT)
+                custom_signal_agent_messages = custom_signal_agent.chat_messages[group_chat_manager]
+                # Get the chat messages for the stock report agent
+                stock_report_agent_messages = user_report_proxy.chat_messages[stock_report_agent]
+
+                last_message = stock_report_agent_messages[-1]
+                print("Last message: ", last_message)
+
+                # check error contains in the last message
+                if last_message and "content" in last_message:
+                    if not "ERROR" in last_message.get("content"):
+                        save_stock_performance_data(
+                            strategy_idea, chat_res, custom_signal_agent_messages, verbose_output=True
+                        )
+                        print(
+                            "Saved stock performance data for strategy: ", strategy_idea
+                        )
+            else:
+                print(
+                    "Error: the stock performance data was not created for strategy: ",
+                    strategy_idea,
+                )
+        else:
+            print("No chat response for strategy: ", strategy_idea)
+            continue
 
 
 def remove_existing_files():
@@ -191,7 +240,7 @@ if __name__ == "__main__":
         remove_existing_files()
 
     today = datetime.today().strftime("%Y-%m-%d")
-    default_message_to_save_code = "" # "Save the code to disk."
+    default_message_to_save_code = ""  # "Save the code to disk."
     user_message = dedent(
         f"""
         {default_message_to_save_code}
@@ -208,6 +257,7 @@ if __name__ == "__main__":
         stock_report_task_instructions="create a plot to display stock investment returns over time",
     )
 
-    autogen.runtime_logging.start()
-    asyncio.run(run_workflow(workflow_tasks))
+    logging_session_id = autogen.runtime_logging.start()
+    print("Logging session ID: " + str(logging_session_id))
+    run_workflow(workflow_tasks)
     autogen.runtime_logging.stop()
