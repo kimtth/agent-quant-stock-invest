@@ -102,7 +102,7 @@ def save_stock_performance_data(
         for message in reversed(custom_signal_agent_messages):
             if "content" in message:
                 tmp_chat_summary = message["content"]
-                if 'import' in tmp_chat_summary:
+                if 'import' in tmp_chat_summary: # To find last success python code block.
                     chat_summary = tmp_chat_summary
                     break
 

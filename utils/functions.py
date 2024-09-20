@@ -1,3 +1,4 @@
+from enum import Enum, IntEnum
 import os
 import numpy as np
 import yfinance as yf
@@ -91,6 +92,14 @@ class PerformanceMetricsCalculator:
         return sharpe_ratio
 
 
+# Define the Position Enum
+class Position(IntEnum):
+    BUY = 1
+    SELL = 2
+    HOLD = 3
+    NO_HOLD = 4
+
+
 class Backtester:
     def __init__(self, data: Dict[str, Any], signals: SignalModel):
         self.data = pd.DataFrame.from_dict(data)
@@ -98,39 +107,93 @@ class Backtester:
         self.results = None
 
     def backtest_strategy_perf(self) -> BacktestPerformanceMetrics:
-        self.data["BuySignal"] = pd.Series(self.signals.BuySignal)
-        self.data["SellSignal"] = pd.Series(self.signals.SellSignal)
-        self.data["Position"] = self.data["BuySignal"].astype(int) - self.data[
-            "SellSignal"
-        ].astype(int)
+        # Step 1: Initialize Buy and Sell Signals
+        self.data["BuySignal"] = pd.Series(self.signals.BuySignal).astype(int)
+        self.data["SellSignal"] = pd.Series(self.signals.SellSignal).astype(int)
 
-        positions = pd.Series(self.data["Position"])
-        returns = pd.Series(self.data["Adj Close"]).pct_change()
-        self.data["Returns"] = returns
+        # Step 2: Define HoldSignal
+        # If buy signal, hold, if sell signal, no hold
+        # If same buy signal as previous day, hold
+        # If same sell signal as previous day, no hold
+        # If no buy or sell signal, hold
+        self.data["HoldSignal"] = np.where(
+            (self.data["BuySignal"] == 0) & (self.data["SellSignal"] == 0),
+            Position.HOLD,
+            np.where(
+                (self.data["BuySignal"] == 1)
+                & (self.data["BuySignal"].shift(1, fill_value=0) == 1),
+                Position.HOLD,
+                np.where(
+                    (self.data["SellSignal"] == 1)
+                    & (self.data["SellSignal"].shift(1, fill_value=0) == 1),
+                    Position.NO_HOLD,
+                    np.where(
+                        self.data["BuySignal"] == 1, Position.HOLD, Position.NO_HOLD
+                    ),
+                ),
+            ),
+        )
 
-        # Calculate adjusted returns
-        # Position = 1 (buy) - 0 (no sell) = 1 (hold position)
-        # Position = 0 (no buy) - 1 (sell) = -1 (sell position or close position)
-        # Position = 0 (no buy) - 0 (no sell) = 0 (no position)
+        # Step 3: Initialize columns for valid sells and positions
+        self.data["ValidSell"] = False
+        self.data["ValidHold"] = False
+        buy_occurred = False
 
-        # Position = 1: Buy signal, so return is as is
-        # Position = -1: Sell signal.
-        # Position = 0: No trade, so return is 0
+        # Determine sell and hold can establish when buy signal occurred before.
+        # If there is no buy signal before a sell signal, it is not a valid sell
+        # If there is a buy signal before a hold signal, it is a valid hold
+        for i in range(len(self.data)):
+            if self.data.loc[i, "BuySignal"] == 1:
+                buy_occurred = True  # A buy has occurred
+                continue
+            if self.data.loc[i, "SellSignal"] == 1 and buy_occurred:
+                self.data.loc[i, "ValidSell"] = True  # Valid sell
+                buy_occurred = False  # Reset after valid sell
+            if self.data.loc[i, "HoldSignal"] == Position.HOLD and buy_occurred:
+                self.data.loc[i, "ValidHold"] = True  # Valid hold
 
-        # The previous day’s signal determines today’s trading action.
-        # The `shift(1)` operation is used to apply the previous day's position to the current day's return.
-        
-        # Calculate adjusted returns
+        # Step 4: Calculate Position
+        self.data["Position"] = np.where(
+            (self.data["HoldSignal"] == Position.HOLD) & (self.data["ValidHold"] == True),
+            Position.HOLD,
+            np.where(
+                self.data["BuySignal"] == 1,
+                Position.BUY,
+                np.where(
+                    (self.data["SellSignal"] == 1) & (self.data["ValidSell"] == True),
+                    Position.SELL,
+                    Position.NO_HOLD,
+                ),
+            ),
+        )
+
+        # Step 5: Calculate raw returns based on adjusted close prices
+        self.data["Returns"] = self.data["Adj Close"].pct_change().fillna(0)
+
+        # Step 6: Shift positions for returns calculation
+        # Investment stock for current date is determined by previous date's position
         self.data["Adjusted Position"] = self.data["Position"].shift(1).fillna(0)
-        # Add a column for self.data["Open"].shift(-1)
-        self.data["Open.Shift(-1)"] = self.data["Open"].shift(-1)
 
-        # When the adjusted position is -1, the adjusted returns will be the sell at open price.
+        # Step 7: Shift close prices for returns calculation
+        self.data["Close(PrevDay)"] = self.data["Close"].shift(1)
+
+        # Step 8: Calculate adjusted returns
         self.data["Adjusted Returns"] = np.where(
-            self.data["Adjusted Position"] == -1, 
-            # This is the ratio of the next day's open price to the current day's adjusted close price. 
-            (self.data["Open"].shift(-1) / self.data["Close"] - 1).fillna(0),  # Adjust returns for sell at open
-            self.data["Returns"] * self.data["Adjusted Position"] # Adjust returns for buy at adj close and no position
+            self.data["Adjusted Position"] == Position.NO_HOLD,
+            0,
+            np.where(
+                self.data["Adjusted Position"] == Position.SELL,
+                # When a signal to sell is generated, sell at the open price
+                # Therefore, returns are calculated as (Open / Close(PrevDay)) - 1
+                (self.data["Open"] / self.data["Close(PrevDay)"] - 1).fillna(0),
+                np.where(
+                    (self.data["Adjusted Position"] == Position.BUY)
+                    | (self.data["Adjusted Position"] == Position.HOLD),
+                    # When a signal to buy is generated, or when holding, returns are same as daily returns
+                    self.data["Returns"],
+                    0,  # Default
+                ),
+            ),
         )
 
         cumulative_returns = (1 + self.data["Adjusted Returns"]).cumprod().fillna(1)
@@ -148,6 +211,8 @@ class Backtester:
 
         # calculate cumulative return by start and end value
         perf_cumulative_returns = (end_value / start_value) - 1
+        positions = pd.Series(self.data["Adjusted Position"])
+        returns = pd.Series(self.data["Adjusted Returns"])
 
         cagr = PerformanceMetricsCalculator.calculate_cagr(
             start_value, end_value, periods
