@@ -1,0 +1,7 @@
+Backtest Results 20240921_110845
+Start Value: 1.00
+End Value: 20.08
+Cumulative Return: 1908.08%
+CAGR: 10.63%
+MDD: -64.81%
+Sharpe Ratio: 0.03

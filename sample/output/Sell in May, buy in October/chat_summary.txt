@@ -1,0 +1,65 @@
+
+# Summary: ### Strategy Performance Summary
+
+**Indicators Used:**
+- Sell in May, Buy in October
+
+**Strategy Summary:**
+The "Sell in May, Buy in October" strategy is a seasonal investing approach suggesting that investors sell their stocks in May and buy them back in October. Historically, the stock market has shown patterns of underperformance during the summer months and outperformance during the winter months. This strategy aims to capture these seasonal trends and generate higher returns by avoiding the underperforming summer months.
+
+### Performance Metrics
+
+| Metric              | Value     |
+|---------------------|-----------|
+| **Cumulative Return**| 1908.08%  |
+| **CAGR**             | 10.63%    |
+| **Maximum Drawdown** | -64.81%   |
+| **Sharpe Ratio**     | 0.03      |
+
+### Used code for buy/sell signals
+```python
+import pandas as pd
+
+# Assuming df is your DataFrame containing the stock price data
+df['Date'] = pd.to_datetime(df['Date'])
+df["BuySignal"] = ((df["Date"].dt.month == 10) & (df["Date"].dt.day == 1))
+df["SellSignal"] = ((df["Date"].dt.month == 5) & (df["Date"].dt.day == 31))
+df["Description"] = "Generated signals using Sell in May, Buy in October strategy"
+
+df["BuySignal"] = df["BuySignal"].fillna(False)
+df["SellSignal"] = df["SellSignal"].fillna(False)
+```
+# Cost: {
+    "usage_including_cached_inference": {
+        "total_cost": 0.00060765,
+        "gpt-4o-mini": {
+            "cost": 0.00060765,
+            "prompt_tokens": 2763,
+            "completion_tokens": 322,
+            "total_tokens": 3085
+        }
+    },
+    "usage_excluding_cached_inference": {
+        "total_cost": 0.00060765,
+        "gpt-4o-mini": {
+            "cost": 0.00060765,
+            "prompt_tokens": 2763,
+            "completion_tokens": 322,
+            "total_tokens": 3085
+        }
+    }
+}
+# Chat History: 
+        # Strategy Idea
+        {'strategy': 'Sell in May, buy in October', 'description': 'Sell in May and buy in October is a seasonal investing strategy that suggests selling stocks in May and buying them back in October.', 'rationale': 'Historically, the stock market has shown a pattern of underperformance during the summer months and outperformance during the winter months.', 'investing_conditions': 'Sell on the last working day of May and buy on the first working day of October.', 'expected_outcome': 'The strategy aims to capture the seasonal trends in the stock market and generate higher returns by avoiding the underperforming summer months.'}
+
+        # Investment Analysis Instructions
+
+
+
+Run complete stock analysis for MSFT from 1995-01-01 to 2024-09-21. 
+Generate buy/sell signals using Sell in May, buy in October.
+Based on the generated signals, backtest the strategy and provide performance metrics.
+
+
+--------------------------------------------------
