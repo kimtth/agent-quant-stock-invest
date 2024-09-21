@@ -112,6 +112,7 @@
         "expected_outcome": "Capture trend reversals before they unfold."
     },
     {
+
         "strategy": "Cumulative Return Analysis",
         "description": "Track cumulative returns over time to identify long-term trends and investment performance.",
         "rationale": "Cumulative return gives a clearer picture of overall performance than daily returns alone.",
