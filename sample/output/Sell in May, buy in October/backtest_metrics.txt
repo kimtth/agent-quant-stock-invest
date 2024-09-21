@@ -5,3 +5,4 @@ Cumulative Return: 1908.08%
 CAGR: 10.63%
 MDD: -64.81%
 Sharpe Ratio: 0.03
+

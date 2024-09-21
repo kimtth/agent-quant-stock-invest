@@ -168,14 +168,18 @@ class Backtester:
         )
 
         # Step 5: Calculate raw returns based on adjusted close prices
-        self.data["Returns"] = self.data["Adj Close"].pct_change().fillna(0)
+        self.data["Returns"] = self.data["Adj Close"].ffill().pct_change().fillna(0)
 
         # Step 6: Shift positions for returns calculation
         # Investment stock for current date is determined by previous date's position
         self.data["Adjusted Position"] = self.data["Position"].shift(1).fillna(0)
 
-        # Step 7: Next day's open price for sell at open cases
-        self.data["Open(NextDay)"] = self.data["Open"].shift(-1)
+        # Step 7: Shift close prices for returns calculation
+        self.data["Close(PrevDay)"] = self.data["Close"].shift(1)
+
+        # fix: ("unsupported operand type(s) for /: 'float' and 'str'",)
+        self.data["Open"] = pd.to_numeric(self.data["Open"], errors='coerce')
+        self.data["Close(PrevDay)"] = pd.to_numeric(self.data["Close(PrevDay)"], errors='coerce')
 
         # Step 8: Calculate adjusted returns
         self.data["Adjusted Returns"] = np.where(
@@ -183,9 +187,9 @@ class Backtester:
             0,
             np.where(
                 self.data["Adjusted Position"] == Position.SELL,
-                # When a signal to sell is generated, sell at the next day's open price
-                # Therefore, returns are calculated as (Open(NextDay) / Close) - 1
-                (self.data["Open(NextDay)"] / self.data["Close"] - 1).fillna(0),
+                # When a signal to sell is generated, sell at the open price
+                # Therefore, returns are calculated as (Open / Close(PrevDay)) - 1
+                (self.data["Open"] / self.data["Close(PrevDay)"] - 1).fillna(0),
                 np.where(
                     (self.data["Adjusted Position"] == Position.BUY)
                     | (self.data["Adjusted Position"] == Position.HOLD),
