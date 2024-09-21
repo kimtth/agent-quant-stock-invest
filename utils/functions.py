@@ -168,7 +168,7 @@ class Backtester:
         )
 
         # Step 5: Calculate raw returns based on adjusted close prices
-        self.data["Returns"] = self.data["Adj Close"].pct_change().fillna(0)
+        self.data["Returns"] = self.data["Adj Close"].ffill().pct_change().fillna(0)
 
         # Step 6: Shift positions for returns calculation
         # Investment stock for current date is determined by previous date's position
@@ -176,6 +176,10 @@ class Backtester:
 
         # Step 7: Shift close prices for returns calculation
         self.data["Close(PrevDay)"] = self.data["Close"].shift(1)
+
+        # fix: ("unsupported operand type(s) for /: 'float' and 'str'",)
+        self.data["Open"] = pd.to_numeric(self.data["Open"], errors='coerce')
+        self.data["Close(PrevDay)"] = pd.to_numeric(self.data["Close(PrevDay)"], errors='coerce')
 
         # Step 8: Calculate adjusted returns
         self.data["Adjusted Returns"] = np.where(

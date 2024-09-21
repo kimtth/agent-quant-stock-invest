@@ -102,7 +102,7 @@ def save_stock_performance_data(
         for message in reversed(custom_signal_agent_messages):
             if "content" in message:
                 tmp_chat_summary = message["content"]
-                if 'import' in tmp_chat_summary: # To find last success python code block.
+                if tmp_chat_summary and 'python' in tmp_chat_summary: # To find last success python code block.
                     chat_summary = tmp_chat_summary
                     break
 
@@ -115,7 +115,7 @@ def save_stock_performance_data(
 
     # Save the chat summary to the stock performance dir
     with open(
-        os.path.join(WORK_DIR, stock_performance_dir_name, CHAT_SUMMARY_FILE_NAME), "w"
+        os.path.join(WORK_DIR, stock_performance_dir_name, CHAT_SUMMARY_FILE_NAME), "w", encoding="utf-8"
     ) as f:
         sep = "-" * 50
         f.write(chat_summary_output)
