@@ -26,7 +26,7 @@ class WebSearch:
         - config (dict): A dictionary containing configuration settings.
         """
         self.config = {
-            "result_count": 3,
+            "result_count": 4,
             # Bing Search enter these values
             "bing_api_key": os.getenv("BING_API_KEY"),
         }

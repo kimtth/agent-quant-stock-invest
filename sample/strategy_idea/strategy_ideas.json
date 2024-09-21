@@ -91,13 +91,6 @@
         "expected_outcome": "Follow trends with confirmation from momentum."
     },
     {
-        "strategy": "Chaikin Money Flow Analysis",
-        "description": "Use the Chaikin Money Flow indicator to assess buying and selling pressure over time.",
-        "rationale": "A positive CMF indicates buying pressure, while a negative value indicates selling pressure.",
-        "investing_conditions": "Buy when CMF is above zero; sell when it is below zero.",
-        "expected_outcome": "Align trades with market sentiment."
-    },
-    {
         "strategy": "Average True Range (ATR) Stop Loss",
         "description": "Utilize ATR to set dynamic stop-loss levels based on market volatility.",
         "rationale": "ATR provides insights into market volatility, allowing for more adaptive stop-loss placements.",
@@ -119,32 +112,12 @@
         "expected_outcome": "Capture trend reversals before they unfold."
     },
     {
-        "strategy": "Williams R Overbought Oversold",
-        "description": "Use Williams %R to identify overbought or oversold conditions in the market.",
-        "rationale": "Values above -20 indicate overbought conditions, while values below -80 indicate oversold conditions.",
-        "investing_conditions": "Buy when Williams %R is below -80; sell when it is above -20.",
-        "expected_outcome": "Enter positions favorably during market extremes."
-    },
-    {
+
         "strategy": "Cumulative Return Analysis",
         "description": "Track cumulative returns over time to identify long-term trends and investment performance.",
         "rationale": "Cumulative return gives a clearer picture of overall performance than daily returns alone.",
         "investing_conditions": "Invest in stocks with strong cumulative returns over time; monitor for potential downturns.",
         "expected_outcome": "Focus on long-term investments with proven performance."
-    },
-    {
-        "strategy": "KST Oscillator Strategy",
-        "description": "Utilize the KST oscillator to identify potential trend changes based on momentum. ",
-        "rationale": "The KST oscillator combines multiple rate-of-change indicators to signal potential trend changes.",
-        "investing_conditions": "Buy when KST crosses above zero; sell when it crosses below zero.",
-        "expected_outcome": "Capture short-term momentum shifts effectively."
-    },
-    {
-        "strategy": "Ease of Movement (EoM) Strategy",
-        "description": "Use EoM to assess the relationship between price movement and volume. ",
-        "rationale": "A rising EoM indicates price movement with less volume, reflecting strong buying pressure.",
-        "investing_conditions": "Buy when EoM is rising; sell when it is falling.",
-        "expected_outcome": "Identify underlying strength in price movements."
     },
     {
         "strategy": "Momentum Divergence",
@@ -169,7 +142,7 @@
     },
     {
         "strategy": "Vortex Indicator (VI) Strategy",
-        "description": "Use the Vortex Indicator to identify potential trend changes. ",
+        "description": "Use the Vortex Indicator to identify potential trend changes. \n```python\nta.trend.VortexIndicator(high: pandas.core.series.Series, low: pandas.core.series.Series, close: pandas.core.series.Series, window: int = 14, fillna: bool = False)\n```",
         "rationale": "The VI consists of two lines that can signal potential trend reversals when they intersect.",
         "investing_conditions": "Buy when the +VI crosses above -VI; sell when -VI crosses above +VI.",
         "expected_outcome": "Take advantage of trend changes as they occur."
@@ -220,7 +193,7 @@
         "strategy": "Relative Strength Index (RSI) Trend Following",
         "description": "Use RSI to identify trends and determine entry and exit points. ",
         "rationale": "RSI values above 50 indicate bullish momentum, while values below indicate bearish momentum.",
-        "investing_conditions": "Buy when RSI crosses above 50; sell when it crosses below.",
+        "investing_conditions": "Buy when RSI crosses above 70; sell when it crosses below.",
         "expected_outcome": "Align trades with prevailing market momentum."
     },
     {
@@ -243,13 +216,6 @@
         "rationale": "Fibonacci levels often align with key price levels where reversals may occur.",
         "investing_conditions": "Buy near key Fibonacci retracement levels; sell at extension levels.",
         "expected_outcome": "Enhance trading decisions using historical price levels."
-    },
-    {
-        "strategy": "Ease of Movement (EoM) Strategy",
-        "description": "Use EoM to assess the relationship between price movement and volume. ",
-        "rationale": "A rising EoM indicates price movement with less volume, reflecting strong buying pressure.",
-        "investing_conditions": "Buy when EoM is rising; sell when it is falling.",
-        "expected_outcome": "Identify underlying strength in price movements."
     },
     {
         "strategy": "CCI Overbought_Oversold",

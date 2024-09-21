@@ -20,7 +20,7 @@ def load_config(config_file_path: str) -> Dict:
         # https://github.com/microsoft/autogen/issues/454
         "config_list": config_list,
         "cache_seed": 44,
-        "temperature": 0.7,
+        "temperature": 0.8,
         "timeout": 800,
         "max_retries": 8,
     }

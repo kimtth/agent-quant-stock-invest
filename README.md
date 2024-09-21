@@ -10,8 +10,73 @@
 - Autogen Agents for finding the best timing to invest.
   - [Documentation](https://microsoft.github.io/autogen/)
   - [Tutorial](https://microsoft.github.io/autogen/docs/Examples)
-  - [Autogen studio](https://microsoft.github.io/autogen/docs/autogen-studio/getting-started) `cmd> autogenstudio ui --port 8081`
+  <!-- - [Autogen studio](https://microsoft.github.io/autogen/docs/autogen-studio/getting-started) `cmd> autogenstudio ui --port 8081` -->
   - [Skills Repository](https://github.com/madtank/autogenstudio-skills)
+- To run the main workflow: `python agent_workflow_e2e.py`
+
+## Sequence diagram
+
+```mermaid
+sequenceDiagram
+    %% User
+    participant User
+    %% Generates Investing Strategies
+    participant StrategyIdeaAgent
+    %% Generates CAGR/MDD graph
+    participant StockReportAgent
+    %% Manages group chat discussions
+    participant GroupChatManager
+    %% Executes code to create signal data
+    participant UserProxyAgent
+    %% Fetches price data from Yahoo Finance and performs backtesting
+    participant StockAnalysisAgent
+    %% Generates code for creating buy/sell signals for backtesting
+    participant SignalAnalysisAgent
+    %% Public API for fetching stock price data for specified periods
+    participant YahooFinanceAPI
+    %% Public web search for finding technical indicators and investing strategies
+    participant BingSearch
+
+    autonumber
+
+    rect rgb(204, 255, 204)
+        User ->> StrategyIdeaAgent: Request to create investment strategies
+        StrategyIdeaAgent ->> StrategyIdeaAgent: Stores investment strategies as 'strategy_ideas.json'
+    end
+
+    loop Iterate through investment strategies
+        User ->> GroupChatManager: Sends an investment strategy to group chat
+        GroupChatManager ->> GroupChatManager: Initializes group chat
+        GroupChatManager ->> StockAnalysisAgent: Calls StockAnalysisAgent
+        StockAnalysisAgent ->> YahooFinanceAPI: Fetches stock data from Yahoo Finance
+        YahooFinanceAPI -->> StockAnalysisAgent: Provides stock data
+        StockAnalysisAgent ->> StockAnalysisAgent: Stores stock price dataset as 'stock_data.csv'
+        StockAnalysisAgent -->> GroupChatManager: Notifies GroupChatManager of task completion
+        GroupChatManager ->> SignalAnalysisAgent: Calls SignalAnalysisAgent
+        SignalAnalysisAgent ->> SignalAnalysisAgent: Generates code for creating buy/sell signals
+        opt
+            SignalAnalysisAgent ->> BingSearch: Searches for examples using the `ta` library
+            BingSearch -->> SignalAnalysisAgent: Provides examples
+        end
+        SignalAnalysisAgent -->> GroupChatManager: Notifies GroupChatManager of task completion
+        GroupChatManager ->> UserProxyAgent: Calls UserProxyAgent
+        UserProxyAgent ->> UserProxyAgent: Executes code created by SignalAnalysisAgent
+        UserProxyAgent ->> UserProxyAgent: Stores buy/sell signal dataset as 'stock_signals.csv'
+        UserProxyAgent -->> GroupChatManager: Notifies GroupChatManager of task completion
+        GroupChatManager ->> StockAnalysisAgent: Calls StockAnalysisAgent
+        StockAnalysisAgent ->> StockAnalysisAgent: Performs backtesting using 'stock_data.csv' and 'stock_signals.csv'
+        opt
+            StockAnalysisAgent ->> BingSearch: Searches for descriptions of indicators
+            BingSearch -->> StockAnalysisAgent: Provides descriptions
+        end
+        StockAnalysisAgent ->> User: Sends a summary of the investment strategy performance
+    end
+
+    rect rgb(230, 242, 255)
+        User ->> StockReportAgent: Requests creation of a graph
+        StockReportAgent ->> StockReportAgent: Generates CAGR/MDD graph
+    end
+```
 
 ## User Input and Results
 
