@@ -12,6 +12,7 @@
   - [Tutorial](https://microsoft.github.io/autogen/docs/Examples)
   <!-- - [Autogen studio](https://microsoft.github.io/autogen/docs/autogen-studio/getting-started) `cmd> autogenstudio ui --port 8081` -->
   - [Skills Repository](https://github.com/madtank/autogenstudio-skills)
+- To run the main workflow: `python agent_workflow_e2e.py`
 
 ## Sequence diagram
 
