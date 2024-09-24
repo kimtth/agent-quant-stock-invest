@@ -14,6 +14,8 @@
   - [Skills Repository](https://github.com/madtank/autogenstudio-skills)
 - To run the main workflow: `python agent_workflow_e2e.py`
 
+> Important: The code in this repository was developed during a hackathon and implemented within a limited timeframe. It is intended for proof-of-concept purposes only.
+
 ## Sequence diagram
 
 ```mermaid
@@ -120,12 +122,14 @@ Buy signals are generated when the stock price is above the 20-day MA, TRIX is p
   ```
 - This application library supports [`ta`](https://github.com/bukosabino/ta), which provides commonly used indicators (pure Python).
 - Another backtesting framework will be supported in the future.
+- Rename `.env.template` to `.env` and `OAI_CONFIG_LIST.template.json` to `OAI_CONFIG_LIST.json`. Then, set your Bing Search API and OpenAI keys.
 
 ## Python Libraries for Quant Trading 
 
 - Zipline: Maintained and updated by the community after Quantopian shut down. [git](https://github.com/stefan-jansen/zipline-reloaded)
 - backtrader: Python Backtesting library for trading strategies [git](https://github.com/mementum/backtrader)
 - QuantStats: [git](https://github.com/ranaroussi/quantstats)
+- fastquant: [git](https://github.com/enzoampil/fastquant)
 - TA-Lib Official Site: 200 indicators such as ADX, MACD, RSI, Stochastic, Bollinger Bands etc. Candlestick patterns. Faster (C-based). recognition. [git](https://ta-lib.org/)
   - TA-Lib python wrapper should be downloaded by manual.
   - unofficial TA-Lib wheels for Python on Windows: https://github.com/cgohlke/talib-build
