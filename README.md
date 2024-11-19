@@ -1,7 +1,7 @@
 
-# Best time to buy/sell: Sell in May, buy in October.
+## Best time to buy/sell: Sell in May, buy in October
 
-## Overview
+### Overview
 
 💸Agent-based stock analysis and investment strategy application using 🎰AutoGen framework, focusing on MSFT stock.
 
@@ -16,7 +16,7 @@
 
 > Important: The code in this repository was developed during a hackathon and implemented within a limited timeframe. It is intended for proof-of-concept purposes only.
 
-## Sequence diagram
+### Sequence diagram
 
 ```mermaid
 sequenceDiagram
@@ -80,7 +80,7 @@ sequenceDiagram
     end
 ```
 
-## User Input and Results
+### User Input and Results
 
 - User Input
 
@@ -115,16 +115,40 @@ Buy signals are generated when the stock price is above the 20-day MA, TRIX is p
 | **Sharpe Ratio**     | 0.04     |
 ```
 
-## Configurations and Setup
+### CAGR calculation
+
+- Most backtrading systems already integrate buy/sell signals and CAGR (Compound Annual Growth Rate) calculation into a single interface. However, this approach limits the flexibility to use custom signals for CAGR calculation.
+- To resolve this issue, the app uses an approach that separates signal generation and CAGR calculation.
+
+  - **Assumptions**
+
+    - To streamline the process, we make the following assumptions:
+
+      1. All trading decisions are based on the signal generated from the previous day's data.
+      1. The calculation of daily returns depends on the type of signal and the price movement:
+
+      - **Buy Signal:** On the trading day, the daily return is calculated as the change of the Adjusted Close price.
+
+      - **Sell Signal:** On the trading day, the daily return is calculated as the gap between the previous day's Close price and the current day's Open price: `Daily Return = ({Open} / {Prev Day Close}) - 1`
+
+  - **Signal Validation**
+
+    - Each trade checks the validity of the signal:
+
+      1. A sell signal cannot be executed without a preceding buy signal.
+      1. Consecutive identical signals (e.g., multiple buy signals in a row) are treated as a **Hold** action, where no new trade is initiated.
+
+### Configurations and Setup
 
   ```bash
   poetry install --no-root
   ```
+
 - This application library supports [`ta`](https://github.com/bukosabino/ta), which provides commonly used indicators (pure Python).
 - Another backtesting framework will be supported in the future.
 - Rename `.env.template` to `.env` and `OAI_CONFIG_LIST.template.json` to `OAI_CONFIG_LIST.json`. Then, set your Bing Search API and OpenAI keys.
 
-## Python Libraries for Quant Trading 
+### Python Libraries for Quant Trading 
 
 - Zipline: Maintained and updated by the community after Quantopian shut down. [git](https://github.com/stefan-jansen/zipline-reloaded)
 - backtrader: Python Backtesting library for trading strategies [git](https://github.com/mementum/backtrader)
@@ -133,10 +157,11 @@ Buy signals are generated when the stock price is above the 20-day MA, TRIX is p
 - TA-Lib Official Site: 200 indicators such as ADX, MACD, RSI, Stochastic, Bollinger Bands etc. Candlestick patterns. Faster (C-based). recognition. [git](https://ta-lib.org/)
   - TA-Lib python wrapper should be downloaded by manual.
   - unofficial TA-Lib wheels for Python on Windows: https://github.com/cgohlke/talib-build
+
 ```bash
-$ python -m pip install TA_Lib-0.4.32-cp311-cp311-win_amd64.whl
+python -m pip install TA_Lib-0.4.32-cp311-cp311-win_amd64.whl
 ```
+
 - finta: Common financial technical indicators implemented in Pandas. archived repository. [git](https://github.com/peerchemist/finta)
 - [FinRobot](https://github.com/AI4Finance-Foundation/FinRobot) uses GroupChat for multiple agents
   - GroupManager controls mutiple agents. It can be used to manage multiple agents in a group chat.
-
