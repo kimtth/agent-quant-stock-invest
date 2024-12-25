@@ -3,10 +3,9 @@
 
 ### Overview
 
-💸Agent-based stock analysis and investment strategy application using 🎰AutoGen framework, focusing on MSFT stock.
+💸Agent-based stock analysis and investment strategy application using 🎰AutoGen framework.
 
-- Review historical stock performance of Microsoft from the past 10-20 years.
-- Identify patterns and trends.
+- Review and backtest the historical stock performance for a specific ticker and date range.
 - Autogen Agents for finding the best timing to invest.
   - [Documentation](https://microsoft.github.io/autogen/)
   - [Tutorial](https://microsoft.github.io/autogen/docs/Examples)
@@ -80,7 +79,7 @@ sequenceDiagram
     end
 ```
 
-### User Input and Results
+### Input and Output
 
 - User Input
 
@@ -90,7 +89,7 @@ Generate buy/sell signals using 20-day Moving Average, TRIX, UO.
 Based on the generated signals, backtest the strategy and provide performance metrics.
 ```
 
-- Results
+- Output
 
 ```bash
 ### Strategy Performance Summary
