@@ -10,7 +10,7 @@ python = ">=3.11,<3.13"
 msgpack = "^1.1.0"
 # ta-lib = {path = "config/TA_Lib-0.4.32-cp311-cp311-win_amd64.whl"}
 # quantstats = "^0.0.62"
-pyautogen = "^0.2.35"
+ag2 = "^0.2.35"
 autogenstudio = "^0.1.5"
 yfinance = "^0.2.43"
 pandas = "^2.2.2"
