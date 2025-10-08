@@ -1,0 +1,9 @@
+flowchart TD
+  fetch_data["fetch_data (Start)"];
+  generate_signals["generate_signals"];
+  backtest["backtest"];
+  summary_report["summary_report"];
+  fetch_data --> generate_signals;
+  generate_signals -. conditional .-> backtest;
+  backtest --> summary_report;
+  generate_signals -. conditional .-> summary_report;

@@ -202,3 +202,5 @@ prompt.md
 stock_agent.py
 /config
 README_MEMO.md
+/checkpoints
+test.py
