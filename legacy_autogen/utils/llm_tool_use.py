@@ -22,11 +22,11 @@ class ToolRegistry:
         self._stock_report_agent = agent_registry.get(AgentName.STOCK_REPORT_AGENT)
 
     def register_tools(self):
-        self.__register_create_stock_data()
-        self.__register_search_ideas_from_web()
-        self.__register_execute_backtesting_strategy()
+        self._register_create_stock_data()
+        self._register_search_ideas_from_web()
+        self._register_execute_backtesting_strategy()
 
-    def __register_create_stock_data(self):
+    def _register_create_stock_data(self):
         @self._user_proxy.register_for_execution()
         @self._stock_analysis_agent.register_for_llm(
             description="Create stock price data from a file path or API."
@@ -44,7 +44,7 @@ class ToolRegistry:
             fetch_stock_data(ticker, start_date, end_date, price_data_file_path)
             return f"Stock data loaded from {price_data_file_path}"
 
-    def __register_search_ideas_from_web(self):
+    def _register_search_ideas_from_web(self):
         @self._user_proxy.register_for_execution()
         @self._stock_analysis_agent.register_for_llm(
             description="Search for description of indicators on the web."
@@ -64,7 +64,7 @@ class ToolRegistry:
                     output += markdown_format
             return output
 
-    def __register_execute_backtesting_strategy(self):
+    def _register_execute_backtesting_strategy(self):
         @self._user_proxy.register_for_execution()
         @self._stock_analysis_agent.register_for_llm(
             description="Execute a backtesting strategy based on buy/sell signals."
@@ -92,10 +92,10 @@ class JsonToolRegistry:
         self._strategy_idea_agent = strategy_idea_agent
 
     def register_tools(self):
-        self.__register_json_validation()
-        self.__register_store_json_data()
+        self._register_json_validation()
+        self._register_store_json_data()
 
-    def __register_json_validation(self):
+    def _register_json_validation(self):
         @self._user_proxy.register_for_execution()
         @self._strategy_idea_agent.register_for_llm(
             description="Validate JSON data against a schema."
@@ -113,7 +113,7 @@ class JsonToolRegistry:
             except Exception as e:
                 return False
 
-    def __register_store_json_data(self):
+    def _register_store_json_data(self):
         @self._user_proxy.register_for_execution()
         @self._strategy_idea_agent.register_for_llm(
             description="Store JSON data as a file."
@@ -140,9 +140,9 @@ class PlotToolRegistry:
         self._stock_report_agent = stock_report_agent
 
     def register_tools(self):
-        self.__register_stock_plot()
+        self._register_stock_plot()
 
-    def __register_stock_plot(self):
+    def _register_stock_plot(self):
         @self._user_proxy.register_for_execution()
         @self._stock_report_agent.register_for_llm(
             description="Plot stock performance data."
