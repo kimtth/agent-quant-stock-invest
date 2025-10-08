@@ -1,9 +1,10 @@
-# Quantitative Investment Agent
+# 💸 Quantitative Investment Agent
 
 **Multi-agent quantitative investment analysis system**  
 
 - Built with [Microsoft Agent Framework](https://github.com/microsoft/agent-framework) (Semantic Kernel + AutoGen), featuring a workflow inspired by [Pregel](https://research.google/pubs/pub37252/).  
 - Legacy version built with AutoGen (See the [README.md](./legacy_autogen/README.md) under `legacy_autogen`)
+- [Assumptions behind the CAGR calculation](./legacy_autogen/README.md/#cagr-calculation)
 
 ## 📖 Overview
 
@@ -91,7 +92,7 @@ autogen-quant-invest-agent/
 ├── agent_quant.py           # Agent definitions
 ├── agent_tools.py           # Function tools
 ├── constants.py             # Configuration
-├── requirements.txt         # Dependencies
+├── pyproject.toml           # Dependencies
 ├── output/                  # Generated files
 │   ├── stock_data.csv
 │   ├── stock_signals.csv
@@ -107,7 +108,7 @@ autogen-quant-invest-agent/
 | **Orchestration** | `GroupChat` + `select_speaker` | `WorkflowBuilder` + edges |
 | **Message Flow** | Broadcast to all agents | Data flows through edges |
 | **Agents** | `AssistantAgent`, `ConversableAgent` | `ChatAgent` (stateless) |
-| **Tools** | `FunctionTool` class | `@ai_function` decorator |
+| **Tools** | `FunctionTool` class | class or `@ai_function` decorator |
 | **State** | Built into agents | `AgentThread` for context |
 | **Pattern** | Control-flow (event-driven) | Data-flow (workflow-based) |
 | **Routing** | Custom logic in manager | Conditional edges |
@@ -119,13 +120,13 @@ autogen-quant-invest-agent/
 ```mermaid
 flowchart TD
     classDef proxy fill:#455a64,color:#fff;
-    classDef manager fill:#d32f2f,color:#fff;
+    classDef manager fill:#6a1b9a,color:#fff;
     classDef agent fill:#1976d2,color:#fff;
     
     A[User Input] --> B[UserProxyAgent]:::proxy
     B --> C[GroupChatManager<br/>Custom speaker selection]:::manager
     C --> D[Stock Analysis Agent]:::agent
-    C --> E[Signal Analysis Agent]:::agent
+    C --> E[Signal Analysis Agent<br/>Pytho code executor]:::agent
     C --> F[Code Executor Agent]:::agent
     D --> G[Tools]
     E --> G
@@ -145,7 +146,7 @@ flowchart TD
     B --> C[WorkflowBuilder]:::orchestrator
     
     subgraph Pipeline [Type-Safe Workflow Pipeline]
-        D[Stock Data Agent]:::agent --> E[Signal Generation Agent]:::agent
+        D[Stock Data Agent]:::agent --> E[Signal Generation Agent<br/>Pytho code executor]:::agent
         E --> F{signals file?}:::decision
         F -->|exists| G[Backtest Agent]:::agent
         F -->|missing| H[Skip to Summary]:::agent
