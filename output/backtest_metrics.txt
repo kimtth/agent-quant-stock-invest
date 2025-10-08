@@ -1,0 +1,9 @@
+Backtest Results 20251008_150030
+========================================
+Start Value: $10,000.00
+End Value: $11,157.97
+Total Return: 11.58%
+Cumulative Return: 11.58%
+CAGR: 11.68%
+MDD: 2.45%
+Sharpe Ratio: 0.09

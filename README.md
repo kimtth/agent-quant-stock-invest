@@ -1,166 +1,175 @@
+# Quantitative Investment Agent
 
-## Best time to buy/sell: Sell in May, buy in October
+**Multi-agent quantitative investment analysis system**  
 
-### Overview
+- Built with [Microsoft Agent Framework](https://github.com/microsoft/agent-framework) (Semantic Kernel + AutoGen), featuring a workflow inspired by [Pregel](https://research.google/pubs/pub37252/).  
+- Legacy version built with AutoGen (See the [README.md](./legacy_autogen/README.md) under `legacy_autogen`)
 
-💸Agent-based stock analysis and investment strategy application using 🎰AutoGen framework.
+## 📖 Overview
 
-- Review and backtest the historical stock performance for a specific ticker and date range.
-- Autogen Agents for finding the best timing to invest.
-  - [Documentation](https://microsoft.github.io/autogen/)
-  - [Tutorial](https://microsoft.github.io/autogen/docs/Examples)
-  <!-- - [Autogen studio](https://microsoft.github.io/autogen/docs/autogen-studio/getting-started) `cmd> autogenstudio ui --port 8081` -->
-  - [Skills Repository](https://github.com/madtank/autogenstudio-skills)
-- To run the main workflow: `python agent_workflow_e2e.py`
+An automated trading analysis system that:
+- Fetches stock data from Yahoo Finance
+- Generates technical trading signals (MACD, RSI, etc.)
+- Backtests strategies with performance metrics (CAGR, MDD, Sharpe Ratio)
+- Uses workflow-based orchestration for agent coordination
 
-> Important: The code in this repository was developed during a hackathon and implemented within a limited timeframe. It is intended for proof-of-concept purposes only.
+Architecture: Workflow-based with executors, function tools, and type-safe schemas.
 
-### Sequence diagram
+## 🚀 Quick Start
+
+```bash
+# 1. Install dependencies
+uv sync
+# Or if using poetry: poetry install
+
+# 2. Set up environment variables
+cp .env.example .env
+# Edit .env and add your Azure OpenAI credentials
+
+# 3. Run the workflow
+python main.py
+```
+
+## Samples
+
+See the generated files under `output`.
+
+- Input sample
+```
+Analyze Apple (AAPL) stock using a momentum trading strategy:
+1. Fetch historical data from 2023-01-01 to 2024-01-01
+2. Generate buy/sell signals using MACD and RSI indicators
+3. Backtest the strategy with initial capital of $10,000
+4. Report performance metrics (CAGR, total return, final value)
+```
+
+- Output sample
+```
+===== Final Output =====
+Summary report — backtest outcome
+
+Key results
+- Final portfolio value: $11,157.97
+- Total return: 11.58% (profit $1,157.97 on implied $10,000 start)
+- CAGR: 11.68% (close to total return → consistent with ~1-year test horizon)
+- Result files: backtest_results.xlsx / backtest_metrics.txt
+
+Quick interpretation
+- The strategy produced a positive return (~11.6%) on the test period with a final value of $11.16k.
+- The near-equality of CAGR and total return indicates the backtest covers roughly one year (or that returns were concentrated in a short single-period test).
+- The absolute profit ($1,157.97) is modest but meaningful for a single-year horizon; risk-adjusted conclusions require volatility and drawdown data (not included here).
+```
+
+## 🏗️ Architecture
+
+### Data-Flow Workflow Pattern
 
 ```mermaid
-sequenceDiagram
-    %% User
-    participant User
-    %% Generates Investing Strategies
-    participant StrategyIdeaAgent
-    %% Generates CAGR/MDD graph
-    participant StockReportAgent
-    %% Manages group chat discussions
-    participant GroupChatManager
-    %% Executes code to create signal data
-    participant UserProxyAgent
-    %% Fetches price data from Yahoo Finance and performs backtesting
-    participant StockAnalysisAgent
-    %% Generates code for creating buy/sell signals for backtesting
-    participant SignalAnalysisAgent
-    %% Public API for fetching stock price data for specified periods
-    participant YahooFinanceAPI
-    %% Public web search for finding technical indicators and investing strategies
-    participant BingSearch
+flowchart TD
+    classDef start fill:#2e7d32,color:#fff;
+    classDef task fill:#1976d2,color:#fff;
+    classDef decision fill:#f9a825,color:#000;
+    
+    A[fetch_data]:::start --> B[generate_signals]:::task
+    B -->|signals exist| C[backtest]:::task
+    B -->|no signals| D[summary_report]:::task
+    C --> D
+```
 
-    autonumber
+**Key Components**:
+- **Executors**: Workflow building blocks (agents with tools)
+- **Edges**: Data flow connections with conditional routing
+- **WorkflowBuilder**: Constructs the data-flow graph
+- **Function Tools**: `agent_tools.py`
 
-    rect rgb(204, 255, 204)
-        User ->> StrategyIdeaAgent: Request to create investment strategies
-        StrategyIdeaAgent ->> StrategyIdeaAgent: Stores investment strategies as 'strategy_ideas.json'
+## 📁 Project Structure
+
+```
+autogen-quant-invest-agent/
+├── main.py                  # Entry point
+├── agent_workflow.py        # Workflow orchestration
+├── agent_quant.py           # Agent definitions
+├── agent_tools.py           # Function tools
+├── constants.py             # Configuration
+├── requirements.txt         # Dependencies
+├── output/                  # Generated files
+│   ├── stock_data.csv
+│   ├── stock_signals.csv
+│   ├── backtest_results.xlsx
+│   └── backtest_metrics.txt
+└── legacy_autogen/          # Original AutoGen implementation
+```
+
+## 🔑 Key Differences from AutoGen
+
+| Aspect | Legacy AutoGen | Microsoft Agent Framework |
+|--------|---------------|--------------------------|
+| **Orchestration** | `GroupChat` + `select_speaker` | `WorkflowBuilder` + edges |
+| **Message Flow** | Broadcast to all agents | Data flows through edges |
+| **Agents** | `AssistantAgent`, `ConversableAgent` | `ChatAgent` (stateless) |
+| **Tools** | `FunctionTool` class | `@ai_function` decorator |
+| **State** | Built into agents | `AgentThread` for context |
+| **Pattern** | Control-flow (event-driven) | Data-flow (workflow-based) |
+| **Routing** | Custom logic in manager | Conditional edges |
+
+## 📊 System Architecture Comparison
+
+### Legacy AutoGen Architecture
+
+```mermaid
+flowchart TD
+    classDef proxy fill:#455a64,color:#fff;
+    classDef manager fill:#d32f2f,color:#fff;
+    classDef agent fill:#1976d2,color:#fff;
+    
+    A[User Input] --> B[UserProxyAgent]:::proxy
+    B --> C[GroupChatManager<br/>Custom speaker selection]:::manager
+    C --> D[Stock Analysis Agent]:::agent
+    C --> E[Signal Analysis Agent]:::agent
+    C --> F[Code Executor Agent]:::agent
+    D --> G[Tools]
+    E --> G
+    F --> G
+    G --> H[Manual Result Collection]
+```
+
+### Microsoft Agent Framework Architecture
+
+```mermaid
+flowchart TD
+    classDef orchestrator fill:#6a1b9a,color:#fff;
+    classDef agent fill:#1976d2,color:#fff;
+    classDef decision fill:#f9a825,color:#000;
+    
+    A[User Input] --> B[QuantInvestWorkflow]:::orchestrator
+    B --> C[WorkflowBuilder]:::orchestrator
+    
+    subgraph Pipeline [Type-Safe Workflow Pipeline]
+        D[Stock Data Agent]:::agent --> E[Signal Generation Agent]:::agent
+        E --> F{signals file?}:::decision
+        F -->|exists| G[Backtest Agent]:::agent
+        F -->|missing| H[Skip to Summary]:::agent
+        G --> I[Summary Report Agent]:::agent
+        H --> I
     end
-
-    loop Iterate through investment strategies
-        User ->> GroupChatManager: Sends an investment strategy to group chat
-        GroupChatManager ->> GroupChatManager: Initializes group chat
-        GroupChatManager ->> StockAnalysisAgent: Calls StockAnalysisAgent
-        StockAnalysisAgent ->> YahooFinanceAPI: Fetches stock data from Yahoo Finance
-        YahooFinanceAPI -->> StockAnalysisAgent: Provides stock data
-        StockAnalysisAgent ->> StockAnalysisAgent: Stores stock price dataset as 'stock_data.csv'
-        StockAnalysisAgent -->> GroupChatManager: Notifies GroupChatManager of task completion
-        GroupChatManager ->> SignalAnalysisAgent: Calls SignalAnalysisAgent
-        SignalAnalysisAgent ->> SignalAnalysisAgent: Generates code for creating buy/sell signals
-        opt
-            SignalAnalysisAgent ->> BingSearch: Searches for examples using the `ta` library
-            BingSearch -->> SignalAnalysisAgent: Provides examples
-        end
-        SignalAnalysisAgent -->> GroupChatManager: Notifies GroupChatManager of task completion
-        GroupChatManager ->> UserProxyAgent: Calls UserProxyAgent
-        UserProxyAgent ->> UserProxyAgent: Executes code created by SignalAnalysisAgent
-        UserProxyAgent ->> UserProxyAgent: Stores buy/sell signal dataset as 'stock_signals.csv'
-        UserProxyAgent -->> GroupChatManager: Notifies GroupChatManager of task completion
-        GroupChatManager ->> StockAnalysisAgent: Calls StockAnalysisAgent
-        StockAnalysisAgent ->> StockAnalysisAgent: Performs backtesting using 'stock_data.csv' and 'stock_signals.csv'
-        opt
-            StockAnalysisAgent ->> BingSearch: Searches for descriptions of indicators
-            BingSearch -->> StockAnalysisAgent: Provides descriptions
-        end
-        StockAnalysisAgent ->> User: Sends a summary of the investment strategy performance
-    end
-
-    rect rgb(230, 242, 255)
-        User ->> StockReportAgent: Requests creation of a graph
-        StockReportAgent ->> StockReportAgent: Generates CAGR/MDD graph
-    end
+    
+    C --> D
+    I --> J[Final Output]
 ```
 
-### Input and Output
+**Key Improvements**:
+- ✅ **Automatic routing** via conditional edges
+- ✅ **Built-in error handling** via WorkflowOutputEvent, ExecutorCompletedEvent
+- ✅ **Type safety** with Pydantic models (AgentCompletedResult)
+- ✅ **Streaming support** via Workflow.run_stream
+- ✅ **State management** via WorkflowContext
+- ✅ **Visualization** via WorkflowViz (generates Mermaid diagrams)
 
-- User Input
+## 📚 Resources
 
-```bash
-Run complete stock analysis for MSFT from 1995-01-01 to today. 
-Generate buy/sell signals using 20-day Moving Average, TRIX, UO.
-Based on the generated signals, backtest the strategy and provide performance metrics.
-```
+- Official documentation: [Overview](https://learn.microsoft.com/en-us/agent-framework/user-guide/workflows/overview) | [Tutorials](https://learn.microsoft.com/en-us/agent-framework/tutorials/overview) |  [Migration from-autogen](https://learn.microsoft.com/en-us/agent-framework/migration-guide/)
+- Official GitHub repository: [Microsoft Agent Framework](https://github.com/microsoft/agent-framework)
 
-- Output
+## 📝 License
 
-```bash
-### Strategy Performance Summary
-
-**Indicators Used:**
-- 20-day Moving Average (MA)
-- TRIX (Triple Exponential Average)
-- Ultimate Oscillator (UO)
-
-**Strategy Summary:**
-The strategy employs a combination of technical indicators to generate buy and sell signals. The 20-day Moving Average smooths price data to identify trends, while the TRIX indicator assesses momentum and potential trend reversals. The Ultimate Oscillator helps gauge market momentum by considering multiple time frames.
-
-Buy signals are generated when the stock price is above the 20-day MA, TRIX is positive, and UO is below 50, indicating a potential upward trend. Conversely, sell signals are triggered when the price is below the 20-day MA, TRIX is negative, and UO is above 50, suggesting a downward trend. This strategy aims to capture momentum while managing risk effectively.
-
-### Performance Metrics
-
-| Metric               | Value    |
-|----------------------|----------|
-| **Cumulative Return** | 188.17%  |
-| **CAGR**             | 2.15%    |
-| **Maximum Drawdown** | -4.47%   |
-| **Sharpe Ratio**     | 0.04     |
-```
-
-### CAGR calculation
-
-- Most backtrading systems already integrate buy/sell signals and CAGR (Compound Annual Growth Rate) calculation into a single interface. However, this approach limits the flexibility to use custom signals for CAGR calculation.
-- To resolve this issue, the app uses an approach that separates signal generation and CAGR calculation.
-
-  - **Assumptions**
-
-    - To streamline the process, we make the following assumptions:
-
-      1. All trading decisions are based on the signal generated from the previous day's data.
-      1. The calculation of daily returns depends on the type of signal and the price movement:
-
-      - **Buy Signal:** On the trading day, the daily return is calculated as the change of the Adjusted Close price.
-
-      - **Sell Signal:** On the trading day, the daily return is calculated as the gap between the previous day's Close price and the current day's Open price: `Daily Return = ({Open} / {Prev Day Close}) - 1`
-
-  - **Signal Validation**
-
-    - Each trade checks the validity of the signal:
-
-      1. A sell signal cannot be executed without a preceding buy signal.
-      1. Consecutive identical signals (e.g., multiple buy signals in a row) are treated as a **Hold** action, where no new trade is initiated.
-
-### Configurations and Setup
-
-  ```bash
-  poetry install --no-root
-  ```
-
-- This application library supports [`ta`](https://github.com/bukosabino/ta), which provides commonly used indicators (pure Python).
-- Another backtesting framework will be supported in the future.
-- Rename `.env.template` to `.env` and `OAI_CONFIG_LIST.template.json` to `OAI_CONFIG_LIST.json`. Then, set your Bing Search API and OpenAI keys.
-
-### Python Libraries for Quant Trading 
-
-- Zipline: Maintained and updated by the community after Quantopian shut down. [git](https://github.com/stefan-jansen/zipline-reloaded)
-- backtrader: Python Backtesting library for trading strategies [git](https://github.com/mementum/backtrader)
-- QuantStats: [git](https://github.com/ranaroussi/quantstats)
-- fastquant: [git](https://github.com/enzoampil/fastquant)
-- TA-Lib Official Site: 200 indicators such as ADX, MACD, RSI, Stochastic, Bollinger Bands etc. Candlestick patterns. Faster (C-based). recognition. [git](https://ta-lib.org/)
-  - TA-Lib python wrapper should be downloaded by manual.
-  - unofficial TA-Lib wheels for Python on Windows: https://github.com/cgohlke/talib-build
-
-```bash
-python -m pip install TA_Lib-0.4.32-cp311-cp311-win_amd64.whl
-```
-
-- finta: Common financial technical indicators implemented in Pandas. archived repository. [git](https://github.com/peerchemist/finta)
-- [FinRobot](https://github.com/AI4Finance-Foundation/FinRobot) uses GroupChat for multiple agents
-  - GroupManager controls mutiple agents. It can be used to manage multiple agents in a group chat.
+MIT
