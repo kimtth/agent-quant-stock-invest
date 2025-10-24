@@ -83,24 +83,6 @@ flowchart TD
 - **WorkflowBuilder**: Constructs the data-flow graph
 - **Function Tools**: `agent_tools.py`
 
-## 📁 Project Structure
-
-```
-autogen-quant-invest-agent/
-├── main.py                  # Entry point
-├── agent_workflow.py        # Workflow orchestration
-├── agent_quant.py           # Agent definitions
-├── agent_tools.py           # Function tools
-├── constants.py             # Configuration
-├── pyproject.toml           # Dependencies
-├── output/                  # Generated files
-│   ├── stock_data.csv
-│   ├── stock_signals.csv
-│   ├── backtest_results.xlsx
-│   └── backtest_metrics.txt
-└── legacy_autogen/          # Original AutoGen implementation
-```
-
 ## 🔑 Key Differences from AutoGen
 
 | Aspect | Legacy AutoGen | Microsoft Agent Framework |
@@ -166,10 +148,92 @@ flowchart TD
 - ✅ **State management** via WorkflowContext
 - ✅ **Visualization** via WorkflowViz (generates Mermaid diagrams)
 
+## 📁 Project Structure
+
+```
+autogen-quant-invest-agent/
+├── main.py                  # Entry point
+├── agent_workflow.py        # Workflow orchestration
+├── agent_quant.py           # Agent definitions
+├── agent_tools.py           # Function tools
+├── constants.py             # Configuration
+├── pyproject.toml           # Dependencies
+├── human_in_loop/           # Human oversight samples
+│   └── main_invest_approval.py  # Investment approval workflow
+├── output/                  # Generated files
+│   ├── stock_data.csv
+│   ├── stock_signals.csv
+│   ├── backtest_results.xlsx
+│   └── backtest_metrics.txt
+└── legacy_autogen/          # Original AutoGen implementation
+```
+
+---
+
+## 🧑‍💼 Human-in-the-Loop: Investment Approval Workflow
+
+The `human_in_loop/main_invest_approval.py` sample demonstrates a **human oversight pattern** for critical investment decisions using `RequestInfoExecutor`.
+
+### Features
+
+- **Human approval gates**: Agent generates investment recommendations, then pauses for human approval
+- **Iterative refinement**: Humans can request modifications with specific feedback (e.g., "refine focus on risk factors")
+- **Structured output**: Uses Pydantic `response_format` for type-safe investment recommendations (ticker, action, rationale, confidence)
+- **Multi-turn workflow**: Continues until human approves, requests changes, or exits
+
+### Workflow Pattern
+
+```mermaid
+flowchart TD
+    classDef human fill:#e65100,color:#fff;
+    classDef agent fill:#1976d2,color:#fff;
+    classDef decision fill:#f9a825,color:#000;
+    
+    A[User Input<br/>Stock Ticker] --> B[Investment Agent<br/>Analyzes Stock]:::agent
+    B --> C[Generate<br/>Recommendation]:::agent
+    C --> D{Human Decision}:::human
+    D -->|approve| E[Execute Decision]
+    D -->|refine| F[Provide Feedback]:::human
+    D -->|exit| G[Cancel]
+    F --> B
+```
+
+### Usage
+
+```bash
+# Run the human-in-the-loop workflow
+python human_in_loop/main_invest_approval.py
+
+# Example interaction:
+# Enter ticker: MSFT
+# [Agent analyzes and generates recommendation]
+# Your decision: refine focus on risk factors
+# [Agent refines based on feedback]
+# Your decision: approve
+```
+
+### Key Components
+
+- **InvestmentTurnManager**: Coordinates agent-human turns and processes approval/feedback
+- **RequestInfoExecutor**: Pauses workflow for human input at critical decision points
+- **InvestmentRecommendation**: Pydantic model for structured output (BUY/SELL/HOLD with rationale)
+- **Multi-turn loop**: Continues until human approval or cancellation
+
+This pattern is essential for **high-stakes AI applications** where human oversight is required before executing decisions.
+
+---
+
+## 📊 Dev UI
+
+The `dev_ui/main_dev_ui.py` sample demonstrates Dev UI Integration with `QuantInvestWorkflow`. 
+
+![Dev_UI](output/dev_ui.png)
+
 ## 📚 Resources
 
 - Official documentation: [Overview](https://learn.microsoft.com/en-us/agent-framework/user-guide/workflows/overview) | [Tutorials](https://learn.microsoft.com/en-us/agent-framework/tutorials/overview) |  [Migration from-autogen](https://learn.microsoft.com/en-us/agent-framework/migration-guide/)
 - Official GitHub repository: [Microsoft Agent Framework](https://github.com/microsoft/agent-framework)
+- [Microsoft Agent Framework Sample](https://github.com/microsoft/Agent-Framework-Samples)
 
 ## 📝 License
 
