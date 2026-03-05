@@ -3,26 +3,23 @@
 import asyncio
 from dataclasses import dataclass
 import os
+from collections.abc import AsyncIterable
 
 from agent_framework import (
     AgentExecutor,
     AgentExecutorRequest,
     AgentExecutorResponse,
-    ChatMessage,
     Executor,
-    RequestInfoEvent,
-    RequestInfoExecutor,
-    RequestInfoMessage,
-    RequestResponse,
-    Role,
+    Message,
     WorkflowBuilder,
     WorkflowContext,
-    WorkflowOutputEvent,
+    WorkflowEvent,
     WorkflowRunState,
-    WorkflowStatusEvent,
     handler,
+    response_handler,
 )
-from agent_framework.azure import AzureOpenAIChatClient
+from agent_framework.azure import AzureOpenAIResponsesClient
+from azure.identity import AzureCliCredential
 from dotenv import load_dotenv
 from pydantic import BaseModel
 
@@ -81,7 +78,7 @@ Investment recommendation for MSFT approved and ready for execution.
 
 
 @dataclass
-class InvestmentApprovalRequest(RequestInfoMessage):
+class InvestmentApprovalRequest:
     """Request sent to human for investment decision approval."""
 
     prompt: str = ""
@@ -113,13 +110,9 @@ class InvestmentTurnManager(Executor):
 
     @handler
     async def start(self, ticker: str, ctx: WorkflowContext[AgentExecutorRequest]) -> None:
-        """Start the investment analysis workflow.
-
-        Args:
-            ticker: Stock symbol to analyze
-        """
-        user = ChatMessage(
-            Role.USER,
+        """Start the investment analysis workflow."""
+        user = Message(
+            "user",
             text=f"Analyze {ticker} and provide an investment recommendation with rationale.",
         )
         await ctx.send_message(AgentExecutorRequest(messages=[user], should_respond=True))
@@ -128,10 +121,10 @@ class InvestmentTurnManager(Executor):
     async def on_agent_response(
         self,
         result: AgentExecutorResponse,
-        ctx: WorkflowContext[InvestmentApprovalRequest],
+        ctx: WorkflowContext,
     ) -> None:
         """Handle agent's investment recommendation and request human approval."""
-        text = result.agent_run_response.text or ""
+        text = result.agent_response.text or ""
 
         try:
             recommendation = InvestmentRecommendation.model_validate_json(text)
@@ -151,12 +144,13 @@ class InvestmentTurnManager(Executor):
                 f"  exit - Cancel and exit\n"
             )
 
-            await ctx.send_message(
-                InvestmentApprovalRequest(
+            await ctx.request_info(
+                request_data=InvestmentApprovalRequest(
                     prompt=prompt,
                     recommendation=text,
                     ticker=recommendation.ticker,
-                )
+                ),
+                response_type=str,
             )
         except Exception:
             # Fallback if parsing fails
@@ -168,23 +162,25 @@ class InvestmentTurnManager(Executor):
                 f"{'='*60}\n\n"
                 f"Type one of: approve, refine <feedback>, or exit\n"
             )
-            await ctx.send_message(
-                InvestmentApprovalRequest(
+            await ctx.request_info(
+                request_data=InvestmentApprovalRequest(
                     prompt=prompt,
                     recommendation=text,
                     ticker="",
-                )
+                ),
+                response_type=str,
             )
 
-    @handler
+    @response_handler
     async def on_human_feedback(
         self,
-        feedback: RequestResponse[InvestmentApprovalRequest, str],
+        original_request: InvestmentApprovalRequest,
+        feedback: str,
         ctx: WorkflowContext[AgentExecutorRequest, str],
     ) -> None:
         """Process human approval or refinement request."""
-        reply = (feedback.data or "").strip().lower()
-        ticker = getattr(feedback.original_request, "ticker", "")
+        reply = (feedback or "").strip().lower()
+        ticker = original_request.ticker
 
         if reply == "approve":
             await ctx.yield_output(
@@ -195,8 +191,8 @@ class InvestmentTurnManager(Executor):
         # Handle refinement requests
         if reply.startswith("refine"):
             refinement_feedback = reply[6:].strip() if len(reply) > 6 else "provide more details"
-            user_msg = ChatMessage(
-                Role.USER,
+            user_msg = Message(
+                "user",
                 text=(
                     f"Please refine your recommendation based on this feedback: {refinement_feedback}. "
                     f'Return a JSON object matching the schema: {{"ticker": str, "action": str, "rationale": str, "confidence": str}}'
@@ -205,20 +201,49 @@ class InvestmentTurnManager(Executor):
             await ctx.send_message(AgentExecutorRequest(messages=[user_msg], should_respond=True))
         else:
             # Invalid input - re-prompt
-            user_msg = ChatMessage(
-                Role.USER,
+            user_msg = Message(
+                "user",
                 text='Please provide a valid investment recommendation in JSON format.',
             )
             await ctx.send_message(AgentExecutorRequest(messages=[user_msg], should_respond=True))
 
 
+async def process_event_stream(
+    stream: AsyncIterable[WorkflowEvent],
+) -> tuple[dict[str, str] | None, str | None]:
+    """Process workflow events, collect request_info prompts and final output."""
+    requests: list[tuple[str, InvestmentApprovalRequest]] = []
+    workflow_output: str | None = None
+
+    async for event in stream:
+        if event.type == "request_info" and isinstance(event.data, InvestmentApprovalRequest):
+            requests.append((event.request_id, event.data))
+        elif event.type == "output" and isinstance(event.data, str):
+            workflow_output = event.data
+        elif event.type == "status":
+            if event.state == WorkflowRunState.IN_PROGRESS_PENDING_REQUESTS:
+                print("[Status: Processing agent response...]")
+            elif event.state == WorkflowRunState.IDLE_WITH_PENDING_REQUESTS:
+                print("[Status: Awaiting human decision...]")
+
+    if requests:
+        responses: dict[str, str] = {}
+        for request_id, request in requests:
+            print(request.prompt)
+            answer = input("Your decision: ").strip().lower()  # noqa: ASYNC250
+            if answer == "exit":
+                print("\nWorkflow cancelled by user.")
+                return None, None
+            responses[request_id] = answer
+        return responses, workflow_output
+
+    return None, workflow_output
+
+
 async def main() -> None:
     """Run the human-in-the-loop investment agent workflow."""
-
-    # Load environment variables
     load_dotenv()
 
-    # Get stock ticker from user
     print("\n" + "=" * 60)
     print("QUANTITATIVE INVESTMENT AGENT WITH HUMAN OVERSIGHT")
     print("=" * 60)
@@ -228,14 +253,14 @@ async def main() -> None:
         print("No ticker provided. Exiting.")
         return
 
-    # Create the investment analysis agent
-    chat_client = AzureOpenAIChatClient(
-        endpoint=os.environ["AZURE_OPENAI_ENDPOINT"],
-        deployment_name=os.environ["AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME"],
-        api_version=os.environ["AZURE_OPENAI_API_VERSION"],
-        api_key=os.environ["AZURE_OPENAI_API_KEY"]
+    # Create investment analysis agent (Azure CLI credential — run `az login` first)
+    client = AzureOpenAIResponsesClient(
+        project_endpoint=os.environ["AZURE_AI_PROJECT_ENDPOINT"],
+        deployment_name=os.environ["AZURE_AI_MODEL_DEPLOYMENT_NAME"],
+        credential=AzureCliCredential(),
     )
-    agent = chat_client.create_agent(
+    agent = client.as_agent(
+        name="investment_analyst",
         instructions=(
             "You are a quantitative investment analyst. "
             "Analyze stocks and provide structured investment recommendations. "
@@ -243,82 +268,38 @@ async def main() -> None:
             'Return ONLY a JSON object matching: {"ticker": str, "action": "BUY/SELL/HOLD", "rationale": str, "confidence": "HIGH/MEDIUM/LOW"}. '
             "No additional text or explanations outside the JSON."
         ),
-        response_format=InvestmentRecommendation,
+        default_options={"response_format": InvestmentRecommendation},
     )
 
-    # Build the workflow
+    # Build the workflow: TurnManager ↔ AgentExecutor loop
     turn_manager = InvestmentTurnManager(id="investment_turn_manager")
     agent_exec = AgentExecutor(agent=agent, id="investment_agent")
-    request_info_executor = RequestInfoExecutor(id="request_info")
 
     workflow = (
-        WorkflowBuilder()
-        .set_start_executor(turn_manager)
+        WorkflowBuilder(start_executor=turn_manager)
         .add_edge(turn_manager, agent_exec)
         .add_edge(agent_exec, turn_manager)
-        .add_edge(turn_manager, request_info_executor)
-        .add_edge(request_info_executor, turn_manager)
         .build()
     )
 
-    # Execute human-in-the-loop workflow
-    pending_responses: dict[str, str] | None = None
-    completed = False
-    workflow_output: str | None = None
-
     print(f"\nAnalyzing {ticker}...\n")
 
-    while not completed:
-        stream = (
-            workflow.send_responses_streaming(pending_responses)
-            if pending_responses
-            else workflow.run_stream(ticker)
-        )
+    pending_responses: dict[str, str] | None = None
+    workflow_output: str | None = None
 
-        events = [event async for event in stream]
-        pending_responses = None
+    stream = workflow.run(ticker, stream=True, include_status_events=True)
+    pending_responses, workflow_output = await process_event_stream(stream)
 
-        requests: list[tuple[str, str]] = []
-        for event in events:
-            if isinstance(event, RequestInfoEvent) and isinstance(event.data, InvestmentApprovalRequest):
-                requests.append((event.request_id, event.data.prompt))
-            elif isinstance(event, WorkflowOutputEvent):
-                workflow_output = str(event.data)
-                completed = True
+    while pending_responses is not None and workflow_output is None:
+        stream = workflow.run(responses=pending_responses, stream=True, include_status_events=True)
+        pending_responses, workflow_output = await process_event_stream(stream)
 
-        # Status monitoring
-        pending_status = any(
-            isinstance(e, WorkflowStatusEvent) and e.state == WorkflowRunState.IN_PROGRESS_PENDING_REQUESTS
-            for e in events
-        )
-        idle_with_requests = any(
-            isinstance(e, WorkflowStatusEvent) and e.state == WorkflowRunState.IDLE_WITH_PENDING_REQUESTS
-            for e in events
-        )
-
-        if pending_status:
-            print("[Status: Processing agent response...]")
-        if idle_with_requests:
-            print("[Status: Awaiting human decision...]")
-
-        # Collect human responses
-        if requests and not completed:
-            responses: dict[str, str] = {}
-            for req_id, prompt in requests:
-                print(prompt)
-                answer = input("Your decision: ").strip().lower()  # noqa: ASYNC250
-                if answer == "exit":
-                    print("\nWorkflow cancelled by user.")
-                    return
-                responses[req_id] = answer
-            pending_responses = responses
-
-    # Display final result
-    print(f"\n{'='*60}")
-    print("WORKFLOW COMPLETE")
-    print(f"{'='*60}")
-    print(f"{workflow_output}")
-    print(f"{'='*60}\n")
+    if workflow_output:
+        print(f"\n{'='*60}")
+        print("WORKFLOW COMPLETE")
+        print(f"{'='*60}")
+        print(workflow_output)
+        print(f"{'='*60}\n")
 
 
 if __name__ == "__main__":
