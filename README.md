@@ -160,8 +160,6 @@ agent-quant-stock-invest/
 │   └── constant.py          # Configuration constants
 ├── human_in_loop/           # Human oversight samples
 │   └── main_invest_approval.py  # Investment approval workflow
-├── dev_ui/                  # Dev UI integration
-│   └── main_dev_ui.py
 ├── output/                  # Generated files
 │   ├── stock_data.csv
 │   ├── stock_signals.csv
