@@ -1,3 +1,76 @@
+<div align="center">
+
+[Agent Framework ](../README.md) &nbsp;|&nbsp; **[Legacy AutoGen ](README.md)**
+
+</div>
+
+---
+
+# 💸 Legacy AutoGen Implementation
+
+> This is the legacy implementation using AutoGen. For the current Microsoft Agent Framework version, see the [Agent Framework README](../README.md).
+
+---
+
+## 🔑 Key Differences from Microsoft Agent Framework
+
+| Aspect | Legacy AutoGen | Microsoft Agent Framework |
+|--------|---------------|---------------------------|
+| **Orchestration** | `GroupChat` + `select_speaker` | `WorkflowBuilder` + edges |
+| **Message Flow** | Broadcast to all agents | Data flows through edges |
+| **Agents** | `AssistantAgent`, `ConversableAgent` | `ChatAgent` (stateless) |
+| **Tools** | `FunctionTool` class | class or `@ai_function` decorator |
+| **State** | Built into agents | `AgentThread` for context |
+| **Pattern** | Control-flow (event-driven) | Data-flow (workflow-based) |
+| **Routing** | Custom logic in manager | Conditional edges |
+
+## 📊 Architecture Comparison
+
+### Legacy AutoGen Architecture
+
+```mermaid
+flowchart TD
+    classDef user         fill:#e6e6fa,stroke:#333,stroke-width:2px
+    classDef orchestrator fill:#f0fff0,stroke:#999,stroke-width:1px
+    classDef agent        fill:#f0f8ff,stroke:#333,stroke-width:2px
+
+    A[User Input]:::user --> B[UserProxyAgent]:::user
+    B --> C[GroupChatManager<br/>Custom speaker selection]:::orchestrator
+    C --> D[Stock Analysis Agent]:::agent
+    C --> E[Signal Analysis Agent<br/>Python code executor]:::agent
+    C --> F[Code Executor Agent]:::agent
+    D --> G[Tools]:::user
+    E --> G
+    F --> G
+    G --> H[Manual Result Collection]:::orchestrator
+```
+
+### Microsoft Agent Framework Architecture
+
+```mermaid
+flowchart TD
+    classDef orchestrator fill:#f0fff0,stroke:#999,stroke-width:1px
+    classDef agent        fill:#f0f8ff,stroke:#333,stroke-width:2px
+    classDef decision     fill:#ffe4e1,stroke:#333,stroke-width:2px
+
+    A[User Input]:::orchestrator --> B[QuantInvestWorkflow]:::orchestrator
+    B --> C[WorkflowBuilder]:::orchestrator
+
+    subgraph Pipeline [Type-Safe Workflow Pipeline]
+        D[Stock Data Agent]:::agent --> E[Signal Generation Agent<br/>Python code executor]:::agent
+        E --> F{signals file?}:::decision
+        F -->|exists| G[Backtest Agent]:::agent
+        F -->|missing| H[Skip to Summary]:::agent
+        G --> I[Summary Report Agent]:::agent
+        H --> I
+    end
+    style Pipeline fill:none,stroke:#333,stroke-width:1px
+
+    C --> D
+    I --> J[Final Output]:::orchestrator
+```
+
+---
 
 ## Best time to buy/sell: Sell in May, buy in October
 
