@@ -8,9 +8,7 @@
 
 # 💸 Legacy AutoGen Implementation
 
-> This is the legacy implementation using AutoGen. For the current Microsoft Agent Framework version, see the [Agent Framework README](../README.md).
-
----
+> This is the legacy implementation using AutoGen. 
 
 ## 🔑 Key Differences from Microsoft Agent Framework
 
@@ -44,33 +42,6 @@ flowchart TD
     F --> G
     G --> H[Manual Result Collection]:::orchestrator
 ```
-
-### Microsoft Agent Framework Architecture
-
-```mermaid
-flowchart TD
-    classDef orchestrator fill:#f0fff0,stroke:#999,stroke-width:1px
-    classDef agent        fill:#f0f8ff,stroke:#333,stroke-width:2px
-    classDef decision     fill:#ffe4e1,stroke:#333,stroke-width:2px
-
-    A[User Input]:::orchestrator --> B[QuantInvestWorkflow]:::orchestrator
-    B --> C[WorkflowBuilder]:::orchestrator
-
-    subgraph Pipeline [Type-Safe Workflow Pipeline]
-        D[Stock Data Agent]:::agent --> E[Signal Generation Agent<br/>Python code executor]:::agent
-        E --> F{signals file?}:::decision
-        F -->|exists| G[Backtest Agent]:::agent
-        F -->|missing| H[Skip to Summary]:::agent
-        G --> I[Summary Report Agent]:::agent
-        H --> I
-    end
-    style Pipeline fill:none,stroke:#333,stroke-width:1px
-
-    C --> D
-    I --> J[Final Output]:::orchestrator
-```
-
----
 
 ## Best time to buy/sell: Sell in May, buy in October
 
