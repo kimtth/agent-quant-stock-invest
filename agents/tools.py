@@ -9,7 +9,7 @@ import pandas as pd
 from pydantic import Field
 # from agent_framework import ai_function > Do not use this annotation when tools are defined in class.
 
-from constant import (
+from .constant import (
     WORK_DIR,
     DATASET_STOCK,
     DATASET_SIGNALS,
@@ -184,6 +184,17 @@ class AgentQuantTools:
                     else 0
                 )
 
+                if buy_count == 0:
+                    # Remove the file so the workflow condition doesn't treat it as a valid result
+                    os.remove(output_path)
+                    return (
+                        f"ERROR: Generated 0 buy signals (sell signals: {sell_count}). "
+                        f"The strategy is too restrictive. "
+                        f"Please retry with a simpler strategy: pure MACD crossover "
+                        f"(BuySignal = MACD crosses above Signal Line, SellSignal = MACD crosses below), "
+                        f"without any additional RSI or other filters."
+                    )
+
                 result = "SUCCESS: Code executed successfully.\n"
                 result += f"Generated {buy_count} buy signals and {sell_count} sell signals.\n"
                 result += f"Saved to {output_path} ({file_size} bytes)\n"
@@ -354,7 +365,7 @@ class AgentQuantTools:
                 start_value, end_value, periods
             )
             mdd = PerformanceMetricsCalculator.calculate_mdd(
-                cumulative_returns, positions
+                cumulative_returns
             )
             sharpe = PerformanceMetricsCalculator.calculate_sharpe_ratio(
                 returns, positions, risk_free_rate=0.02, period="daily"
@@ -376,7 +387,11 @@ class AgentQuantTools:
 
             # Prepare metrics
             timestamp_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+            invest_start = str(df["Date"].iloc[0]) if "Date" in df.columns else "N/A"
+            invest_end = str(df["Date"].iloc[-1]) if "Date" in df.columns else "N/A"
             metrics = {
+                "Investment Start": invest_start,
+                "Investment End": invest_end,
                 "Start Value": f"${initial_capital:,.2f}",
                 "End Value": f"${final_value:,.2f}",
                 "Total Return": f"{total_return:.2f}%",
@@ -437,21 +452,22 @@ class PerformanceMetricsCalculator:
         return (end_value / start_value) ** (1 / periods) - 1
 
     @staticmethod
-    def calculate_mdd(cumulative_returns: pd.Series, positions: pd.Series) -> float:
+    def calculate_mdd(cumulative_returns: pd.Series) -> float:
         """
-        Calculate Maximum Drawdown (MDD).
+        Calculate Maximum Drawdown (MDD) over the full backtest period.
+
+        Inactive (cash) periods naturally flatline in cumulative_returns, so
+        computing MDD on the full series gives the standard portfolio-level MDD.
 
         Args:
             cumulative_returns: Series of cumulative returns
-            positions: Series of position states
 
         Returns:
             float: Maximum drawdown as a decimal (e.g., 0.20 for 20%)
         """
-        active_returns = cumulative_returns[positions.shift(1) != 0]
-        if active_returns.empty:
+        if cumulative_returns.empty:
             return 0.0
-        drawdown = active_returns / active_returns.cummax() - 1
+        drawdown = cumulative_returns / cumulative_returns.cummax() - 1
         return abs(drawdown.min())
 
     @staticmethod
@@ -482,8 +498,11 @@ class PerformanceMetricsCalculator:
             return 0.0
 
         if period == "daily":
+            # Annualized Sharpe from daily returns: (mean - rf_daily) / std * sqrt(252)
             adjusted_risk_free_rate = risk_free_rate / 252
-            sharpe_ratio = (active_returns.mean() - adjusted_risk_free_rate) / std_dev
+            sharpe_ratio = (
+                (active_returns.mean() - adjusted_risk_free_rate) / std_dev
+            ) * (252**0.5)
         elif period == "yearly":
             sharpe_ratio = ((active_returns.mean() - risk_free_rate) / std_dev) * (
                 252**0.5
