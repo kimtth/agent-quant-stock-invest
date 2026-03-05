@@ -1,251 +1,792 @@
 BuySignal,SellSignal,Description
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-True,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-True,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-True,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-True,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-True,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-True,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-True,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-True,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-True,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,True,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
-False,False,Buy: MACD crossover up + RSI>50; Sell: MACD crossover down OR RSI>70. Signals computed using Close only via ta library.
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,True,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+True,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"
+False,False,"MACD (12,26,9) crossover with RSI(14) >50 buy filter / <50 sell filter"

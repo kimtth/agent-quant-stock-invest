@@ -21,7 +21,6 @@ Architecture: Workflow-based with executors, function tools, and type-safe schem
 ```bash
 # 1. Install dependencies
 uv sync
-# Or if using poetry: poetry install
 
 # 2. Set up environment variables
 cp .env.example .env
@@ -67,21 +66,20 @@ Quick interpretation
 
 ```mermaid
 flowchart TD
-    classDef start fill:#2e7d32,color:#fff;
-    classDef task fill:#1976d2,color:#fff;
-    classDef decision fill:#f9a825,color:#000;
-    
-    A[fetch_data]:::start --> B[generate_signals]:::task
-    B -->|signals exist| C[backtest]:::task
-    B -->|no signals| D[summary_report]:::task
-    C --> D
+    classDef boot fill:#fffacd,stroke:#333,stroke-width:2px
+    classDef mem  fill:#fff0f5,stroke:#333,stroke-width:2px
+
+    A[fetch_data]:::boot --> B[generate_signals]:::mem
+    B -->|signals exist| C[backtest]:::mem
+    B -->|no signals| D[summary_report]:::mem
+    C --> D:::mem
 ```
 
 **Key Components**:
 - **Executors**: Workflow building blocks (agents with tools)
 - **Edges**: Data flow connections with conditional routing
 - **WorkflowBuilder**: Constructs the data-flow graph
-- **Function Tools**: `agent_tools.py`
+- **Function Tools**: `agents/tools.py`
 
 ## 🔑 Key Differences from AutoGen
 
@@ -101,43 +99,43 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    classDef proxy fill:#455a64,color:#fff;
-    classDef manager fill:#6a1b9a,color:#fff;
-    classDef agent fill:#1976d2,color:#fff;
-    
-    A[User Input] --> B[UserProxyAgent]:::proxy
-    B --> C[GroupChatManager<br/>Custom speaker selection]:::manager
-    C --> D[Stock Analysis Agent]:::agent
-    C --> E[Signal Analysis Agent<br/>Pytho code executor]:::agent
-    C --> F[Code Executor Agent]:::agent
-    D --> G[Tools]
+    classDef hw     fill:#e6e6fa,stroke:#333,stroke-width:2px
+    classDef kernel fill:#f5f5dc,stroke:#333,stroke-width:2px
+    classDef cpu    fill:#f0f8ff,stroke:#333,stroke-width:2px
+
+    A[User Input]:::hw --> B[UserProxyAgent]:::hw
+    B --> C[GroupChatManager<br/>Custom speaker selection]:::kernel
+    C --> D[Stock Analysis Agent]:::cpu
+    C --> E[Signal Analysis Agent<br/>Python code executor]:::cpu
+    C --> F[Code Executor Agent]:::cpu
+    D --> G[Tools]:::hw
     E --> G
     F --> G
-    G --> H[Manual Result Collection]
+    G --> H[Manual Result Collection]:::kernel
 ```
 
 ### Microsoft Agent Framework Architecture
 
 ```mermaid
 flowchart TD
-    classDef orchestrator fill:#6a1b9a,color:#fff;
-    classDef agent fill:#1976d2,color:#fff;
-    classDef decision fill:#f9a825,color:#000;
-    
-    A[User Input] --> B[QuantInvestWorkflow]:::orchestrator
-    B --> C[WorkflowBuilder]:::orchestrator
-    
+    classDef kernel fill:#f5f5dc,stroke:#333,stroke-width:2px
+    classDef cpu    fill:#f0f8ff,stroke:#333,stroke-width:2px
+    classDef proc   fill:#ffe4e1,stroke:#333,stroke-width:2px
+
+    A[User Input]:::kernel --> B[QuantInvestWorkflow]:::kernel
+    B --> C[WorkflowBuilder]:::kernel
+
     subgraph Pipeline [Type-Safe Workflow Pipeline]
-        D[Stock Data Agent]:::agent --> E[Signal Generation Agent<br/>Pytho code executor]:::agent
-        E --> F{signals file?}:::decision
-        F -->|exists| G[Backtest Agent]:::agent
-        F -->|missing| H[Skip to Summary]:::agent
-        G --> I[Summary Report Agent]:::agent
+        D[Stock Data Agent]:::cpu --> E[Signal Generation Agent<br/>Python code executor]:::cpu
+        E --> F{signals file?}:::proc
+        F -->|exists| G[Backtest Agent]:::cpu
+        F -->|missing| H[Skip to Summary]:::cpu
+        G --> I[Summary Report Agent]:::cpu
         H --> I
     end
-    
+
     C --> D
-    I --> J[Final Output]
+    I --> J[Final Output]:::kernel
 ```
 
 **Key Improvements**:
@@ -151,15 +149,19 @@ flowchart TD
 ## 📁 Project Structure
 
 ```
-autogen-quant-invest-agent/
+agent-quant-stock-invest/
 ├── main.py                  # Entry point
-├── agent_workflow.py        # Workflow orchestration
-├── agent_quant.py           # Agent definitions
-├── agent_tools.py           # Function tools
-├── constants.py             # Configuration
-├── pyproject.toml           # Dependencies
+├── pyproject.toml           # Dependencies (uv)
+├── agents/                  # Core agent package
+│   ├── __init__.py
+│   ├── workflow.py          # Workflow orchestration
+│   ├── agents.py            # Agent definitions
+│   ├── tools.py             # Function tools
+│   └── constant.py          # Configuration constants
 ├── human_in_loop/           # Human oversight samples
 │   └── main_invest_approval.py  # Investment approval workflow
+├── dev_ui/                  # Dev UI integration
+│   └── main_dev_ui.py
 ├── output/                  # Generated files
 │   ├── stock_data.csv
 │   ├── stock_signals.csv
@@ -185,16 +187,16 @@ The `human_in_loop/main_invest_approval.py` sample demonstrates a **human oversi
 
 ```mermaid
 flowchart TD
-    classDef human fill:#e65100,color:#fff;
-    classDef agent fill:#1976d2,color:#fff;
-    classDef decision fill:#f9a825,color:#000;
-    
-    A[User Input<br/>Stock Ticker] --> B[Investment Agent<br/>Analyzes Stock]:::agent
-    B --> C[Generate<br/>Recommendation]:::agent
-    C --> D{Human Decision}:::human
-    D -->|approve| E[Execute Decision]
-    D -->|refine| F[Provide Feedback]:::human
-    D -->|exit| G[Cancel]
+    classDef note fill:#f0fff0,stroke:#999,stroke-width:1px,stroke-dasharray:4 2,color:#555
+    classDef cpu  fill:#f0f8ff,stroke:#333,stroke-width:2px
+    classDef proc fill:#ffe4e1,stroke:#333,stroke-width:2px
+
+    A[User Input<br/>Stock Ticker]:::note --> B[Investment Agent<br/>Analyzes Stock]:::cpu
+    B --> C[Generate<br/>Recommendation]:::cpu
+    C --> D{Human Decision}:::proc
+    D -->|approve| E[Execute Decision]:::cpu
+    D -->|refine| F[Provide Feedback]:::note
+    D -->|exit| G[Cancel]:::note
     F --> B
 ```
 

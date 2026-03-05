@@ -204,3 +204,5 @@ stock_agent.py
 README_MEMO.md
 /checkpoints
 test.py
+ref/
+/.github
