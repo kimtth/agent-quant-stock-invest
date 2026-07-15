@@ -187,15 +187,12 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-.env
 /_output
 /.cache
 OAI_CONFIG_LIST.json
 poetry.lock
 logs.db
 MSFT_stock_data.csv
-/venv
-/utils/__pycache__
 agent_demo_cp_v1.py
 agent_demo_cp_v2.py
 prompt.md
@@ -203,7 +200,10 @@ stock_agent.py
 /config
 README_MEMO.md
 /checkpoints
-test.py
-ref/
 /.github
 .vscode/
+/agent_framework_patterns/patterns
+/agent-file-memory
+.ruff_cache/
+/.agents
+skills-lock.json
