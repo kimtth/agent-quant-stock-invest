@@ -1,0 +1,1 @@
+"""Behavior tests for standalone Agent Framework patterns."""
