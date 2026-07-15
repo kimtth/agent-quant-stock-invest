@@ -1,134 +1,120 @@
 <div align="center">
 
-**[Agent Framework ](README.md)** &nbsp;|&nbsp; [Legacy AutoGen ](legacy_autogen/README.md)
+**Repository overview** &nbsp;|&nbsp; [Agent Framework](docs/agent_framework.md) &nbsp;|&nbsp; [Semantic Kernel](docs/semantic_kernel.md) &nbsp;|&nbsp; [AutoGen reference](docs/autogen.md) &nbsp;|&nbsp; [Agent Framework patterns](docs/agent_framework_patterns.md) &nbsp;|&nbsp; [Framework comparison](docs/autogen_agent_sk.md)
 
 </div>
 
 ---
 
-# 💸 Quantitative Investment Agent
+# 💸 Investment Agent Patterns
 
-Multi-agent quantitative investment analysis system built with [Microsoft Agent Framework](https://github.com/microsoft/agent-framework) (Semantic Kernel + AutoGen), using a [Pregel](https://research.google/pubs/pub37252/)-inspired data-flow workflow.
+This project shows how to use Microsoft Agent Framework for stock-market research. It downloads past prices, creates signals, tests simple strategies, and saves the results.
 
-## 🚀 Quick Start
+> [!NOTE]  
+> Recommended first: Microsoft Agent Framework. It combines ideas from AutoGen and Semantic Kernel.  
+> Semantic Kernel and AutoGen are included only for comparison.
+
+## What's included
+
+| Area | Purpose | Use |
+|---|---|---|
+| [Agent Framework workflow](docs/agent_framework.md) | Main workflow. | **Start here.** |
+| [Semantic Kernel workflow](docs/semantic_kernel.md) | Same steps, plugin-based. | Compare with the main workflow. |
+| [AutoGen reference](docs/autogen.md) | Earlier group-chat version. | Compare implementation styles. |
+| [Agent Framework patterns](docs/agent_framework_patterns.md) | Examples for the investment domain. | Explore features one at a time. |
+| [Framework comparison](docs/autogen_agent_sk.md) | Short comparison of the three frameworks. | - |
+
+The [Agent Framework patterns](docs/agent_framework_patterns.md) are the only pattern showcase in this repository. The 30 examples show Microsoft Agent Framework features for investment research. Semantic Kernel and AutoGen do not have separate pattern libraries here.
+
+## Quick start: Microsoft Agent Framework
+
+Python 3.13 and `uv`. To run the main Agent Framework example, you also need an Azure AI Foundry project with a chat model and access through the Azure CLI.
 
 ```bash
 uv sync
-cp .env.example .env   # add Azure OpenAI credentials
-uv run main.py
+cp .env.example .env   # set Azure AI Foundry endpoint and model deployment
+az login                # authenticate the Azure CLI credential used by the workflow
+uv run python -m agent_framework.main
 ```
 
-## 📖 Overview
+On PowerShell, use `Copy-Item .env.example .env` to copy the settings file. Then fill in these values in `.env`:
 
-Fetches stock data → generates technical signals (MACD, RSI) → backtests → reports metrics (CAGR, MDD, Sharpe Ratio).
+| Variable | Purpose |
+|---|---|
+| `AZURE_AI_PROJECT_ENDPOINT` | Address of the Azure AI Foundry project used by the main workflow. |
+| `AZURE_AI_MODEL_DEPLOYMENT_NAME` | Name of the chat model deployed in that project. |
+| `INVESTMENT_TICKER` | Stock symbol to study. The default is `MSFT`. |
+| `INVESTMENT_START_DATE`, `INVESTMENT_END_DATE` | First and last dates for the past-price data. |
+| `INVESTMENT_INITIAL_CAPITAL` | Pretend starting amount for the backtest. |
 
-**Sample input**
-```
-Analyze Apple (AAPL) stock using a momentum trading strategy:
-1. Fetch historical data from 2023-01-01 to 2024-01-01
-2. Generate buy/sell signals using MACD and RSI indicators
-3. Backtest the strategy with initial capital of $10,000
-4. Report performance metrics (CAGR, total return, final value)
-```
+## Optional: Semantic Kernel variant
 
-**Sample output**
-```
-===== Final Output =====
-Summary report — backtest outcome
-
-Key results
-- Final portfolio value: $11,157.97
-- Total return: 11.58% (profit $1,157.97 on implied $10,000 start)
-- CAGR: 11.68% (close to total return → consistent with ~1-year test horizon)
-- Result files: backtest_results.xlsx / backtest_metrics.txt
-
-Quick interpretation
-- The strategy produced a positive return (~11.6%) on the test period with a final value of $11.16k.
-- The near-equality of CAGR and total return indicates the backtest covers roughly one year.
-- The absolute profit ($1,157.97) is modest but meaningful for a single-year horizon.
-```
-
-## 🏗️ Architecture
-
-```mermaid
-flowchart TD
-    classDef orchestrator fill:#f0fff0,stroke:#999,stroke-width:1px
-    classDef agent        fill:#f0f8ff,stroke:#333,stroke-width:2px
-    classDef decision     fill:#ffe4e1,stroke:#333,stroke-width:2px
-
-    A[User Input]:::orchestrator --> B[QuantInvestWorkflow]:::orchestrator
-    B --> C[WorkflowBuilder]:::orchestrator
-
-    subgraph Pipeline [Type-Safe Workflow Pipeline]
-        D[Stock Data Agent]:::agent --> E[Signal Generation Agent<br/>Python code executor]:::agent
-        E --> F{signals file?}:::decision
-        F -->|exists| G[Backtest Agent]:::agent
-        F -->|missing| H[Skip to Summary]:::agent
-        G --> I[Summary Report Agent]:::agent
-        H --> I
-    end
-    style Pipeline fill:none,stroke:#333,stroke-width:1px
-
-    C --> D
-    I --> J[Final Output]:::orchestrator
-```
-
-| Component | Description |
-|-----------|-------------|
-| **Executors** | Agents with tools — the workflow building blocks |
-| **Edges** | Data-flow connections with conditional routing |
-| **WorkflowBuilder** | Constructs the directed graph |
-| **Tools** | `agents/tools.py` — function tools for each agent |
-
-## 📐 Calculation Assumptions
-
-### CAGR & Returns
-
-- All trading decisions are based on the **previous day's signal** (no look-ahead bias).
-- **Buy signal** — daily return = change in Adjusted Close price.
-- **Sell signal** — daily return = `(Open / Prev Day Close) − 1` (captures overnight gap).
-- **Consecutive identical signals** are treated as **Hold** (no new trade opened).
-- A **sell cannot be executed** without a prior buy.
-
-### Signal Validity
-
-| Rule | Behaviour |
-|------|-----------|
-| No prior buy | Sell signal skipped |
-| Duplicate signal | Treated as Hold |
-| Partial-year test | CAGR ≈ Total Return (expected) |
-
-## 🧑‍💼 Human-in-the-Loop
-
-`human_in_loop/main_invest_approval.py` — human approval gate before executing investment decisions using `RequestInfoExecutor`.
-
-```mermaid
-flowchart TD
-    classDef human    fill:#f0fff0,stroke:#999,stroke-width:1px
-    classDef agent    fill:#f0f8ff,stroke:#333,stroke-width:2px
-    classDef decision fill:#ffe4e1,stroke:#333,stroke-width:2px
-
-    A[User Input<br/>Stock Ticker]:::human --> B[Investment Agent]:::agent
-    B --> C[Recommendation]:::agent
-    C --> D{Human Decision}:::decision
-    D -->|approve| E[Execute]:::agent
-    D -->|refine| F[Feedback]:::human
-    D -->|exit| G[Cancel]:::human
-    F --> B
-```
+Use this command only when comparing the plugin-based variant. It creates the same type of charts, metrics, spreadsheets, and CSV files as the primary Agent Framework workflow, in its own output folder:
 
 ```bash
-uv run human_in_loop/main_invest_approval.py
+uv run python -m semantic_kernel.main
 ```
 
-## 📊 Dev UI
+## Sample research output
 
-![Dev_UI](output/dev_ui.png)
+These files were created by the main Agent Framework workflow for `MSFT`, using the default date range and a pretend $10,000 starting balance. They are examples only. Results can change when the workflow is run again because market data changes.
 
-## 📚 Resources
+### Input query
 
-- Docs: [Overview](https://learn.microsoft.com/en-us/agent-framework/user-guide/workflows/overview) | [Tutorials](https://learn.microsoft.com/en-us/agent-framework/tutorials/overview) | [Migration from AutoGen](https://learn.microsoft.com/en-us/agent-framework/migration-guide/)
-- [Microsoft Agent Framework](https://github.com/microsoft/agent-framework) | [Samples](https://github.com/microsoft/Agent-Framework-Samples)
+```text
+Analyze MSFT from 2020-01-01 to 2026-07-01; generate MACD/RSI signals, backtest $10000, and report CAGR, total return, final value, drawdown, and Sharpe ratio.
+```
+
+### Performance graph
+
+The top line shows how the pretend portfolio value changed over time. The shaded lower chart shows drawdown: how far the portfolio fell from its highest value at each point.
+
+<img src="output/agent_framework/trix_ultimateoscillator_reversal/stock_plot.png" alt="TRIX and Ultimate Oscillator cumulative returns and drawdown" width="500">
+
+### Backtest metrics
+
+| Strategy | Cumulative return | CAGR | Maximum drawdown | Sharpe ratio | Final value |
+|---|---:|---:|---:|---:|---:|
+| [MACD and RSI momentum](output/agent_framework/macd_rsi_momentum/backtest_metrics.txt) | -2.82% | -0.91% | -26.51% | 0.02 | $9,717.67 |
+| [Moving-average trend](output/agent_framework/movingaverage_trend/backtest_metrics.txt) | -2.00% | -0.64% | -28.29% | 0.02 | $9,799.54 |
+| [TRIX and Ultimate Oscillator reversal](output/agent_framework/trix_ultimateoscillator_reversal/backtest_metrics.txt) | 9.60% | 2.96% | -25.73% | 0.29 | $10,959.96 |
+
+- **Cumulative return** is the total percentage gained or lost over the whole test.
+- **CAGR** is the average yearly growth rate.
+- **Maximum drawdown** is the largest drop from a previous high point.
+- **Sharpe ratio** is one simple measure of return compared with day-to-day ups and downs; it is not a guarantee of quality.
+
+### Summary example
+
+> In this example run, the TRIX and Ultimate Oscillator strategy did better than the other two examples. A pretend $10,000 grew to $10,959.96, a 9.60% total gain. However, the portfolio also fell as much as 25.73% from an earlier high. One past result is not proof that a strategy will work in the future. Test it over other time periods and include trading fees, price changes during trades, and data checks before trusting the result.
+
+## Repository layout
+
+| Path | Contents |
+|---|---|
+| [agent_framework](agent_framework) | The main Microsoft Agent Framework application. |
+| [semantic_kernel](semantic_kernel) | The Semantic Kernel version of the research workflow. |
+| [autogen](autogen) | The AutoGen reference version, with its own Poetry environment. |
+| [agent_framework_patterns](agent_framework_patterns) | Thirty small Agent Framework examples for investment research. |
+| [tests](tests) | Offline tests for the Agent Framework patterns. |
+| [output](output) | Saved charts, metrics, and example pattern responses. |
+| [docs](docs) | Guides for each implementation and framework comparison. |
+
+## Validation
+
+The Agent Framework pattern tests run without Azure credentials or live market-data services:
+
+```bash
+uv run ruff check agent_framework semantic_kernel agent_framework_patterns tests
+uv run pytest tests/agent_framework_patterns -q
+```
+
+## Safety and limitations
+
+- These results are for learning and research, not financial advice or a real trading system.
+- Good results from the past do not mean the same strategy will work in the future.
+- The examples use public market data and simple rules. They leave out trading fees, price changes that happen while a trade is being made, taxes, careful handling of stock splits and dividends, and checks for an individual investor's needs.
+- Review AI responses, connected tools, and data licences before using this project outside a learning or research setting.
 
 ## 📝 License
 

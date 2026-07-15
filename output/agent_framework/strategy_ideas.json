@@ -1,0 +1,26 @@
+[
+  {
+    "name": "MACD RSI momentum",
+    "indicator": "macd_rsi",
+    "description": "MACD crossover confirmation with RSI filtering.",
+    "rationale": "Pairs trend momentum with an overbought guardrail.",
+    "investing_conditions": "Enter on a bullish crossover below RSI 70; exit on a bearish crossover or RSI above 75.",
+    "expected_outcome": "Research hypothesis for sustained momentum."
+  },
+  {
+    "name": "Moving-average trend",
+    "indicator": "moving_average",
+    "description": "20-day and 60-day moving-average crossover.",
+    "rationale": "Transparent trend-following baseline.",
+    "investing_conditions": "Enter and exit on the corresponding crossover.",
+    "expected_outcome": "Research benchmark for persistent trends."
+  },
+  {
+    "name": "TRIX ultimate-oscillator reversal",
+    "indicator": "trix_uo",
+    "description": "TRIX momentum with the Ultimate Oscillator.",
+    "rationale": "Tests reversal timing across lookback periods.",
+    "investing_conditions": "Enter on positive TRIX with UO below 50; exit on negative TRIX or UO above 70.",
+    "expected_outcome": "Research hypothesis for momentum transitions."
+  }
+]
