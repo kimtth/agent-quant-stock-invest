@@ -1,0 +1,1632 @@
+BuySignal,SellSignal,Description
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+True,False,Buy: SMA50 > SMA200 and RSI(14) > 50
+False,True,Sell: SMA50 <= SMA200 or RSI(14) <= 50
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold
+False,False,Hold

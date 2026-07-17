@@ -23,14 +23,14 @@
 | Concern | AutoGen | Semantic Kernel | Microsoft Agent Framework |
 |---|---|---|---|
 | Primary model | Conversational multi-agent runtime | Application SDK with plugins and services | Unified agent and workflow platform |
-| Coordination | Group chats, handoffs, and agent conversations | Explicit application orchestration and plugin calls | Directed workflows, agents, tools, and durable execution |
+| Coordination | Group chats, handoffs, and agent conversations | Tool-using `ChatCompletionAgent` instances and plugins | Directed workflows, agents, tools, and durable execution |
 | Investment implementation in this repository | [autogen](../autogen) | [semantic_kernel](../semantic_kernel) | [agent_framework](../agent_framework) |
 | Recommended use here | Reference implementation | Plugin-based variant of the Agent Framework research workflow | Primary multi-agent investment workflow and review patterns |
 
 ## Choosing an implementation
 
 - Use [agent_framework](../agent_framework) for the primary workflow, explicit executor edges, and the current approval pattern.
-- Use [semantic_kernel](../semantic_kernel) to see the Agent Framework research workflow expressed with reusable Semantic Kernel plugins and the same output layout.
+- Use [semantic_kernel](../semantic_kernel) to see the same agent-authored signal and REPL pattern expressed with Semantic Kernel `ChatCompletionAgent` instances and reusable plugins.
 - Use [autogen](../autogen) to study the reference conversational implementation and its group-chat model.
 
 All three implementations create research artifacts only. They do not place trades or provide personalized investment advice.
