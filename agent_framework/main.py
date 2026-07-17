@@ -15,7 +15,11 @@ def task() -> str:
     start = os.getenv("INVESTMENT_START_DATE", "2020-01-01")
     end = os.getenv("INVESTMENT_END_DATE", "2026-07-01")
     capital = os.getenv("INVESTMENT_INITIAL_CAPITAL", "10000")
-    return f"Analyze {ticker} from {start} to {end}; generate MACD/RSI signals, backtest ${capital}, and report CAGR, total return, final value, drawdown, and Sharpe ratio."
+    return (
+        f"Analyze {ticker} from {start} to {end}. Develop one transparent technical-analysis "
+        f"signal strategy as Python code, execute it, backtest ${capital}, and report CAGR, "
+        "total return, final value, drawdown, and Sharpe ratio."
+    )
 
 
 async def build() -> tuple[QuantInvestWorkflow, object]:

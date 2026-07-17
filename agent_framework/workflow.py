@@ -1,4 +1,4 @@
-"""Agent Framework orchestration and deterministic artifact composition."""
+"""Agent Framework orchestration for REPL-driven investment research."""
 
 from __future__ import annotations
 
@@ -7,8 +7,6 @@ import os
 from pathlib import Path
 from typing import Any
 
-import pandas as pd
-import yfinance as yf
 from agent_framework import (
     FileCheckpointStorage,
     Workflow,
@@ -19,96 +17,21 @@ from agent_framework import (
 )
 from agent_framework.foundry import FoundryChatClient
 from azure.identity.aio import AzureCliCredential
-from pydantic import BaseModel
 from typing_extensions import Never
 
-from .models import IDEAS, StrategyRun, WorkflowRequest, WorkflowResult
-from .tools import (
-    AgentTools,
-    DATASET_SIGNALS,
-    WORK_DIR,
-    backtest,
-    generate_signals,
-    plot,
-    safe_name,
-)
-
-
-class ArtifactPipeline:
-    """Repeatable artifact generation that does not require an LLM response."""
-
-    def __init__(self, output_dir: Path) -> None:
-        self.output_dir = output_dir
-
-    def run(self, request: WorkflowRequest) -> WorkflowResult:
-        self.output_dir.mkdir(parents=True, exist_ok=True)
-        catalog = self.output_dir / "strategy_ideas.json"
-        catalog.write_text(
-            json.dumps([idea.model_dump() for idea in IDEAS], indent=2),
-            encoding="utf-8",
-        )
-        runs = [self._run(request, idea) for idea in request.strategies or IDEAS]
-        return WorkflowResult(
-            ticker=request.ticker, strategy_ideas_file=catalog, runs=runs
-        )
-
-    def _run(self, request: WorkflowRequest, idea) -> StrategyRun:
-        directory = self.output_dir / safe_name(idea.name)
-        directory.mkdir(parents=True, exist_ok=True)
-        frame = yf.download(
-            request.ticker,
-            start=request.start_date,
-            end=request.end_date,
-            auto_adjust=False,
-            progress=False,
-        )
-        if frame.empty:
-            raise ValueError(f"No data returned for {request.ticker}.")
-        if isinstance(frame.columns, pd.MultiIndex):
-            frame.columns = frame.columns.get_level_values(0)
-        data = directory / "stock_data.csv"
-        frame.reset_index().to_csv(data, index=False)
-        buy, sell = generate_signals(pd.read_csv(data), idea)
-        signals = directory / "stock_signals.csv"
-        pd.DataFrame(
-            {
-                "BuySignal": buy.fillna(False),
-                "SellSignal": sell.fillna(False),
-                "Description": idea.description,
-            }
-        ).to_csv(signals, index=False)
-        metrics, results, metric_file = backtest(directory, request.initial_capital)
-        return StrategyRun(
-            strategy=idea,
-            metrics=metrics,
-            output_directory=directory,
-            stock_data_file=data,
-            signals_file=signals,
-            results_file=results,
-            metrics_file=metric_file,
-            plot_file=plot(directory),
-        )
-
-
-def generate_reproducible_output(
-    request: WorkflowRequest, output_dir: Path
-) -> WorkflowResult:
-    return ArtifactPipeline(output_dir).run(request)
-
-
-class AgentCompletedResult(BaseModel):
-    success: bool
-    message: str
+from .research_repl import DATASET_SIGNALS
+from .tools import AgentTools, WORK_DIR
 
 
 class QuantInvestWorkflow:
-    """Foundry-agent executor graph with conditional backtesting and checkpoints."""
+    """Foundry agents that author, execute, and evaluate a signal script."""
 
     def __init__(self) -> None:
         self.work_dir = WORK_DIR
         self.work_dir.mkdir(parents=True, exist_ok=True)
         self.storage = FileCheckpointStorage(Path("checkpoints"))
         self.agents: dict[str, Any] = {}
+        self.tools = AgentTools(self.work_dir)
 
     async def create_workflow(self) -> Workflow:
         client = FoundryChatClient(
@@ -116,43 +39,86 @@ class QuantInvestWorkflow:
             model=os.environ["AZURE_AI_MODEL_DEPLOYMENT_NAME"],
             credential=AzureCliCredential(),
         )
-        tools, options = AgentTools(), {"response_format": AgentCompletedResult}
         self.agents = {
             "data": client.as_agent(
                 name="stock_data_fetcher",
-                instructions="Fetch requested OHLCV data; report research results only.",
-                tools=[tools.fetch_stock_data],
-                default_options=options,
+                instructions=(
+                    "Fetch the requested historical OHLCV data with fetch_stock_data. "
+                    "Use the ticker and dates from the user request, call the tool exactly once, "
+                    "and report only its result. This is research, not investment advice."
+                ),
+                tools=[self.tools.fetch_stock_data],
             ),
             "signal": client.as_agent(
                 name="signal_generator",
-                instructions="Create BuySignal, SellSignal, and Description using pandas and ta; retry errors up to three times.",
-                tools=[tools.execute_python_code],
-                default_options=options,
+                instructions=(
+                    "Design a technical-analysis hypothesis from the research request, then author "
+                    "Python code and execute it with run_python_repl. The code must read INPUT_PATH "
+                    "and write a CSV to OUTPUT_PATH containing one row per input row and exactly "
+                    "BuySignal, SellSignal, and Description columns. Use only pandas as pd, numpy "
+                    "as np, and ta; do not access the network, shell, environment variables, or any "
+                    "other files. Do not return code in prose: call the REPL. When it reports an "
+                    "error, correct the code and retry up to three times. This is research only."
+                ),
+                tools=[self.tools.run_python_repl],
             ),
             "backtest": client.as_agent(
                 name="backtester",
-                instructions="Call the backtest tool and report returned metrics.",
-                tools=[tools.backtest_strategy],
-                default_options=options,
+                instructions=(
+                    "Call backtest_strategy once for the validated signal file. Extract an initial "
+                    "capital amount from the request when it is present; otherwise use 10000. Report "
+                    "the returned metrics and state that they are historical research, not advice."
+                ),
+                tools=[self.tools.backtest_strategy],
+            ),
+            "plot": client.as_agent(
+                name="performance_plotter",
+                instructions="Call plot_performance once after a successful backtest and report its result.",
+                tools=[self.tools.plot_performance],
             ),
             "summary": client.as_agent(
                 name="summary_reporter",
-                instructions="Write concise research-only Markdown with metrics, assumptions, limitations, and risks; never advise or trade.",
+                instructions=(
+                    "Write a concise Markdown research report from the supplied workflow state. Include "
+                    "the generated-strategy outcome, backtest metrics when available, assumptions, "
+                    "limitations, and risks. Never advise, recommend, or execute trades."
+                ),
             ),
         }
 
         @executor(id="fetch_data")
         async def fetch(task: str, ctx: WorkflowContext[str]) -> None:
-            await ctx.send_message((await self.agents["data"].run(task)).text)
+            self.tools.clear_run_artifacts()
+            result = await self.agents["data"].run(task)
+            await ctx.send_message(self._state(task, data=result.text))
 
         @executor(id="generate_signals")
         async def signal(message: str, ctx: WorkflowContext[str]) -> None:
-            await ctx.send_message((await self.agents["signal"].run(message)).text)
+            state = self._parse_state(message)
+            prompt = (
+                f"Original request:\n{state['task']}\n\n"
+                f"Data-agent result:\n{state['data']}"
+            )
+            result = await self.agents["signal"].run(prompt)
+            state["signal"] = result.text
+            await ctx.send_message(self._state(**state))
 
         @executor(id="backtest")
         async def run_backtest(message: str, ctx: WorkflowContext[str]) -> None:
-            await ctx.send_message((await self.agents["backtest"].run(message)).text)
+            state = self._parse_state(message)
+            result = await self.agents["backtest"].run(
+                f"Original request:\n{state['task']}\n\n"
+                f"Signal-agent result:\n{state['signal']}"
+            )
+            state["backtest"] = result.text
+            await ctx.send_message(self._state(**state))
+
+        @executor(id="plot_performance")
+        async def create_plot(message: str, ctx: WorkflowContext[str]) -> None:
+            state = self._parse_state(message)
+            result = await self.agents["plot"].run(state["backtest"])
+            state["plot"] = result.text
+            await ctx.send_message(self._state(**state))
 
         @executor(id="summary_report")
         async def summary(message: str, ctx: WorkflowContext[Never, str]) -> None:
@@ -165,7 +131,8 @@ class QuantInvestWorkflow:
             WorkflowBuilder(start_executor=fetch, checkpoint_storage=self.storage)
             .add_edge(fetch, signal)
             .add_edge(signal, run_backtest, condition=valid)
-            .add_edge(run_backtest, summary)
+            .add_edge(run_backtest, create_plot)
+            .add_edge(create_plot, summary)
             .add_edge(signal, summary, condition=lambda message: not valid(message))
             .build()
         )
@@ -197,10 +164,28 @@ class QuantInvestWorkflow:
         return final
 
     def _has_signals(self, message: Any) -> bool:
+        self._parse_state(message)
+        return (self.work_dir / DATASET_SIGNALS).is_file()
+
+    @staticmethod
+    def _state(task: str, **updates: str) -> str:
+        state = {
+            "task": task,
+            "data": "",
+            "signal": "",
+            "backtest": "",
+            "plot": "",
+        }
+        state.update(updates)
+        return json.dumps(state)
+
+    @staticmethod
+    def _parse_state(message: Any) -> dict[str, str]:
         try:
-            return (
-                AgentCompletedResult.model_validate_json(message).success
-                and (self.work_dir / DATASET_SIGNALS).is_file()
-            )
-        except Exception:
-            return False
+            state = json.loads(str(message))
+        except (TypeError, ValueError):
+            state = {"task": str(message)}
+        return {
+            key: str(state.get(key, ""))
+            for key in ("task", "data", "signal", "backtest", "plot")
+        }
