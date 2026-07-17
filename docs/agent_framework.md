@@ -4,7 +4,7 @@
 
 ## Purpose
 
-The [Agent Framework implementation](../agent_framework) is the repository's primary agent-oriented workflow. It uses Microsoft Agent Framework with Azure AI Foundry to coordinate research-only stock-data retrieval, signal generation, backtesting, and a final written summary.
+The [Agent Framework implementation](../agent_framework) is the repository's primary agent-oriented workflow. It uses Microsoft Agent Framework with Azure AI Foundry to coordinate research-only stock-data retrieval, agent-authored Python signal generation, backtesting, plotting, and a final written summary.
 
 Microsoft Agent Framework is the unified successor to AutoGen and Semantic Kernel. It supplies agents for open-ended, tool-using tasks and graph-based workflows for explicit multi-step orchestration. This implementation uses a workflow because the research pipeline has a defined execution order and a conditional backtesting branch.
 
@@ -22,11 +22,11 @@ flowchart TD
 	B --> C[WorkflowBuilder]:::orchestrator
 
 	subgraph Pipeline [Type-Safe Workflow Pipeline]
-		D[Stock Data Agent]:::agent --> E[Signal Generation Agent<br/>Python code executor]:::agent
+		D[Stock Data Agent]:::agent --> E[Signal Generation Agent<br/>Python REPL]:::agent
 		E --> F{signals file?}:::decision
-		F -->|exists| G[Backtest Agent]:::agent
+		F -->|exists| G[Backtest Agent]:::agent --> K[Performance Plot Agent]:::agent
 		F -->|missing| H[Skip to Summary]:::agent
-		G --> I[Summary Report Agent]:::agent
+		K --> I[Summary Report Agent]:::agent
 		H --> I
 	end
 	style Pipeline fill:none,stroke:#333,stroke-width:1px
@@ -40,9 +40,10 @@ flowchart TD
 | Stage | Responsibility | Implementation |
 |---|---|---|
 | Stock data | Retrieves requested OHLCV history. | `stock_data_fetcher` and `AgentTools.fetch_stock_data()` |
-| Signals | Produces the `BuySignal`, `SellSignal`, and `Description` dataset. | `signal_generator` |
-| Conditional route | Continues to backtesting only when the structured agent response indicates success and the signal file exists. | `QuantInvestWorkflow._has_signals()` |
+| Signals | Designs a hypothesis, writes Python, executes it, and validates the `BuySignal`, `SellSignal`, and `Description` dataset. | `signal_generator` and `AgentTools.run_python_repl()` |
+| Conditional route | Continues to backtesting only when the validated signal file exists. | `QuantInvestWorkflow._has_signals()` |
 | Backtest | Calculates portfolio metrics and writes result artifacts. | `backtester` and `AgentTools.backtest_strategy()` |
+| Plot | Creates the cumulative-return and drawdown chart. | `performance_plotter` and `AgentTools.plot_performance()` |
 | Summary | Writes a bounded research summary with assumptions, limitations, and risks. | `summary_reporter` |
 
 The workflow stores checkpoints under [checkpoints](../checkpoints), emits its Mermaid graph to `output/agent_framework/workflow_diagram.mmd` after a run, and writes research artifacts below [output/agent_framework](../output/agent_framework).
@@ -52,9 +53,9 @@ The workflow stores checkpoints under [checkpoints](../checkpoints), emits its M
 | Module | Role |
 |---|---|
 | [main.py](../agent_framework/main.py) | Loads configuration, creates the workflow, runs a default research request, and optionally launches Dev UI. |
-| [workflow.py](../agent_framework/workflow.py) | Defines the Foundry-agent graph, checkpoint integration, and deterministic artifact pipeline. |
-| [tools.py](../agent_framework/tools.py) | Implements market-data retrieval, signal support, backtesting, plots, and output paths. |
-| [models.py](../agent_framework/models.py) | Defines Pydantic research contracts and the approved strategy catalog. |
+| [workflow.py](../agent_framework/workflow.py) | Defines the Foundry-agent graph and checkpoint integration. |
+| [tools.py](../agent_framework/tools.py) | Implements market-data retrieval, REPL execution, backtesting, plots, and output paths. |
+| [models.py](../agent_framework/models.py) | Defines Pydantic backtest metrics. |
 
 ## Configuration and run
 
@@ -81,9 +82,11 @@ On PowerShell, use `Copy-Item .env.example .env` to create the configuration fil
 
 The application calls `load_dotenv()` itself. Microsoft Agent Framework does not automatically load `.env` files.
 
-## Research calculations
+## REPL contract and research calculations
 
-The deterministic backtesting helpers support the `macd_rsi`, `moving_average`, and `trix_uo` strategy ideas in [models.py](../agent_framework/models.py). They apply the following simplified rules:
+The signal agent decides which technical indicators and thresholds to use for each run. It must submit Python to `run_python_repl`, implemented in [research_repl.py](../agent_framework/research_repl.py), which persists the script as `generated_signal_strategy.py` and accepts output only when it has one signal row per price row and the required `BuySignal`, `SellSignal`, and `Description` columns. The REPL exposes pandas, NumPy, and `ta` together with `INPUT_PATH` and `OUTPUT_PATH`; it rejects unrelated imports and common dynamic-execution primitives.
+
+The deterministic backtest itself applies the following simplified rules:
 
 - A position opens on a buy signal only when no position is held, and closes on a sell signal only when a position is held.
 - The return for a held position is the following session's Adjusted Close percentage change, avoiding look-ahead bias.
@@ -91,9 +94,9 @@ The deterministic backtesting helpers support the `macd_rsi`, `moving_average`, 
 - Metrics include cumulative return, CAGR, maximum drawdown, Sharpe ratio, and final portfolio value.
 - The model does not simulate intraday fills, spread, slippage, trading fees, taxes, or corporate-action validation.
 
-## Deterministic artifact pipeline
+## Research artifacts
 
-`ArtifactPipeline` can generate the same artifact shape without an LLM summary. The Semantic Kernel variant intentionally creates this same structure. For each requested strategy, the pipeline creates:
+For the one strategy designed by the agent, the workflow creates:
 
 - `stock_data.csv`
 - `stock_signals.csv`
@@ -110,7 +113,7 @@ Console OpenTelemetry exporters are disabled by default in the observability sam
 ## Operational considerations
 
 - Azure AI Foundry requests use Azure CLI credentials in this implementation; run `az login` before execution.
-- The workflow accepts model-produced code in its signal-generation tool. Treat this as a development-only demonstration and isolate or replace it with fixed operations before production use.
+- The workflow executes model-produced code. The REPL validation constrains its intended data contract but is not a security sandbox. Use it only in an isolated development environment with no credentials or production data; replace it with an approved, sandboxed execution service before production use.
 - Use licensed market data and validate data quality, execution assumptions, compliance controls, and human approval requirements before any production deployment.
 
 ## Official Documentation
