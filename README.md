@@ -1,6 +1,6 @@
 <div align="center">
 
-**Repository overview** &nbsp;|&nbsp; [Agent Framework](docs/agent_framework.md) &nbsp;|&nbsp; [Semantic Kernel](docs/semantic_kernel.md) &nbsp;|&nbsp; [AutoGen reference](docs/autogen.md) &nbsp;|&nbsp; [Agent Framework patterns](docs/agent_framework_patterns.md) &nbsp;|&nbsp; [Framework comparison](docs/autogen_agent_sk.md)
+**Repository overview** &nbsp;|&nbsp; [Agent Framework](docs/agent_framework.md) &nbsp;|&nbsp; [Semantic Kernel](docs/semantic_kernel.md) &nbsp;|&nbsp; [AutoGen reference](docs/autogen.md) &nbsp;|&nbsp; [Agent Framework patterns](docs/agent_framework_patterns.md) &nbsp;|&nbsp; [Terminal dashboard](docs/chart_cli.md) &nbsp;|&nbsp; [Framework comparison](docs/autogen_agent_sk.md)
 
 </div>
 
@@ -14,6 +14,27 @@ This project shows how to use Microsoft Agent Framework for stock-market researc
 > Recommended first: Microsoft Agent Framework. It combines ideas from AutoGen and Semantic Kernel.  
 > Semantic Kernel and AutoGen are included only for comparison.
 
+## Real-time terminal dashboard and backtesting interface
+
+[chart-cli](docs/chart_cli.md) renders a live watchlist, price chart, and Agent Framework workflow output in the terminal. Press `/` for the command prompt: `/ask` answers questions about the symbols on screen, `/backtest` has an agent write and test a strategy from a plain-language request, `/period` sets the window, `/model` switches the chat backend, and `/help` lists everything. In the screenshot below, `AGENT:RULES` means the workflow is using its transparent rule-based path because no chat provider was connected.
+
+<img src="docs/chart-cli-dashboard.png" alt="chart-cli terminal dashboard with a watchlist, price chart, details, workflow signals, agent call, and market and risk notes" width="900">
+
+Run this from PowerShell:
+
+```powershell
+cd chart-cli
+pnpm install
+.\scripts\test-cli.ps1
+```
+
+The script verifies the Node UI and Python Agent Framework protocol, then opens
+the interactive dashboard in the same terminal. It starts the workflow process
+used by the dashboard; do not start a separate Python backend. Use
+`.\scripts\test-cli.ps1 -CheckOnly` for verification without opening the UI.
+
+See the [terminal dashboard guide](docs/chart_cli.md) for the panels, keys, commands, periods, and provider setup.
+
 ## What's included
 
 | Area | Purpose | Use |
@@ -22,6 +43,7 @@ This project shows how to use Microsoft Agent Framework for stock-market researc
 | [Semantic Kernel workflow](docs/semantic_kernel.md) | Same steps, plugin-based. | Compare with the main workflow. |
 | [AutoGen reference](docs/autogen.md) | Earlier group-chat version. | Compare implementation styles. |
 | [Agent Framework patterns](docs/agent_framework_patterns.md) | Examples for the investment domain. | Explore features one at a time. |
+| [Real-time terminal dashboard](docs/chart_cli.md) | Live watchlist and charts driven by an Agent Framework workflow, with `/ask`, `/backtest`, `/period`, and `/model` commands. | Watch signals update in a terminal. |
 | [Framework comparison](docs/autogen_agent_sk.md) | Short comparison of the three frameworks. | - |
 
 The [Agent Framework patterns](docs/agent_framework_patterns.md) are the only pattern showcase in this repository. The 30 examples show Microsoft Agent Framework features for investment research. Semantic Kernel and AutoGen do not have separate pattern libraries here.
@@ -102,6 +124,7 @@ See the full [backtest workbook](output/agent_framework/backtest_results.xlsx), 
 | [semantic_kernel](semantic_kernel) | The Semantic Kernel version of the research workflow. |
 | [autogen](autogen) | The AutoGen reference version, with its own Poetry environment. |
 | [agent_framework_patterns](agent_framework_patterns) | Thirty small Agent Framework examples for investment research. |
+| [chart-cli](chart-cli) | Real-time terminal dashboard with a companion Agent Framework workflow. |
 | [tests](tests) | Offline tests for Agent Framework patterns and the REPL contracts. |
 | [output](output) | Saved charts, metrics, and example pattern responses. |
 | [docs](docs) | Guides for each implementation and framework comparison. |
