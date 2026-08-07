@@ -1,0 +1,19 @@
+{
+  "tickers": ["MSFT", "AAPL", "NVDA", "GOOGL", "AMZN", "META", "AVGO", "TSLA", "QQQ", "SPY"],
+  "cryptoIds": {
+    "BTC": "bitcoin",
+    "ETH": "ethereum",
+    "SOL": "solana"
+  },
+  "updateIntervalMs": 120000,
+  "chart": {
+    "defaultPeriodIndex": 1
+  },
+  "agent": {
+    "enabled": true,
+    "command": "uv",
+    "args": ["run", "--project", "..", "python", "-m", "signal_agent.run_agent", "--serve"],
+    "analyzeIntervalMs": 600000,
+    "timeoutMs": 180000
+  }
+}
