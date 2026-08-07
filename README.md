@@ -10,10 +10,6 @@
 
 This project shows how to use Microsoft Agent Framework for stock-market research. Agents download past prices, write and execute a technical-analysis signal script, test the resulting strategy, and save the results.
 
-> [!NOTE]  
-> Recommended first: Microsoft Agent Framework. It combines ideas from AutoGen and Semantic Kernel.  
-> Semantic Kernel and AutoGen are included only for comparison.
-
 ## Real-time terminal dashboard and backtesting interface
 
 [chart-cli](docs/chart_cli.md) renders a live watchlist, price chart, and Agent Framework workflow output in the terminal. Press `/` for the command prompt: `/ask` answers questions about the symbols on screen, `/backtest` has an agent write and test a strategy from a plain-language request, `/period` sets the window, `/model` switches the chat backend, and `/help` lists everything. In the screenshot below, `AGENT:RULES` means the workflow is using its transparent rule-based path because no chat provider was connected.
