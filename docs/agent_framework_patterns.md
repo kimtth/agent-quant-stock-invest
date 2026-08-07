@@ -1,6 +1,6 @@
 # Agent Framework Investment Pattern Library
 
-[Repository overview](../README.md) &nbsp;|&nbsp; [Agent Framework](agent_framework.md) &nbsp;|&nbsp; [Semantic Kernel workflow](semantic_kernel.md) &nbsp;|&nbsp; [AutoGen reference](autogen.md) &nbsp;|&nbsp; **[Agent Framework patterns](agent_framework_patterns.md)** &nbsp;|&nbsp; [Framework comparison](autogen_agent_sk.md)
+[Repository overview](../README.md) &nbsp;|&nbsp; [Agent Framework](agent_framework.md) &nbsp;|&nbsp; [Semantic Kernel workflow](semantic_kernel.md) &nbsp;|&nbsp; [AutoGen reference](autogen.md) &nbsp;|&nbsp; **[Agent Framework patterns](agent_framework_patterns.md)** &nbsp;|&nbsp; [Terminal dashboard](chart_cli.md) &nbsp;|&nbsp; [Framework comparison](autogen_agent_sk.md)
 
 This is the repository's only pattern library. Each Markdown reference in [agent_framework_patterns/patterns](../agent_framework_patterns/patterns) has a corresponding **standalone** Python implementation in [agent_framework_patterns](../agent_framework_patterns). The scripts use Microsoft Agent Framework directly; they do not import a shared pattern helper or another pattern script. Semantic Kernel and AutoGen do not have separate pattern implementations in this repository.
 

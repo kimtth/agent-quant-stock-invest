@@ -207,3 +207,4 @@ README_MEMO.md
 .ruff_cache/
 /.agents
 skills-lock.json
+/chart-cli/output
