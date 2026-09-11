@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from textwrap import dedent
 from pydantic import BaseModel, field_validator
 from typing import List, Optional
@@ -14,7 +15,7 @@ class AgentName(Enum):
 
 
 class Settings(BaseModel):
-    work_dir: str = "output/autogen"
+    work_dir: str = str(Path(__file__).resolve().parents[2] / "output" / "autogen")
     backtest_results_file: str = "backtest_results.xlsx"
     backtest_metrics_file: str = "backtest_metrics.txt"
     dataset_stock: str = "stock_data.csv"

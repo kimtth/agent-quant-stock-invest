@@ -1,6 +1,6 @@
 <div align="center">
 
-[Repository overview](../README.md) &nbsp;|&nbsp; [Agent Framework](agent_framework.md) &nbsp;|&nbsp; [Semantic Kernel workflow](semantic_kernel.md) &nbsp;|&nbsp; [AutoGen reference](autogen.md) &nbsp;|&nbsp; [Agent Framework patterns](agent_framework_patterns.md) &nbsp;|&nbsp; **[Terminal dashboard](chart_cli.md)** &nbsp;|&nbsp; [Framework comparison](autogen_agent_sk.md)
+[Repository overview](../README.md) &nbsp;|&nbsp; [Agent Framework](agent_framework.md) &nbsp;|&nbsp; [Agent Framework patterns](agent_framework_patterns.md) &nbsp;|&nbsp; **[TUI](chart_cli.md)** &nbsp;|&nbsp; [Archive guide](archive.md)
 
 </div>
 
@@ -15,7 +15,7 @@ companion Python process. The source lives in [chart-cli](../chart-cli); every
 command below is run from that directory.
 
 The terminal visualisation layout is derived from the `stonks-dashboard`
-checkpoint in [checkpoints/stonks-dashboard](../checkpoints/stonks-dashboard).
+checkpoint in its local runtime directory (excluded from version control).
 
 <img src="chart-cli-dashboard.png" alt="chart-cli terminal dashboard with a watchlist, price chart, details, workflow signals, agent call, and market and risk notes" width="900">
 

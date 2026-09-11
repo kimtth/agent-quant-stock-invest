@@ -1,6 +1,8 @@
 <div align="center">
 
-[Repository overview](../README.md) &nbsp;|&nbsp; [Agent Framework](agent_framework.md) &nbsp;|&nbsp; [Semantic Kernel workflow](semantic_kernel.md) &nbsp;|&nbsp; **[AutoGen reference](autogen.md)** &nbsp;|&nbsp; [Agent Framework patterns](agent_framework_patterns.md) &nbsp;|&nbsp; [Terminal dashboard](chart_cli.md) &nbsp;|&nbsp; [Framework comparison](autogen_agent_sk.md)
+[Repository overview](../../README.md) &nbsp;|&nbsp; [Agent Framework](../../docs/agent_framework.md) &nbsp;|&nbsp; [Agent Framework patterns](../../docs/agent_framework_patterns.md) &nbsp;|&nbsp; [TUI](../../docs/chart_cli.md) &nbsp;|&nbsp; [Archive guide](../../docs/archive.md)
+
+Archive: **[AutoGen reference](autogen.md)** &nbsp;|&nbsp; [Semantic Kernel workflow](semantic_kernel.md) &nbsp;|&nbsp; [Framework comparison](autogen_agent_sk.md)
 
 </div>
 
@@ -8,11 +10,11 @@
 
 # 💸 AutoGen Reference Implementation
 
-> This is the AutoGen reference implementation.
+> **Archived:** This guide and the [AutoGen reference implementation](../autogen) are preserved under the repository's archive for framework comparison and migration study, not active development.
 >
-> The [Semantic Kernel workflow](semantic_kernel.md) provides the maintained deterministic pipeline. This implementation remains available for framework comparison and migration study.
+> The [Agent Framework workflow](../../docs/agent_framework.md), [Agent Framework patterns](../../docs/agent_framework_patterns.md), and [TUI](../../docs/chart_cli.md) are the active implementations. The [Semantic Kernel workflow](semantic_kernel.md) is also archived.
 >
-> It has an independent Poetry project requiring Python 3.11–3.12. It is incompatible with this repository's Python 3.13 root environment; use a separate environment if you need to run it.
+> AutoGen has an independent Poetry project in [.old/autogen](../autogen) requiring Python 3.11–3.12. It is incompatible with this repository's Python 3.13 root environment; use a separate environment and run its commands from that project directory.
 
 ## 🔑 Key Differences from Microsoft Agent Framework
 
@@ -59,8 +61,8 @@ flowchart TD
   - [Tutorial](https://microsoft.github.io/autogen/docs/Examples)
   <!-- - [Autogen studio](https://microsoft.github.io/autogen/docs/autogen-studio/getting-started) `cmd> autogenstudio ui --port 8081` -->
   - [Skills Repository](https://github.com/madtank/autogenstudio-skills)
-- To run the main workflow: `python agent_workflow_e2e.py`
-- Generated AutoGen artifacts are written to [output/autogen](../output/autogen). Both executable entry points print this directory when they start.
+- To run the main workflow from [.old/autogen](../autogen): `poetry run python agent_workflow_e2e.py`.
+- Generated AutoGen artifacts are written to [.old/output/autogen](../output/autogen), independently of the current working directory. Both executable entry points print this directory when they start.
 
 > Important: The code in this repository was developed during a hackathon and implemented within a limited timeframe. It is intended for proof-of-concept purposes only.
 
@@ -188,13 +190,17 @@ Buy signals are generated when the stock price is above the 20-day MA, TRIX is p
 
 ### Configurations and Setup
 
+Use a separate Python 3.11–3.12 environment. Starting from the repository root, enter the independent Poetry project, install its dependencies, and run the workflow after configuring credentials:
+
   ```bash
+  cd .old/autogen
   poetry install --no-root
+  poetry run python agent_workflow_e2e.py
   ```
 
 - This application library supports [`ta`](https://github.com/bukosabino/ta), which provides commonly used indicators (pure Python).
-- Another backtesting framework will be supported in the future.
-- Rename `.env.template` to `.env` and `OAI_CONFIG_LIST.template.json` to `OAI_CONFIG_LIST.json`. Then, set your Bing Search API and OpenAI keys.
+- Before running, copy the [.env.template](../autogen/.env.template) and [OAI_CONFIG_LIST.template.json](../autogen/OAI_CONFIG_LIST.template.json) templates to their non-template names in the same project directory and set your Bing Search API and OpenAI keys.
+- The Poetry [project metadata](../autogen/pyproject.toml) keeps its existing `readme = "../docs/autogen.md"` reference, which correctly points to this archived guide.
 
 ### Python Libraries for Quant Trading 
 
