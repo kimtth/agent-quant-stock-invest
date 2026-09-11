@@ -1,6 +1,6 @@
 # Microsoft Agent Framework Investment Workflow
 
-[Repository overview](../README.md) &nbsp;|&nbsp; **[Agent Framework](agent_framework.md)** &nbsp;|&nbsp; [Semantic Kernel workflow](semantic_kernel.md) &nbsp;|&nbsp; [AutoGen reference](autogen.md) &nbsp;|&nbsp; [Agent Framework patterns](agent_framework_patterns.md) &nbsp;|&nbsp; [Terminal dashboard](chart_cli.md) &nbsp;|&nbsp; [Framework comparison](autogen_agent_sk.md)
+[Repository overview](../README.md) &nbsp;|&nbsp; **[Agent Framework](agent_framework.md)** &nbsp;|&nbsp; [Agent Framework patterns](agent_framework_patterns.md) &nbsp;|&nbsp; [TUI](chart_cli.md) &nbsp;|&nbsp; [Archive guide](archive.md)
 
 ## Purpose
 
@@ -46,7 +46,7 @@ flowchart TD
 | Plot | Creates the cumulative-return and drawdown chart. | `performance_plotter` and `AgentTools.plot_performance()` |
 | Summary | Writes a bounded research summary with assumptions, limitations, and risks. | `summary_reporter` |
 
-The workflow stores checkpoints under [checkpoints](../checkpoints), emits its Mermaid graph to `output/agent_framework/workflow_diagram.mmd` after a run, and writes research artifacts below [output/agent_framework](../output/agent_framework).
+The workflow creates a local checkpoint directory when it runs, emits its Mermaid graph to `output/agent_framework/workflow_diagram.mmd`, and writes research artifacts below [output/agent_framework](../output/agent_framework). Checkpoints are runtime state and are not version controlled.
 
 ## Project modules
 

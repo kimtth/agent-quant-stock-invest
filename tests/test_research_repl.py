@@ -1,14 +1,12 @@
-"""Offline tests for the shared agent signal-generation REPL."""
+"""Offline tests for the Microsoft Agent Framework signal-generation REPL."""
 
 from pathlib import Path
 
 import pandas as pd
 import pytest
 
+from agent_framework.research_repl import ResearchPythonRepl
 from agent_framework.tools import AgentTools
-from agent_framework.research_repl import ResearchPythonRepl as AgentFrameworkRepl
-from semantic_kernel.tools import BacktestingPlugin, PythonReplPlugin
-from semantic_kernel.research_repl import ResearchPythonRepl as SemanticKernelRepl
 
 
 SIGNAL_SCRIPT = """
@@ -45,13 +43,8 @@ def price_data(tmp_path: Path) -> Path:
     return tmp_path
 
 
-@pytest.mark.parametrize(
-    "factory", [lambda path: AgentTools(path), lambda path: PythonReplPlugin(path)]
-)
-def test_repl_executes_agent_signal_code_and_validates_contract(
-    price_data: Path, factory
-) -> None:
-    result = factory(price_data).run_python_repl(SIGNAL_SCRIPT)
+def test_repl_executes_agent_signal_code_and_validates_contract(price_data: Path) -> None:
+    result = AgentTools(price_data).run_python_repl(SIGNAL_SCRIPT)
 
     assert result.startswith("SUCCESS:")
     assert (price_data / "generated_signal_strategy.py").is_file()
@@ -66,32 +59,5 @@ def test_repl_rejects_unrelated_imports(price_data: Path) -> None:
     assert result.startswith("ERROR: REPL rejected")
 
 
-def test_frameworks_have_distinct_repl_implementations() -> None:
-    assert AgentFrameworkRepl is not SemanticKernelRepl
-    assert AgentFrameworkRepl.__module__ == "agent_framework.research_repl"
-    assert SemanticKernelRepl.__module__ == "semantic_kernel.research_repl"
-
-
-def test_framework_tools_match_for_the_same_script_and_prices(
-    price_data: Path,
-) -> None:
-    agent_framework_dir = price_data / "agent_framework"
-    semantic_kernel_dir = price_data / "semantic_kernel"
-    agent_framework_dir.mkdir()
-    semantic_kernel_dir.mkdir()
-    source_prices = (price_data / "stock_data.csv").read_bytes()
-    for directory in (agent_framework_dir, semantic_kernel_dir):
-        (directory / "stock_data.csv").write_bytes(source_prices)
-
-    agent_framework_tools = AgentTools(agent_framework_dir)
-    semantic_kernel_repl = PythonReplPlugin(semantic_kernel_dir)
-    assert agent_framework_tools.run_python_repl(SIGNAL_SCRIPT).startswith("SUCCESS:")
-    assert semantic_kernel_repl.run_python_repl(SIGNAL_SCRIPT).startswith("SUCCESS:")
-
-    assert (agent_framework_dir / "stock_signals.csv").read_bytes() == (
-        semantic_kernel_dir / "stock_signals.csv"
-    ).read_bytes()
-    assert agent_framework_tools.backtest_strategy(10_000) == BacktestingPlugin(
-        semantic_kernel_dir
-    ).backtest_strategy(10_000)
-
+def test_agent_framework_has_its_own_repl_implementation() -> None:
+    assert ResearchPythonRepl.__module__ == "agent_framework.research_repl"

@@ -22,7 +22,7 @@ from .tools import (
     StockDataPlugin,
 )
 
-WORK_DIR = Path("output") / "semantic_kernel"
+WORK_DIR = Path(__file__).resolve().parents[1] / "output" / "semantic_kernel"
 
 
 class InvestmentWorkflow:

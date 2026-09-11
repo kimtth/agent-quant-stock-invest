@@ -1,8 +1,12 @@
 # Semantic Kernel Investment Workflow
 
-[Repository overview](../README.md) &nbsp;|&nbsp; [Agent Framework](agent_framework.md) &nbsp;|&nbsp; **[Semantic Kernel workflow](semantic_kernel.md)** &nbsp;|&nbsp; [AutoGen reference](autogen.md) &nbsp;|&nbsp; [Agent Framework patterns](agent_framework_patterns.md) &nbsp;|&nbsp; [Terminal dashboard](chart_cli.md) &nbsp;|&nbsp; [Framework comparison](autogen_agent_sk.md)
+[Repository overview](../../README.md) &nbsp;|&nbsp; [Agent Framework](../../docs/agent_framework.md) &nbsp;|&nbsp; [Agent Framework patterns](../../docs/agent_framework_patterns.md) &nbsp;|&nbsp; [TUI](../../docs/chart_cli.md) &nbsp;|&nbsp; [Archive guide](../../docs/archive.md)
 
-The [Semantic Kernel implementation](../semantic_kernel) is a plugin-based agent variant of the [Agent Framework workflow](agent_framework.md). It uses `ChatCompletionAgent` instances to fetch data, write and execute a signal script through a Python REPL plugin, backtest, plot, and summarize the result.
+Archive: [AutoGen reference](autogen.md) &nbsp;|&nbsp; **[Semantic Kernel workflow](semantic_kernel.md)** &nbsp;|&nbsp; [Framework comparison](autogen_agent_sk.md)
+
+> **Archived:** This guide and the Semantic Kernel implementation are preserved for framework comparison and migration study, not active development. The active implementations are [Agent Framework](../../docs/agent_framework.md), its [pattern library](../../docs/agent_framework_patterns.md), and the [TUI](../../docs/chart_cli.md).
+
+The archived [Semantic Kernel implementation](../semantic_kernel) is a plugin-based agent variant of the [Agent Framework workflow](../../docs/agent_framework.md). It uses `ChatCompletionAgent` instances to fetch data, write and execute a signal script through a Python REPL plugin, backtest, plot, and summarize the result.
 
 It uses an explicit, testable sequence while leaving the technical indicator choice and signal logic to the signal agent:
 
@@ -30,13 +34,13 @@ flowchart LR
 
 ## Run
 
-From the repository root:
+From the repository root, enable the parent uv project's `legacy` dependency group and use the archive as the working directory so Python resolves the archived module:
 
 ```bash
-uv run python -m semantic_kernel.main
+uv run --group legacy --directory .old python -m semantic_kernel.main
 ```
 
-The Semantic Kernel run reuses `AZURE_AI_PROJECT_ENDPOINT` and `AZURE_AI_MODEL_DEPLOYMENT_NAME` through Azure AI Inference by default. It can instead use `AZURE_OPENAI_ENDPOINT` and `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` when both are configured. Authenticate with `az login` for the default Entra ID flow. Artifacts are written to [output/semantic_kernel](../output/semantic_kernel): the auditable generated script, stock-data CSV, validated signal CSV, results spreadsheet, metrics text file, and performance chart. The run prints this directory and requires internet access for both the model and the demonstration data adapter. Set `INVESTMENT_TICKER`, `INVESTMENT_START_DATE`, `INVESTMENT_END_DATE`, and `INVESTMENT_INITIAL_CAPITAL` in `.env` to configure it.
+The Semantic Kernel run reuses `AZURE_AI_PROJECT_ENDPOINT` and `AZURE_AI_MODEL_DEPLOYMENT_NAME` through Azure AI Inference by default. It can instead use `AZURE_OPENAI_ENDPOINT` and `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` when both are configured. Authenticate with `az login` for the default Entra ID flow. Artifacts are written to [.old/output/semantic_kernel](../output/semantic_kernel): the auditable generated script, stock-data CSV, validated signal CSV, results spreadsheet, metrics text file, and performance chart. The run prints this directory and requires internet access for both the model and the demonstration data adapter. Set `INVESTMENT_TICKER`, `INVESTMENT_START_DATE`, `INVESTMENT_END_DATE`, and `INVESTMENT_INITIAL_CAPITAL` in `.env` to configure it.
 
 ## AutoGen feature mapping
 
