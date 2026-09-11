@@ -208,3 +208,7 @@ README_MEMO.md
 /.agents
 skills-lock.json
 /chart-cli/output
+# Generated reports and binary research caches (local only)
+*.txt
+*.pkl
+
