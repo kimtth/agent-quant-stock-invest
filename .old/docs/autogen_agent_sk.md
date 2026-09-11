@@ -1,6 +1,10 @@
 # AutoGen, Semantic Kernel, and Microsoft Agent Framework
 
-[Repository overview](../README.md) &nbsp;|&nbsp; [Agent Framework](agent_framework.md) &nbsp;|&nbsp; [Semantic Kernel workflow](semantic_kernel.md) &nbsp;|&nbsp; [AutoGen reference](autogen.md) &nbsp;|&nbsp; [Agent Framework patterns](agent_framework_patterns.md) &nbsp;|&nbsp; [Terminal dashboard](chart_cli.md) &nbsp;|&nbsp; **[Framework comparison](autogen_agent_sk.md)**
+[Repository overview](../../README.md) &nbsp;|&nbsp; [Agent Framework](../../docs/agent_framework.md) &nbsp;|&nbsp; [Agent Framework patterns](../../docs/agent_framework_patterns.md) &nbsp;|&nbsp; [TUI](../../docs/chart_cli.md) &nbsp;|&nbsp; [Archive guide](../../docs/archive.md)
+
+Archive: [AutoGen reference](autogen.md) &nbsp;|&nbsp; [Semantic Kernel workflow](semantic_kernel.md) &nbsp;|&nbsp; **[Framework comparison](autogen_agent_sk.md)**
+
+> **Archived comparison:** This guide is retained for historical reference and migration study. AutoGen and Semantic Kernel code, guides, outputs, and shared comparison tests are archived. Only Microsoft Agent Framework, its patterns, and the TUI remain active.
 
 ## Initial public releases
 
@@ -24,13 +28,13 @@
 |---|---|---|---|
 | Primary model | Conversational multi-agent runtime | Application SDK with plugins and services | Unified agent and workflow platform |
 | Coordination | Group chats, handoffs, and agent conversations | Tool-using `ChatCompletionAgent` instances and plugins | Directed workflows, agents, tools, and durable execution |
-| Investment implementation in this repository | [autogen](../autogen) | [semantic_kernel](../semantic_kernel) | [agent_framework](../agent_framework) |
-| Recommended use here | Reference implementation | Plugin-based variant of the Agent Framework research workflow | Primary multi-agent investment workflow and review patterns |
+| Investment implementation in this repository | [.old/autogen](../autogen) | [.old/semantic_kernel](../semantic_kernel) | [agent_framework](../../agent_framework) |
+| Recommended use here | Archived conversational reference | Archived plugin-based variant | Active primary multi-agent investment workflow and review patterns |
 
 ## Choosing an implementation
 
-- Use [agent_framework](../agent_framework) for the primary workflow, explicit executor edges, and the current approval pattern.
-- Use [semantic_kernel](../semantic_kernel) to see the same agent-authored signal and REPL pattern expressed with Semantic Kernel `ChatCompletionAgent` instances and reusable plugins.
-- Use [autogen](../autogen) to study the reference conversational implementation and its group-chat model.
+- Use [agent_framework](../../agent_framework) for the active primary workflow and explicit executor edges; see the [Agent Framework patterns](../../docs/agent_framework_patterns.md) for the human-review gate and the [TUI](../../docs/chart_cli.md) for the terminal dashboard.
+- Consult the archived [.old/semantic_kernel](../semantic_kernel) implementation to study the agent-authored signal and REPL pattern expressed with Semantic Kernel `ChatCompletionAgent` instances and reusable plugins.
+- Consult the archived [.old/autogen](../autogen) implementation to study the conversational reference and its group-chat model.
 
 All three implementations create research artifacts only. They do not place trades or provide personalized investment advice.

@@ -1,6 +1,6 @@
 <div align="center">
 
-**Repository overview** &nbsp;|&nbsp; [Agent Framework](docs/agent_framework.md) &nbsp;|&nbsp; [Semantic Kernel](docs/semantic_kernel.md) &nbsp;|&nbsp; [AutoGen reference](docs/autogen.md) &nbsp;|&nbsp; [Agent Framework patterns](docs/agent_framework_patterns.md) &nbsp;|&nbsp; [Terminal dashboard](docs/chart_cli.md) &nbsp;|&nbsp; [Framework comparison](docs/autogen_agent_sk.md)
+**Repository overview** &nbsp;|&nbsp; [Agent Framework](docs/agent_framework.md) &nbsp;|&nbsp; [Agent Framework patterns](docs/agent_framework_patterns.md) &nbsp;|&nbsp; [Terminal dashboard](docs/chart_cli.md) &nbsp;|&nbsp; [AutoGen (legacy)](.old/docs/autogen.md) &nbsp;|&nbsp; [Semantic Kernel (legacy)](.old/docs/semantic_kernel.md) &nbsp;|&nbsp; [ETF research (legacy)](docs/etf_research.md) &nbsp;|&nbsp; [Archive guide](docs/archive.md)
 
 </div>
 
@@ -36,11 +36,11 @@ See the [terminal dashboard guide](docs/chart_cli.md) for the panels, keys, comm
 | Area | Purpose | Use |
 |---|---|---|
 | [Agent Framework workflow](docs/agent_framework.md) | Main workflow. | **Start here.** |
-| [Semantic Kernel workflow](docs/semantic_kernel.md) | Same steps, plugin-based. | Compare with the main workflow. |
-| [AutoGen reference](docs/autogen.md) | Earlier group-chat version. | Compare implementation styles. |
 | [Agent Framework patterns](docs/agent_framework_patterns.md) | Examples for the investment domain. | Explore features one at a time. |
 | [Real-time terminal dashboard](docs/chart_cli.md) | Live watchlist and charts driven by an Agent Framework workflow, with `/ask`, `/backtest`, `/period`, and `/model` commands. | Watch signals update in a terminal. |
-| [Framework comparison](docs/autogen_agent_sk.md) | Short comparison of the three frameworks. | - |
+| [AutoGen stock-research agents](.old/docs/autogen.md) | Group-chat agents propose strategies, generate signals, backtest, and report results. | Legacy reference. |
+| [Semantic Kernel research workflow](.old/docs/semantic_kernel.md) | Plugin-based agents fetch prices, execute signal code, backtest, and plot results. | Legacy reference. |
+| [ETF strategy research tools](docs/etf_research.md) | Standalone scripts explore momentum, volatility targeting, drawdown controls, and benchmarks. | Legacy research. |
 
 The [Agent Framework patterns](docs/agent_framework_patterns.md) are the only pattern showcase in this repository. The 30 examples show Microsoft Agent Framework features for investment research. Semantic Kernel and AutoGen do not have separate pattern libraries here.
 
@@ -61,19 +61,26 @@ On PowerShell, use `Copy-Item .env.example .env` to copy the settings file. Then
 |---|---|
 | `AZURE_AI_PROJECT_ENDPOINT` | Address of the Azure AI Foundry project used by the main workflow. |
 | `AZURE_AI_MODEL_DEPLOYMENT_NAME` | Name of the chat model deployed in that project. |
-| `AZURE_OPENAI_ENDPOINT` | Optional direct Azure OpenAI endpoint for the Semantic Kernel workflow; otherwise it uses the Foundry project endpoint. |
-| `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` | Optional direct Azure OpenAI deployment for the Semantic Kernel workflow. |
 | `INVESTMENT_TICKER` | Stock symbol to study. The default is `MSFT`. |
 | `INVESTMENT_START_DATE`, `INVESTMENT_END_DATE` | First and last dates for the past-price data. |
 | `INVESTMENT_INITIAL_CAPITAL` | Pretend starting amount for the backtest. |
 
-## Optional: Semantic Kernel variant
+<a id="legacy-code-index"></a>
 
-Use this command only when comparing the plugin-based agent variant. It reuses the configured Foundry project and model by default, then creates charts, metrics, spreadsheets, CSVs, and the generated signal script in its own output folder:
+## Legacy: AutoGen, Semantic Kernel, and ETF research
 
-```bash
-uv run python -m semantic_kernel.main
-```
+These earlier implementations and research experiments remain under [.old](.old) for reference, outside the default workflow and test suite. The [archive guide](docs/archive.md) explains their layout and execution.
+
+The archived [ETF research guide](docs/etf_research.md) documents global USD defaults with SPY as the benchmark and QQQ as an option. This selects the benchmark/fallback/regime, not every strategy's universe; historical Korean-market reports are not results of the refactored scripts or comparable to new USD runs.
+
+| Implementation | What it contains | Explore |
+|---|---|---|
+| AutoGen stock-research agents | Conversational agents for strategy ideas, price analysis, signal generation, backtesting, and report writing. | [Source](.old/autogen) · [Architecture and guide](.old/docs/autogen.md) · [Sample results](.old/output/autogen) |
+| Semantic Kernel research workflow | A plugin-based pipeline that fetches prices, writes and executes Python signals, backtests, and produces charts and metrics. | [Source](.old/semantic_kernel) · [Architecture and guide](.old/docs/semantic_kernel.md) · [Sample results](.old/output/semantic_kernel) |
+| Standalone ETF strategy experiments | Scripts for momentum strategies, volatility targeting, drawdown and stop-loss analysis, benchmark comparisons, and GenPort factor inspection. | [Guide](docs/etf_research.md) · [Research scripts](.old/tools) · [Archived sample artifacts](.old/output) |
+| Cross-framework REPL tests | Checks that Agent Framework and Semantic Kernel validate generated signals and produce matching results for the same script and prices. | [Comparison tests](.old/tests/test_research_repl.py) · [Run instructions](docs/archive.md#legacy-execution) |
+
+See the [framework comparison](.old/docs/autogen_agent_sk.md) for implementation differences and the [relocation map](docs/archive.md#relocation-map) for previous and current paths.
 
 ## Sample research output
 
@@ -104,7 +111,7 @@ The top panel shows cumulative strategy returns. The lower panel shows portfolio
 
 | Metric | Sample value |
 |---|---:|
-| [Cumulative return](output/agent_framework/backtest_metrics.txt) | 27.96% |
+| Cumulative return | 27.96% |
 | CAGR | 3.88% |
 | Maximum drawdown | -21.03% |
 | Sharpe ratio | 0.36 |
@@ -112,32 +119,33 @@ The top panel shows cumulative strategy returns. The lower panel shows portfolio
 
 See the full [backtest workbook](output/agent_framework/backtest_results.xlsx), [generated signal script](output/agent_framework/generated_signal_strategy.py), and [validated signals](output/agent_framework/stock_signals.csv).
 
+Text reports (`*.txt`) and pickle caches (`*.pkl`) are local generated artifacts, not version controlled or included in a clean clone. The sample metrics above remain illustrative; the linked workbook, script, signals, and chart provide the bundled sample artifacts.
+
 ## Repository layout
 
 | Path | Contents |
 |---|---|
 | [agent_framework](agent_framework) | The main Microsoft Agent Framework application. |
-| [semantic_kernel](semantic_kernel) | The Semantic Kernel version of the research workflow. |
-| [autogen](autogen) | The AutoGen reference version, with its own Poetry environment. |
 | [agent_framework_patterns](agent_framework_patterns) | Thirty small Agent Framework examples for investment research. |
 | [chart-cli](chart-cli) | Real-time terminal dashboard with a companion Agent Framework workflow. |
 | [tests](tests) | Offline tests for Agent Framework patterns and the REPL contracts. |
-| [output](output) | Saved charts, metrics, and example pattern responses. |
-| [docs](docs) | Guides for each implementation and framework comparison. |
+| [output](output) | Agent Framework charts, metrics, and example pattern responses. |
+| [docs](docs) | Agent Framework, TUI, archive, and ETF research guides, linked from this single README entry point. |
+| [.old](.old) | Archived frameworks, comparison tests and independent architecture guides, standalone ETF tools, and non-Agent-Framework sample outputs. See the [archive guide](docs/archive.md). |
 
 ## Validation
 
 The Agent Framework pattern tests run without Azure credentials or live market-data services:
 
 ```bash
-uv run ruff check agent_framework semantic_kernel agent_framework_patterns tests
+uv run ruff check agent_framework agent_framework_patterns tests
 uv run pytest tests -q
 ```
 
 ## Safety and limitations
 
 - These results are for learning and research, not financial advice or a real trading system.
-- Both workflows execute model-authored Python to create signals. Their validation is not a security sandbox; run them only in an isolated development environment without credentials or production data.
+- The research workflows execute model-authored Python to create signals. Their validation is not a security sandbox; run them only in an isolated development environment without credentials or production data.
 - Good results from the past do not mean the same strategy will work in the future.
 - The examples use public market data and simple rules. They leave out trading fees, price changes that happen while a trade is being made, taxes, careful handling of stock splits and dividends, and checks for an individual investor's needs.
 - Review AI responses, connected tools, and data licences before using this project outside a learning or research setting.
