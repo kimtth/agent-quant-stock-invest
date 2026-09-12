@@ -67,59 +67,9 @@ On PowerShell, use `Copy-Item .env.example .env` to copy the settings file. Then
 
 <a id="legacy-code-index"></a>
 
-## Legacy: AutoGen, Semantic Kernel, and ETF research
-
-These earlier implementations and research experiments remain under [.old](.old) for reference, outside the default workflow and test suite. The [archive guide](docs/archive.md) explains their layout and execution.
-
-The archived [ETF research guide](docs/etf_research.md) documents global USD defaults with SPY as the benchmark and QQQ as an option. This selects the benchmark/fallback/regime, not every strategy's universe; historical Korean-market reports are not results of the refactored scripts or comparable to new USD runs.
-
-| Implementation | What it contains | Explore |
-|---|---|---|
-| AutoGen stock-research agents | Conversational agents for strategy ideas, price analysis, signal generation, backtesting, and report writing. | [Source](.old/autogen) · [Architecture and guide](.old/docs/autogen.md) · [Sample results](.old/output/autogen) |
-| Semantic Kernel research workflow | A plugin-based pipeline that fetches prices, writes and executes Python signals, backtests, and produces charts and metrics. | [Source](.old/semantic_kernel) · [Architecture and guide](.old/docs/semantic_kernel.md) · [Sample results](.old/output/semantic_kernel) |
-| Standalone ETF strategy experiments | Scripts for momentum strategies, volatility targeting, drawdown and stop-loss analysis, benchmark comparisons, and GenPort factor inspection. | [Guide](docs/etf_research.md) · [Research scripts](.old/tools) · [Archived sample artifacts](.old/output) |
-| Cross-framework REPL tests | Checks that Agent Framework and Semantic Kernel validate generated signals and produce matching results for the same script and prices. | [Comparison tests](.old/tests/test_research_repl.py) · [Run instructions](docs/archive.md#legacy-execution) |
-
-See the [framework comparison](.old/docs/autogen_agent_sk.md) for implementation differences and the [relocation map](docs/archive.md#relocation-map) for previous and current paths.
-
 ## Sample research output
 
-The following Agent Framework sample uses `MSFT` from 2020-01-01 through 2026-07-01 with a simulated $10,000 starting balance. It is historical research only; a later run can generate a different strategy and result.
-
-### Input
-
-```text
-Analyze MSFT from 2020-01-01 to 2026-07-01. Develop one transparent technical-analysis signal strategy as Python code, execute it, backtest $10000, and report CAGR, total return, final value, drawdown, and Sharpe ratio.
-```
-
-### Generated signal
-
-The sample agent generated a long-only trend-and-momentum signal using MSFT closing prices:
-
-- **Buy:** the 50-day simple moving average is above the 200-day simple moving average and RSI(14) is above 50, after that combined condition was previously false.
-- **Sell:** the combined condition becomes false: the 50-day average is at or below the 200-day average, or RSI(14) is at or below 50.
-- **Hold:** no change in the combined condition.
-- **Execution convention:** a close-based condition affects the next session's return, reducing same-close look-ahead bias.
-
-### Performance plot
-
-The top panel shows cumulative strategy returns. The lower panel shows portfolio drawdown from its previous peak.
-
-<img src="output/agent_framework/stock_plot.png" alt="Sample cumulative returns and drawdown for the Agent Framework research run" width="600">
-
-### Backtest metrics
-
-| Metric | Sample value |
-|---|---:|
-| Cumulative return | 27.96% |
-| CAGR | 3.88% |
-| Maximum drawdown | -21.03% |
-| Sharpe ratio | 0.36 |
-| Final value | $12,796.05 |
-
 See the full [backtest workbook](output/agent_framework/backtest_results.xlsx), [generated signal script](output/agent_framework/generated_signal_strategy.py), and [validated signals](output/agent_framework/stock_signals.csv).
-
-Text reports (`*.txt`) and pickle caches (`*.pkl`) are local generated artifacts, not version controlled or included in a clean clone. The sample metrics above remain illustrative; the linked workbook, script, signals, and chart provide the bundled sample artifacts.
 
 ## Repository layout
 
