@@ -207,8 +207,9 @@ README_MEMO.md
 .ruff_cache/
 /.agents
 skills-lock.json
+/uv.lock
+/chart-cli/pnpm-lock.yaml
 /chart-cli/output
 # Generated reports and binary research caches (local only)
 *.txt
 *.pkl
-
